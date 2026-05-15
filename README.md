@@ -22,7 +22,7 @@ pocket-book-sa/
 ├── meta/                       # Документы о книге, НЕ являются её частью
 │   ├── editorial-standard.html # Редакционный стандарт
 │   └── project-instructions.md # Инструкции для AI-ассистента
-├── assets/svg/                 # SVG-исходники, если хранятся отдельно
+├── assets/svg/                 # SVG-исходники (34 готовых + новые при написании глав)
 ├── .github/workflows/          # GitHub Actions: автосборка и публикация
 ├── build.py                    # Скрипт сборки и валидации
 ├── pocket-book.html            # Финальный собранный файл (в .gitignore)
