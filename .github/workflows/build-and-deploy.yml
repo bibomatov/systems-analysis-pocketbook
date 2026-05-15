@@ -1,0 +1,76 @@
+name: Сборка и публикация книги
+
+# Триггеры:
+# - push в main (например, после merge PR с новой главой)
+# - ручной запуск через Actions UI
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Разрешения для деплоя на Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Один деплой за раз — отменяем предыдущий, если он ещё идёт
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Сборка pocket-book.html
+    runs-on: ubuntu-latest
+    steps:
+      - name: Чекаут репо
+        uses: actions/checkout@v4
+
+      - name: Установка Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Валидация HTML
+        run: python3 build.py --check
+
+      - name: Проверка синхронизации TOC
+        run: |
+          python3 build.py --sync-toc
+          if [ -n "$(git status --porcelain chapters/)" ]; then
+            echo "❌ TOC в файлах глав не синхронизирован с index.html."
+            echo "Запустите 'python3 build.py --sync-toc' локально и закоммитьте результат."
+            git diff chapters/
+            exit 1
+          fi
+
+      - name: Сборка книги
+        run: python3 build.py
+
+      - name: Подготовка артефактов для Pages
+        run: |
+          # Собранная книга становится корневым index.html сайта.
+          # Все meta-документы копируются в /meta/ для доступа по URL.
+          mkdir -p _site/meta
+          cp pocket-book.html _site/index.html
+          cp styles.css _site/styles.css
+          cp -r meta/*.html _site/meta/ 2>/dev/null || true
+          cp -r meta/*.md _site/meta/ 2>/dev/null || true
+
+      - name: Загрузка артефакта Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Деплой на GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Деплой
+        id: deployment
+        uses: actions/deploy-pages@v4
