@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 580" role="img">
+<title>Состояния экрана списка заказов</title>
+<desc>Один экран — пять состояний, которые надо описывать в постановке: пустой, загрузка, успех, ошибка, частичный отказ. Описывать только успешный сценарий — частая ошибка постановки.</desc>
+
+<text x="460" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#444441">Один экран — пять состояний, и все надо описать</text>
+
+<!-- Пустой экран -->
+<rect x="40" y="55" width="170" height="220" rx="6" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="1"/>
+<rect x="40" y="55" width="170" height="22" rx="6" fill="#F4F2EE" stroke="#5F5E5A" stroke-width="1"/>
+<text x="125" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#444441">Пустой</text>
+
+<circle cx="125" cy="135" r="22" fill="none" stroke="#B4B2A9" stroke-width="1.5"/>
+<line x1="113" y1="135" x2="137" y2="135" stroke="#B4B2A9" stroke-width="1.5"/>
+<line x1="125" y1="123" x2="125" y2="147" stroke="#B4B2A9" stroke-width="1.5"/>
+
+<text x="125" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A">Заказов пока нет</text>
+<text x="125" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#B4B2A9">Создайте первый заказ —</text>
+<text x="125" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#B4B2A9">это займёт минуту</text>
+
+<rect x="75" y="225" width="100" height="26" rx="4" fill="#3B6D11" stroke="#27500A" stroke-width="1"/>
+<text x="125" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">+ Создать</text>
+
+<text x="125" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">данных нет —</text>
+<text x="125" y="309" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">подсказка и кнопка «начать»</text>
+
+<!-- Загрузка -->
+<rect x="225" y="55" width="170" height="220" rx="6" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="1"/>
+<rect x="225" y="55" width="170" height="22" rx="6" fill="#F4F2EE" stroke="#5F5E5A" stroke-width="1"/>
+<text x="310" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#444441">Загрузка</text>
+
+<rect x="240" y="95" width="140" height="14" rx="2" fill="#E5E2DC"/>
+<rect x="240" y="118" width="120" height="14" rx="2" fill="#E5E2DC"/>
+<rect x="240" y="141" width="140" height="14" rx="2" fill="#E5E2DC"/>
+<rect x="240" y="164" width="100" height="14" rx="2" fill="#E5E2DC"/>
+<rect x="240" y="187" width="140" height="14" rx="2" fill="#E5E2DC"/>
+<rect x="240" y="210" width="125" height="14" rx="2" fill="#E5E2DC"/>
+<rect x="240" y="233" width="140" height="14" rx="2" fill="#E5E2DC"/>
+
+<text x="310" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">скелетон или спиннер —</text>
+<text x="310" y="309" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">видно, что идёт загрузка</text>
+
+<!-- Успех -->
+<rect x="410" y="55" width="170" height="220" rx="6" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="1"/>
+<rect x="410" y="55" width="170" height="22" rx="6" fill="#EAF3DE" stroke="#5F5E5A" stroke-width="1"/>
+<text x="495" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500A">Успех</text>
+
+<rect x="425" y="92" width="140" height="32" rx="3" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="435" y="108" font-family="Arial, sans-serif" font-size="9" fill="#444441" font-weight="600">Заказ #1024</text>
+<text x="435" y="120" font-family="Arial, sans-serif" font-size="8" fill="#5F5E5A">12 апр · 4 850 руб · оплачен</text>
+
+<rect x="425" y="130" width="140" height="32" rx="3" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="435" y="146" font-family="Arial, sans-serif" font-size="9" fill="#444441" font-weight="600">Заказ #1023</text>
+<text x="435" y="158" font-family="Arial, sans-serif" font-size="8" fill="#5F5E5A">11 апр · 12 200 руб · доставлен</text>
+
+<rect x="425" y="168" width="140" height="32" rx="3" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="435" y="184" font-family="Arial, sans-serif" font-size="9" fill="#444441" font-weight="600">Заказ #1022</text>
+<text x="435" y="196" font-family="Arial, sans-serif" font-size="8" fill="#5F5E5A">10 апр · 720 руб · отменён</text>
+
+<rect x="425" y="206" width="140" height="32" rx="3" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="435" y="222" font-family="Arial, sans-serif" font-size="9" fill="#444441" font-weight="600">Заказ #1021</text>
+<text x="435" y="234" font-family="Arial, sans-serif" font-size="8" fill="#5F5E5A">09 апр · 3 100 руб · доставлен</text>
+
+<text x="495" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A">всего: 124 заказа</text>
+
+<text x="495" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27500A" font-style="italic">основной сценарий —</text>
+<text x="495" y="309" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27500A" font-style="italic">данные показываются</text>
+
+<!-- Ошибка -->
+<rect x="595" y="55" width="170" height="220" rx="6" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="1"/>
+<rect x="595" y="55" width="170" height="22" rx="6" fill="#FCEBEB" stroke="#5F5E5A" stroke-width="1"/>
+<text x="680" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#791F1F">Ошибка</text>
+
+<circle cx="680" cy="135" r="22" fill="none" stroke="#A32D2D" stroke-width="2"/>
+<line x1="668" y1="123" x2="692" y2="147" stroke="#A32D2D" stroke-width="2"/>
+<line x1="692" y1="123" x2="668" y2="147" stroke="#A32D2D" stroke-width="2"/>
+
+<text x="680" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#791F1F" font-weight="600">Не удалось загрузить</text>
+<text x="680" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A">Проверьте соединение</text>
+<text x="680" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A">или попробуйте позже</text>
+
+<rect x="630" y="225" width="100" height="26" rx="4" fill="#FFFFFF" stroke="#A32D2D" stroke-width="1"/>
+<text x="680" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#791F1F" font-weight="600">Повторить</text>
+
+<text x="680" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">сервер упал или нет связи —</text>
+<text x="680" y="309" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">объяснение и действие</text>
+
+<!-- Частичный отказ — отдельным рядом, занимает всю ширину -->
+<line x1="40" y1="345" x2="880" y2="345" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="4,3"/>
+<text x="460" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#444441">+ пятое состояние, которое часто забывают</text>
+
+<rect x="280" y="385" width="360" height="160" rx="6" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="1"/>
+<rect x="280" y="385" width="360" height="22" rx="6" fill="#FAEFD9" stroke="#5F5E5A" stroke-width="1"/>
+<text x="460" y="401" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#7A4A0E">Частичный отказ</text>
+
+<rect x="295" y="420" width="330" height="26" rx="3" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="305" y="436" font-family="Arial, sans-serif" font-size="9" fill="#444441" font-weight="600">Заказ #1024 · 12 апр · 4 850 руб · оплачен</text>
+
+<rect x="295" y="450" width="330" height="26" rx="3" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="305" y="466" font-family="Arial, sans-serif" font-size="9" fill="#444441" font-weight="600">Заказ #1023 · 11 апр · 12 200 руб · </text>
+<text x="495" y="466" font-family="Arial, sans-serif" font-size="9" fill="#7A4A0E" font-style="italic">статус недоступен</text>
+
+<rect x="295" y="480" width="330" height="26" rx="3" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="305" y="496" font-family="Arial, sans-serif" font-size="9" fill="#444441" font-weight="600">Заказ #1022 · 10 апр · 720 руб · </text>
+<text x="475" y="496" font-family="Arial, sans-serif" font-size="9" fill="#7A4A0E" font-style="italic">статус недоступен</text>
+
+<rect x="295" y="510" width="330" height="26" rx="3" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="305" y="526" font-family="Arial, sans-serif" font-size="9" fill="#444441" font-weight="600">Заказ #1021 · 09 апр · 3 100 руб · доставлен</text>
+
+<text x="460" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">часть данных пришла, часть нет — показываем то, что есть, и помечаем недоступное</text>
+</svg>

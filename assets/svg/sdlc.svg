@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 240" role="img">
+<title>Жизненный цикл разработки</title>
+<desc>Шесть этапов жизненного цикла разработки: анализ требований, проектирование, разработка, тестирование, внедрение, эксплуатация. Каждый этап показан прямоугольником с краткой подписью под ним. Стрелки показывают последовательность.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#5F5E5A"/>
+</marker>
+</defs>
+<rect x="20" y="40" width="130" height="60" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="85" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#0C447C">Анализ</text>
+<text x="85" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#0C447C">требований</text>
+<text x="85" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">Сбор и</text>
+<text x="85" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">формализация</text>
+<text x="85" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">потребностей</text>
+<line x1="155" y1="70" x2="195" y2="70" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="200" y="40" width="130" height="60" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="265" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#0C447C">Проектирование</text>
+<text x="265" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">Архитектура,</text>
+<text x="265" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">модели,</text>
+<text x="265" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">ТЗ</text>
+<line x1="335" y1="70" x2="375" y2="70" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="380" y="40" width="130" height="60" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="445" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#0C447C">Разработка</text>
+<text x="445" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">Написание</text>
+<text x="445" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">кода</text>
+<line x1="515" y1="70" x2="555" y2="70" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="560" y="40" width="130" height="60" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="625" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#0C447C">Тестирование</text>
+<text x="625" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">Проверка</text>
+<text x="625" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">результата</text>
+<line x1="695" y1="70" x2="735" y2="70" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="740" y="40" width="130" height="60" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="805" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#0C447C">Внедрение</text>
+<text x="805" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">Релиз в</text>
+<text x="805" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">прод</text>
+<rect x="380" y="180" width="130" height="50" rx="8" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="445" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#27500A">Эксплуатация</text>
+<path d="M 870 70 L 895 70 L 895 205 L 510 205" fill="none" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="4,3"/>
+<path d="M 380 205 L 280 205 L 280 105" fill="none" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="4,3"/>
+<text x="320" y="180" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">новые требования</text>
+</svg>

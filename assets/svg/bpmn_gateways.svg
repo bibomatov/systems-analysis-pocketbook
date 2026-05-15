@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 220" role="img">
+<title>Четыре типа шлюзов BPMN</title>
+<desc>Сравнение четырёх типов шлюзов BPMN: исключающий XOR, параллельный AND, неисключающий OR, по событию.</desc>
+<polygon points="100,80 150,40 200,80 150,120" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5"/>
+<text x="150" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="500" fill="#854F0B">×</text>
+<text x="150" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#633806">Исключающий</text>
+<text x="150" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#633806">(XOR)</text>
+<text x="150" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">или один путь, или другой</text>
+<polygon points="320,80 370,40 420,80 370,120" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+<line x1="370" y1="58" x2="370" y2="102" stroke="#185FA5" stroke-width="2.5"/>
+<line x1="348" y1="80" x2="392" y2="80" stroke="#185FA5" stroke-width="2.5"/>
+<text x="370" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#0C447C">Параллельный</text>
+<text x="370" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#0C447C">(AND)</text>
+<text x="370" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">все пути одновременно</text>
+<polygon points="540,80 590,40 640,80 590,120" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<circle cx="590" cy="80" r="14" fill="none" stroke="#3B6D11" stroke-width="2.5"/>
+<text x="590" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#27500A">Неисключающий</text>
+<text x="590" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27500A">(OR)</text>
+<text x="590" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">один или несколько путей</text>
+<polygon points="760,80 810,40 860,80 810,120" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/>
+<polygon points="810,68 822,77 817,91 803,91 798,77" fill="none" stroke="#534AB7" stroke-width="1.5"/>
+<text x="810" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#26215C">По событию</text>
+<text x="810" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">первое пришедшее событие</text>
+</svg>

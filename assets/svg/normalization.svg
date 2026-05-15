@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 580" role="img">
+<title>Нормализация: было и стало</title>
+<desc>Слева плохая ненормализованная таблица с дублированием и многозначными полями. Справа схема после нормализации до 3НФ — данные разложены по связанным таблицам.</desc>
+<defs>
+<marker id="norm_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#A32D2D"/>
+</marker>
+</defs>
+<text x="230" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#791F1F">Было: ненормализованная таблица</text>
+<rect x="40" y="60" width="380" height="220" rx="4" fill="#FFFFFF" stroke="#A32D2D" stroke-width="1.5"/>
+<rect x="40" y="60" width="380" height="24" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1.5"/>
+<text x="230" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#791F1F">applications</text>
+<line x1="40" y1="106" x2="420" y2="106" stroke="#A32D2D" stroke-width="0.5"/>
+<text x="55" y="100" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#791F1F">id</text>
+<text x="80" y="100" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#791F1F">manager</text>
+<text x="155" y="100" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#791F1F">manager_email</text>
+<text x="245" y="100" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#791F1F">client</text>
+<text x="290" y="100" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#791F1F">products</text>
+<text x="380" y="100" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#791F1F">price</text>
+<text x="55" y="124" font-family="Arial, sans-serif" font-size="9" fill="#444441">1</text>
+<text x="80" y="124" font-family="Arial, sans-serif" font-size="9" fill="#444441">Иван</text>
+<text x="155" y="124" font-family="Arial, sans-serif" font-size="9" fill="#444441">ivan@mail.ru</text>
+<text x="245" y="124" font-family="Arial, sans-serif" font-size="9" fill="#444441">Анна</text>
+<text x="290" y="124" font-family="Arial, sans-serif" font-size="9" fill="#444441">Тариф А, Тариф Б</text>
+<text x="380" y="124" font-family="Arial, sans-serif" font-size="9" fill="#444441">2500</text>
+<text x="55" y="144" font-family="Arial, sans-serif" font-size="9" fill="#444441">2</text>
+<text x="80" y="144" font-family="Arial, sans-serif" font-size="9" fill="#444441">Иван</text>
+<text x="155" y="144" font-family="Arial, sans-serif" font-size="9" fill="#444441">ivan@mail.ru</text>
+<text x="245" y="144" font-family="Arial, sans-serif" font-size="9" fill="#444441">Борис</text>
+<text x="290" y="144" font-family="Arial, sans-serif" font-size="9" fill="#444441">Тариф А</text>
+<text x="380" y="144" font-family="Arial, sans-serif" font-size="9" fill="#444441">1000</text>
+<text x="55" y="164" font-family="Arial, sans-serif" font-size="9" fill="#444441">3</text>
+<text x="80" y="164" font-family="Arial, sans-serif" font-size="9" fill="#444441">Иван</text>
+<text x="155" y="164" font-family="Arial, sans-serif" font-size="9" fill="#444441">ivan.new@mail.ru</text>
+<text x="245" y="164" font-family="Arial, sans-serif" font-size="9" fill="#444441">Виктор</text>
+<text x="290" y="164" font-family="Arial, sans-serif" font-size="9" fill="#444441">Тариф В</text>
+<text x="380" y="164" font-family="Arial, sans-serif" font-size="9" fill="#444441">3000</text>
+<line x1="55" y1="180" x2="420" y2="180" stroke="#A32D2D" stroke-width="0.3"/>
+<text x="50" y="220" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#791F1F">Проблемы:</text>
+<text x="50" y="238" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">• имя и email менеджера дублируются (1НФ ОК, но обновлять в N местах)</text>
+<text x="50" y="252" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">• список товаров через запятую — нарушение 1НФ</text>
+<text x="50" y="266" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">• цена зависит от товара, не от заявки — нарушение 3НФ</text>
+<line x1="460" y1="60" x2="460" y2="540" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<text x="690" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#27500A">Стало: 3НФ — таблицы разделены</text>
+<rect x="500" y="60" width="180" height="100" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1.5"/>
+<rect x="500" y="60" width="180" height="22" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="590" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">managers</text>
+<line x1="500" y1="100" x2="680" y2="100" stroke="#3B6D11" stroke-width="0.5"/>
+<text x="510" y="95" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">id</text>
+<text x="540" y="95" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">name</text>
+<text x="600" y="95" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">email</text>
+<text x="510" y="118" font-family="Arial, sans-serif" font-size="9" fill="#444441">10</text>
+<text x="540" y="118" font-family="Arial, sans-serif" font-size="9" fill="#444441">Иван</text>
+<text x="600" y="118" font-family="Arial, sans-serif" font-size="9" fill="#444441">ivan.new@mail.ru</text>
+<text x="510" y="138" font-family="Arial, sans-serif" font-size="9" fill="#444441">11</text>
+<text x="540" y="138" font-family="Arial, sans-serif" font-size="9" fill="#444441">Мария</text>
+<text x="600" y="138" font-family="Arial, sans-serif" font-size="9" fill="#444441">maria@mail.ru</text>
+<rect x="710" y="60" width="180" height="100" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1.5"/>
+<rect x="710" y="60" width="180" height="22" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="800" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">clients</text>
+<line x1="710" y1="100" x2="890" y2="100" stroke="#3B6D11" stroke-width="0.5"/>
+<text x="720" y="95" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">id</text>
+<text x="750" y="95" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">name</text>
+<text x="720" y="118" font-family="Arial, sans-serif" font-size="9" fill="#444441">100</text>
+<text x="750" y="118" font-family="Arial, sans-serif" font-size="9" fill="#444441">Анна</text>
+<text x="720" y="138" font-family="Arial, sans-serif" font-size="9" fill="#444441">101</text>
+<text x="750" y="138" font-family="Arial, sans-serif" font-size="9" fill="#444441">Борис</text>
+<rect x="500" y="180" width="180" height="120" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1.5"/>
+<rect x="500" y="180" width="180" height="22" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="590" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">products</text>
+<line x1="500" y1="220" x2="680" y2="220" stroke="#3B6D11" stroke-width="0.5"/>
+<text x="510" y="215" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">id</text>
+<text x="540" y="215" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">name</text>
+<text x="620" y="215" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">price</text>
+<text x="510" y="238" font-family="Arial, sans-serif" font-size="9" fill="#444441">1</text>
+<text x="540" y="238" font-family="Arial, sans-serif" font-size="9" fill="#444441">Тариф А</text>
+<text x="620" y="238" font-family="Arial, sans-serif" font-size="9" fill="#444441">1000</text>
+<text x="510" y="258" font-family="Arial, sans-serif" font-size="9" fill="#444441">2</text>
+<text x="540" y="258" font-family="Arial, sans-serif" font-size="9" fill="#444441">Тариф Б</text>
+<text x="620" y="258" font-family="Arial, sans-serif" font-size="9" fill="#444441">1500</text>
+<text x="510" y="278" font-family="Arial, sans-serif" font-size="9" fill="#444441">3</text>
+<text x="540" y="278" font-family="Arial, sans-serif" font-size="9" fill="#444441">Тариф В</text>
+<text x="620" y="278" font-family="Arial, sans-serif" font-size="9" fill="#444441">3000</text>
+<rect x="710" y="180" width="180" height="120" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1.5"/>
+<rect x="710" y="180" width="180" height="22" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="800" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">applications</text>
+<line x1="710" y1="220" x2="890" y2="220" stroke="#3B6D11" stroke-width="0.5"/>
+<text x="720" y="215" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">id</text>
+<text x="745" y="215" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">manager</text>
+<text x="820" y="215" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">client</text>
+<text x="720" y="238" font-family="Arial, sans-serif" font-size="9" fill="#444441">1</text>
+<text x="745" y="238" font-family="Arial, sans-serif" font-size="9" fill="#444441">10</text>
+<text x="820" y="238" font-family="Arial, sans-serif" font-size="9" fill="#444441">100</text>
+<text x="720" y="258" font-family="Arial, sans-serif" font-size="9" fill="#444441">2</text>
+<text x="745" y="258" font-family="Arial, sans-serif" font-size="9" fill="#444441">10</text>
+<text x="820" y="258" font-family="Arial, sans-serif" font-size="9" fill="#444441">101</text>
+<rect x="600" y="320" width="200" height="120" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1.5"/>
+<rect x="600" y="320" width="200" height="22" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="700" y="336" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">application_products</text>
+<line x1="600" y1="360" x2="800" y2="360" stroke="#3B6D11" stroke-width="0.5"/>
+<text x="610" y="355" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">app_id</text>
+<text x="690" y="355" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">product_id</text>
+<text x="610" y="378" font-family="Arial, sans-serif" font-size="9" fill="#444441">1</text>
+<text x="690" y="378" font-family="Arial, sans-serif" font-size="9" fill="#444441">1</text>
+<text x="610" y="398" font-family="Arial, sans-serif" font-size="9" fill="#444441">1</text>
+<text x="690" y="398" font-family="Arial, sans-serif" font-size="9" fill="#444441">2</text>
+<text x="610" y="418" font-family="Arial, sans-serif" font-size="9" fill="#444441">2</text>
+<text x="690" y="418" font-family="Arial, sans-serif" font-size="9" fill="#444441">1</text>
+<text x="500" y="478" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">Что получили:</text>
+<text x="500" y="496" font-family="Arial, sans-serif" font-size="10" fill="#27500A">• имя и email менеджера хранятся в одном месте</text>
+<text x="500" y="510" font-family="Arial, sans-serif" font-size="10" fill="#27500A">• товары — отдельные сущности, цена связана только с товаром</text>
+<text x="500" y="524" font-family="Arial, sans-serif" font-size="10" fill="#27500A">• связь M:N (заявка ↔ товары) реализована через application_products</text>
+</svg>

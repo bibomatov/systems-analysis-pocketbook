@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 460" role="img">
+<title>Базовая sequence-диаграмма</title>
+<desc>Sequence-диаграмма с тремя участниками: клиент, сервис заказов, сервис клиентов. Показаны lifeline, активационные прямоугольники, синхронные запросы, ответы, фрагмент alt.</desc>
+<defs>
+<marker id="seq_solid" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#444441"/>
+</marker>
+<marker id="seq_dash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+<path d="M0,0 L10,5 L0,10" fill="none" stroke="#444441" stroke-width="1.5"/>
+</marker>
+</defs>
+<rect x="80" y="20" width="140" height="44" rx="4" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="150" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#0C447C">Клиент</text>
+<rect x="380" y="20" width="160" height="44" rx="4" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="460" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#0C447C">Сервис заказов</text>
+<rect x="700" y="20" width="160" height="44" rx="4" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="780" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#0C447C">Сервис клиентов</text>
+<line x1="150" y1="64" x2="150" y2="430" stroke="#185FA5" stroke-width="1" stroke-dasharray="4,4"/>
+<line x1="460" y1="64" x2="460" y2="430" stroke="#185FA5" stroke-width="1" stroke-dasharray="4,4"/>
+<line x1="780" y1="64" x2="780" y2="430" stroke="#185FA5" stroke-width="1" stroke-dasharray="4,4"/>
+<rect x="455" y="100" width="10" height="280" fill="#FFFFFF" stroke="#185FA5" stroke-width="1"/>
+<line x1="151" y1="100" x2="455" y2="100" stroke="#444441" stroke-width="1.5" marker-end="url(#seq_solid)"/>
+<text x="303" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">POST /orders</text>
+<rect x="280" y="135" width="540" height="220" rx="2" fill="none" stroke="#854F0B" stroke-width="1"/>
+<rect x="280" y="135" width="40" height="20" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+<text x="300" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#633806">alt</text>
+<text x="335" y="150" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">[сервис клиентов доступен]</text>
+<rect x="775" y="170" width="10" height="80" fill="#FFFFFF" stroke="#185FA5" stroke-width="1"/>
+<line x1="465" y1="170" x2="775" y2="170" stroke="#444441" stroke-width="1.5" marker-end="url(#seq_solid)"/>
+<text x="620" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">GET /clients/42</text>
+<line x1="775" y1="245" x2="467" y2="245" stroke="#444441" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#seq_dash)"/>
+<text x="620" y="237" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">200 OK + данные</text>
+<line x1="280" y1="270" x2="820" y2="270" stroke="#854F0B" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="290" y="288" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">[сервис клиентов недоступен]</text>
+<line x1="465" y1="320" x2="465" y2="335" stroke="#444441" stroke-width="1.5"/>
+<rect x="430" y="305" width="70" height="20" rx="2" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/>
+<text x="465" y="319" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">взять из кэша</text>
+<line x1="455" y1="395" x2="153" y2="395" stroke="#444441" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#seq_dash)"/>
+<text x="303" y="387" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">201 Created + заказ</text>
+</svg>

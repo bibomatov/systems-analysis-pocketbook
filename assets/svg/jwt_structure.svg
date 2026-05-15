@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 540" role="img">
+<title>Структура JWT</title>
+<desc>JWT состоит из трёх частей, разделённых точками: Header (заголовок), Payload (данные), Signature (подпись). Header и Payload — это base64 от JSON, можно декодировать. Signature считается на сервере с секретным ключом и защищает от подделки.</desc>
+<defs>
+<marker id="jwt_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#444441"/>
+</marker>
+</defs>
+
+<text x="460" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#444441">JWT — три части, разделённые точками</text>
+
+<!-- JWT строка целиком -->
+<rect x="40" y="55" width="840" height="50" rx="4" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+
+<text x="60" y="85" font-family="Courier New, monospace" font-size="11" fill="#A32D2D" font-weight="600">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</text>
+<text x="328" y="85" font-family="Courier New, monospace" font-size="13" fill="#444441" font-weight="600">.</text>
+<text x="340" y="85" font-family="Courier New, monospace" font-size="11" fill="#7A4A0E" font-weight="600">eyJzdWIiOiI0MiIsIm5hbWUiOiJJdmFuIn0</text>
+<text x="608" y="85" font-family="Courier New, monospace" font-size="13" fill="#444441" font-weight="600">.</text>
+<text x="620" y="85" font-family="Courier New, monospace" font-size="11" fill="#27500A" font-weight="600">SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV</text>
+
+<text x="170" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#791F1F" font-style="italic">Header</text>
+<text x="475" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#7A4A0E" font-style="italic">Payload</text>
+<text x="755" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A" font-style="italic">Signature</text>
+
+<!-- Header блок -->
+<rect x="40" y="135" width="270" height="195" rx="6" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1.5"/>
+<text x="175" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#791F1F">Header (заголовок)</text>
+<text x="175" y="174" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-style="italic" fill="#791F1F">base64 от JSON</text>
+
+<rect x="55" y="187" width="240" height="80" rx="4" fill="#FFFFFF" stroke="#A32D2D" stroke-width="0.5"/>
+<text x="65" y="205" font-family="Courier New, monospace" font-size="11" fill="#444441">{</text>
+<text x="75" y="222" font-family="Courier New, monospace" font-size="11" fill="#444441">  "alg": "HS256",</text>
+<text x="75" y="239" font-family="Courier New, monospace" font-size="11" fill="#444441">  "typ": "JWT"</text>
+<text x="65" y="256" font-family="Courier New, monospace" font-size="11" fill="#444441">}</text>
+
+<text x="55" y="290" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">alg — алгоритм подписи</text>
+<text x="55" y="307" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">typ — тип токена (всегда JWT)</text>
+
+<!-- Payload блок -->
+<rect x="325" y="135" width="270" height="195" rx="6" fill="#FAEFD9" stroke="#B07820" stroke-width="1.5"/>
+<text x="460" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#7A4A0E">Payload (данные)</text>
+<text x="460" y="174" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-style="italic" fill="#7A4A0E">base64 от JSON</text>
+
+<rect x="340" y="187" width="240" height="115" rx="4" fill="#FFFFFF" stroke="#B07820" stroke-width="0.5"/>
+<text x="350" y="205" font-family="Courier New, monospace" font-size="10" fill="#444441">{</text>
+<text x="358" y="221" font-family="Courier New, monospace" font-size="10" fill="#444441">  "sub": "42",</text>
+<text x="358" y="237" font-family="Courier New, monospace" font-size="10" fill="#444441">  "name": "Ivan Petrov",</text>
+<text x="358" y="253" font-family="Courier New, monospace" font-size="10" fill="#444441">  "role": "manager",</text>
+<text x="358" y="269" font-family="Courier New, monospace" font-size="10" fill="#444441">  "iat": 1714435200,</text>
+<text x="358" y="285" font-family="Courier New, monospace" font-size="10" fill="#444441">  "exp": 1714438800</text>
+<text x="350" y="298" font-family="Courier New, monospace" font-size="10" fill="#444441">}</text>
+
+<text x="340" y="320" font-family="Arial, sans-serif" font-size="10" fill="#7A4A0E">claims — данные о пользователе</text>
+
+<!-- Signature блок -->
+<rect x="610" y="135" width="270" height="195" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="745" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#27500A">Signature (подпись)</text>
+<text x="745" y="174" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-style="italic" fill="#27500A">HMAC от header + payload</text>
+
+<rect x="625" y="187" width="240" height="80" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="0.5"/>
+<text x="635" y="207" font-family="Courier New, monospace" font-size="10" fill="#444441">HMAC_SHA256(</text>
+<text x="643" y="222" font-family="Courier New, monospace" font-size="10" fill="#444441">  base64(header) + "."</text>
+<text x="643" y="237" font-family="Courier New, monospace" font-size="10" fill="#444441">  + base64(payload),</text>
+<text x="643" y="252" font-family="Courier New, monospace" font-size="10" fill="#444441">  secret_key</text>
+<text x="635" y="262" font-family="Courier New, monospace" font-size="10" fill="#444441">)</text>
+
+<text x="625" y="290" font-family="Arial, sans-serif" font-size="10" fill="#27500A">защищает от подделки —</text>
+<text x="625" y="307" font-family="Arial, sans-serif" font-size="10" fill="#27500A">подделать без secret_key нельзя</text>
+
+<!-- Разделитель -->
+<line x1="40" y1="355" x2="880" y2="355" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="4,3"/>
+
+<!-- Что важно знать -->
+<rect x="40" y="375" width="840" height="145" rx="6" fill="#FFFAF0" stroke="#5F5E5A" stroke-width="1"/>
+<text x="460" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#444441">Что важно знать про JWT</text>
+
+<text x="60" y="425" font-family="Arial, sans-serif" font-size="11" fill="#791F1F" font-weight="600">Header и Payload — открытые!</text>
+<text x="60" y="442" font-family="Arial, sans-serif" font-size="10" fill="#444441">Это просто base64 от JSON. Любой может декодировать и прочитать.</text>
+<text x="60" y="458" font-family="Arial, sans-serif" font-size="10" fill="#444441">Секреты класть нельзя — id, имя, роль допустимы; пароли, токены, ПДн — нет.</text>
+
+<text x="60" y="485" font-family="Arial, sans-serif" font-size="11" fill="#27500A" font-weight="600">Подпись защищает целостность, не конфиденциальность.</text>
+<text x="60" y="502" font-family="Arial, sans-serif" font-size="10" fill="#444441">Сервер пересчитывает signature своим secret_key и сравнивает. Совпало — подлинный.</text>
+<text x="60" y="518" font-family="Arial, sans-serif" font-size="10" fill="#444441">Без secret_key подделать токен (изменить роль, продлить exp) — невозможно.</text>
+</svg>

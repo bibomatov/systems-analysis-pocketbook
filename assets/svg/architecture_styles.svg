@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 460" role="img">
+<title>Архитектурные стили: монолит, SOA, микросервисы</title>
+<desc>Три стиля архитектуры. Монолит: одно приложение, одна база данных, всё внутри. SOA: сервисы общаются через корпоративную шину ESB. Микросервисы: независимые сервисы со своими базами, общаются через лёгкие протоколы.</desc>
+<defs>
+<marker id="as_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#444441"/>
+</marker>
+</defs>
+
+<!-- МОНОЛИТ -->
+<text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#791F1F">Монолит</text>
+<rect x="40" y="50" width="220" height="220" rx="6" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1.5"/>
+<text x="150" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-style="italic" fill="#791F1F">Одно приложение</text>
+
+<rect x="60" y="90" width="80" height="40" rx="3" fill="#FFFFFF" stroke="#A32D2D" stroke-width="1"/>
+<text x="100" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">Заказы</text>
+<rect x="160" y="90" width="80" height="40" rx="3" fill="#FFFFFF" stroke="#A32D2D" stroke-width="1"/>
+<text x="200" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">Платежи</text>
+<rect x="60" y="140" width="80" height="40" rx="3" fill="#FFFFFF" stroke="#A32D2D" stroke-width="1"/>
+<text x="100" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">Каталог</text>
+<rect x="160" y="140" width="80" height="40" rx="3" fill="#FFFFFF" stroke="#A32D2D" stroke-width="1"/>
+<text x="200" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">Уведомления</text>
+
+<line x1="140" y1="110" x2="160" y2="110" stroke="#444441" stroke-width="1" marker-end="url(#as_arr)"/>
+<line x1="140" y1="160" x2="160" y2="160" stroke="#444441" stroke-width="1" marker-end="url(#as_arr)"/>
+<line x1="100" y1="130" x2="100" y2="140" stroke="#444441" stroke-width="1" marker-end="url(#as_arr)"/>
+<line x1="200" y1="130" x2="200" y2="140" stroke="#444441" stroke-width="1" marker-end="url(#as_arr)"/>
+
+<text x="150" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">прямые вызовы внутри процесса</text>
+
+<ellipse cx="150" cy="240" rx="60" ry="14" fill="#FFFFFF" stroke="#A32D2D" stroke-width="1"/>
+<path d="M 90,240 v 12 a 60,14 0 0 0 120,0 v -12" fill="#FFFFFF" stroke="#A32D2D" stroke-width="1"/>
+<text x="150" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">Одна БД</text>
+
+<text x="150" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#791F1F">+ просто, быстрая разработка</text>
+<text x="150" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#791F1F">+ одна транзакция, один деплой</text>
+<text x="150" y="321" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#791F1F">− сложно масштабировать частями</text>
+<text x="150" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#791F1F">− релиз = весь монолит целиком</text>
+<text x="150" y="347" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#791F1F">− связанность растёт со временем</text>
+
+<!-- SOA -->
+<text x="460" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#7A4A0E">SOA</text>
+<rect x="320" y="50" width="280" height="220" rx="6" fill="#FAEFD9" stroke="#B07820" stroke-width="1.5"/>
+<text x="460" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-style="italic" fill="#7A4A0E">Сервисы + корпоративная шина</text>
+
+<rect x="340" y="90" width="80" height="34" rx="3" fill="#FFFFFF" stroke="#B07820" stroke-width="1"/>
+<text x="380" y="111" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">Сервис A</text>
+<rect x="420" y="90" width="80" height="34" rx="3" fill="#FFFFFF" stroke="#B07820" stroke-width="1"/>
+<text x="460" y="111" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">Сервис B</text>
+<rect x="500" y="90" width="80" height="34" rx="3" fill="#FFFFFF" stroke="#B07820" stroke-width="1"/>
+<text x="540" y="111" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">Сервис C</text>
+
+<line x1="380" y1="124" x2="380" y2="160" stroke="#444441" stroke-width="1" marker-end="url(#as_arr)"/>
+<line x1="460" y1="124" x2="460" y2="160" stroke="#444441" stroke-width="1" marker-end="url(#as_arr)"/>
+<line x1="540" y1="124" x2="540" y2="160" stroke="#444441" stroke-width="1" marker-end="url(#as_arr)"/>
+
+<rect x="335" y="165" width="250" height="30" rx="4" fill="#B07820" stroke="#7A4A0E" stroke-width="1"/>
+<text x="460" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">ESB (Enterprise Service Bus)</text>
+
+<text x="460" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">маршрутизация, трансформация, оркестрация</text>
+<text x="460" y="234" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">формат — обычно SOAP / XML</text>
+
+<text x="460" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#7A4A0E">+ единая точка интеграции</text>
+<text x="460" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#7A4A0E">+ стандартизация форматов</text>
+<text x="460" y="321" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#7A4A0E">− ESB — узкое место и точка отказа</text>
+<text x="460" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#7A4A0E">− тяжёлая инфраструктура</text>
+<text x="460" y="347" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#7A4A0E">− сегодня вытеснены микросервисами</text>
+
+<!-- МИКРОСЕРВИСЫ -->
+<text x="770" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#27500A">Микросервисы</text>
+<rect x="650" y="50" width="240" height="220" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="770" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-style="italic" fill="#27500A">Независимые сервисы, свои БД</text>
+
+<rect x="670" y="90" width="76" height="34" rx="3" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1"/>
+<text x="708" y="111" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">Заказы</text>
+<ellipse cx="708" cy="142" rx="22" ry="6" fill="#FFFFFF" stroke="#3B6D11" stroke-width="0.8"/>
+<path d="M 686,142 v 6 a 22,6 0 0 0 44,0 v -6" fill="#FFFFFF" stroke="#3B6D11" stroke-width="0.8"/>
+<text x="708" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27500A">DB</text>
+
+<rect x="794" y="90" width="76" height="34" rx="3" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1"/>
+<text x="832" y="111" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">Платежи</text>
+<ellipse cx="832" cy="142" rx="22" ry="6" fill="#FFFFFF" stroke="#3B6D11" stroke-width="0.8"/>
+<path d="M 810,142 v 6 a 22,6 0 0 0 44,0 v -6" fill="#FFFFFF" stroke="#3B6D11" stroke-width="0.8"/>
+<text x="832" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27500A">DB</text>
+
+<rect x="670" y="175" width="76" height="34" rx="3" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1"/>
+<text x="708" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">Каталог</text>
+<ellipse cx="708" cy="227" rx="22" ry="6" fill="#FFFFFF" stroke="#3B6D11" stroke-width="0.8"/>
+<path d="M 686,227 v 6 a 22,6 0 0 0 44,0 v -6" fill="#FFFFFF" stroke="#3B6D11" stroke-width="0.8"/>
+<text x="708" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27500A">DB</text>
+
+<rect x="794" y="175" width="76" height="34" rx="3" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1"/>
+<text x="832" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">Уведомл.</text>
+<ellipse cx="832" cy="227" rx="22" ry="6" fill="#FFFFFF" stroke="#3B6D11" stroke-width="0.8"/>
+<path d="M 810,227 v 6 a 22,6 0 0 0 44,0 v -6" fill="#FFFFFF" stroke="#3B6D11" stroke-width="0.8"/>
+<text x="832" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27500A">DB</text>
+
+<line x1="746" y1="107" x2="794" y2="107" stroke="#444441" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#as_arr)"/>
+<line x1="746" y1="192" x2="794" y2="192" stroke="#444441" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#as_arr)"/>
+<line x1="708" y1="124" x2="708" y2="175" stroke="#444441" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#as_arr)"/>
+
+<text x="770" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">+ независимый деплой и масштаб</text>
+<text x="770" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">+ команды работают параллельно</text>
+<text x="770" y="321" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">+ свои БД у каждого сервиса</text>
+<text x="770" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">− сложная инфраструктура</text>
+<text x="770" y="347" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">− распределённые транзакции</text>
+
+<!-- Подпись внизу -->
+<text x="460" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">SOA и микросервисы — оба про разбиение на сервисы. Разница — в инфраструктуре связи и автономии.</text>
+<text x="460" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">SOA: тяжёлая шина и общие стандарты. Микросервисы: лёгкие протоколы и независимость.</text>
+</svg>

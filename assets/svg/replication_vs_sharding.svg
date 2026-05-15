@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 540" role="img">
+<title>Репликация и шардирование</title>
+<desc>Слева: репликация — все серверы хранят одни и те же данные. Master принимает запись, реплики получают копии. Справа: шардирование — данные разделены на части, каждый сервер хранит только свою часть. На практике решения комбинируются.</desc>
+<defs>
+<marker id="rs_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#444441"/>
+</marker>
+</defs>
+
+<!-- РЕПЛИКАЦИЯ -->
+<text x="220" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#27500A">Репликация</text>
+<text x="220" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-style="italic" fill="#27500A">одни и те же данные на нескольких серверах</text>
+
+<!-- Клиент -->
+<rect x="160" y="80" width="120" height="32" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="220" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#791F1F">Клиент</text>
+
+<!-- Стрелка к мастеру -->
+<line x1="220" y1="112" x2="220" y2="138" stroke="#444441" stroke-width="1.2" marker-end="url(#rs_arr)"/>
+<text x="245" y="128" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">запись</text>
+
+<!-- Master -->
+<rect x="155" y="140" width="130" height="40" rx="4" fill="#3B6D11" stroke="#27500A" stroke-width="1.5"/>
+<text x="220" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Master</text>
+<text x="220" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF">[A, B, C, D]</text>
+
+<!-- Стрелки к репликам -->
+<line x1="200" y1="180" x2="100" y2="218" stroke="#444441" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#rs_arr)"/>
+<line x1="240" y1="180" x2="340" y2="218" stroke="#444441" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#rs_arr)"/>
+<text x="120" y="200" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">копия</text>
+<text x="290" y="200" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">копия</text>
+
+<!-- Replica 1 -->
+<rect x="35" y="220" width="130" height="40" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="100" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500A">Replica 1</text>
+<text x="100" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27500A">[A, B, C, D]</text>
+
+<!-- Replica 2 -->
+<rect x="275" y="220" width="130" height="40" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="340" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500A">Replica 2</text>
+<text x="340" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27500A">[A, B, C, D]</text>
+
+<!-- Чтение клиента с реплик -->
+<line x1="100" y1="220" x2="160" y2="100" stroke="#3B6D11" stroke-width="0.8" stroke-dasharray="2,2" marker-end="url(#rs_arr)"/>
+<line x1="340" y1="220" x2="280" y2="100" stroke="#3B6D11" stroke-width="0.8" stroke-dasharray="2,2" marker-end="url(#rs_arr)"/>
+<text x="55" y="160" font-family="Arial, sans-serif" font-size="9" fill="#3B6D11" font-style="italic">чтение</text>
+<text x="365" y="160" font-family="Arial, sans-serif" font-size="9" fill="#3B6D11" font-style="italic">чтение</text>
+
+<!-- Что решает репликация -->
+<rect x="35" y="295" width="370" height="80" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
+<text x="50" y="315" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500A">Решает задачу доступности и нагрузки на чтение:</text>
+<text x="50" y="333" font-family="Arial, sans-serif" font-size="10" fill="#27500A">• master упал — переключаемся на реплику</text>
+<text x="50" y="349" font-family="Arial, sans-serif" font-size="10" fill="#27500A">• чтения распределяем между репликами</text>
+<text x="50" y="365" font-family="Arial, sans-serif" font-size="10" fill="#27500A">• реплики ближе к пользователям географически</text>
+
+<!-- Разделитель -->
+<line x1="460" y1="40" x2="460" y2="500" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="4,3"/>
+
+<!-- ШАРДИРОВАНИЕ -->
+<text x="700" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#7A4A0E">Шардирование</text>
+<text x="700" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-style="italic" fill="#7A4A0E">данные разделены на части по серверам</text>
+
+<!-- Клиент -->
+<rect x="640" y="80" width="120" height="32" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="700" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#791F1F">Клиент</text>
+
+<!-- Стрелки к шардам, по ключу -->
+<line x1="660" y1="112" x2="555" y2="218" stroke="#444441" stroke-width="1" marker-end="url(#rs_arr)"/>
+<line x1="700" y1="112" x2="700" y2="218" stroke="#444441" stroke-width="1" marker-end="url(#rs_arr)"/>
+<line x1="740" y1="112" x2="845" y2="218" stroke="#444441" stroke-width="1" marker-end="url(#rs_arr)"/>
+
+<text x="560" y="155" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">id 1–999</text>
+<text x="675" y="155" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">id 1000–1999</text>
+<text x="800" y="155" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">id 2000+</text>
+
+<!-- Shard 1 -->
+<rect x="495" y="220" width="120" height="40" rx="4" fill="#FAEFD9" stroke="#B07820" stroke-width="1.5"/>
+<text x="555" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#7A4A0E">Shard 1</text>
+<text x="555" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7A4A0E">[A, B]</text>
+
+<!-- Shard 2 -->
+<rect x="640" y="220" width="120" height="40" rx="4" fill="#FAEFD9" stroke="#B07820" stroke-width="1.5"/>
+<text x="700" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#7A4A0E">Shard 2</text>
+<text x="700" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7A4A0E">[C, D]</text>
+
+<!-- Shard 3 -->
+<rect x="785" y="220" width="120" height="40" rx="4" fill="#FAEFD9" stroke="#B07820" stroke-width="1.5"/>
+<text x="845" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#7A4A0E">Shard 3</text>
+<text x="845" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7A4A0E">[E, F]</text>
+
+<!-- Что решает шардирование -->
+<rect x="495" y="295" width="410" height="80" rx="4" fill="#FAEFD9" stroke="#B07820" stroke-width="0.5"/>
+<text x="510" y="315" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#7A4A0E">Решает задачу объёма:</text>
+<text x="510" y="333" font-family="Arial, sans-serif" font-size="10" fill="#7A4A0E">• данных больше, чем влезает в один сервер</text>
+<text x="510" y="349" font-family="Arial, sans-serif" font-size="10" fill="#7A4A0E">• нагрузка на запись распределяется по шардам</text>
+<text x="510" y="365" font-family="Arial, sans-serif" font-size="10" fill="#7A4A0E">• сложно с JOIN между шардами и кросс-шард транзакциями</text>
+
+<!-- На практике комбинируют -->
+<rect x="40" y="410" width="840" height="100" rx="6" fill="#FFFAF0" stroke="#5F5E5A" stroke-width="1"/>
+<text x="460" y="432" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#444441">На практике решения комбинируют</text>
+<text x="460" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">Сначала шардируем — делим данные между серверами по ключу.</text>
+<text x="460" y="473" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">Затем для каждого шарда делаем репликацию: master + 2 реплики.</text>
+<text x="460" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">10 шардов × 3 копии = 30 серверов: десятая часть данных, продублированная трижды.</text>
+</svg>

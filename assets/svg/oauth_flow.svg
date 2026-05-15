@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 580" role="img">
+<title>OAuth 2.0 flow на примере «Войти через соцсеть»</title>
+<desc>Шесть шагов протокола OAuth 2.0 с Authorization Code Flow. Пользователь, клиентское приложение, сервер авторизации и сервер ресурсов обмениваются сообщениями так, чтобы клиент получил access token, ни разу не видев пароль пользователя.</desc>
+<defs>
+<marker id="oa_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#444441"/>
+</marker>
+</defs>
+
+<text x="460" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#444441">OAuth 2.0 flow: «фитнес-приложение хочет публиковать в соцсети»</text>
+
+<!-- Заголовки колонок -->
+<rect x="40" y="55" width="170" height="36" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1.5"/>
+<text x="125" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#791F1F">Пользователь</text>
+
+<rect x="270" y="55" width="170" height="36" rx="4" fill="#FAEFD9" stroke="#B07820" stroke-width="1.5"/>
+<text x="355" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#7A4A0E">Client</text>
+<text x="355" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#7A4A0E" font-style="italic">фитнес-приложение</text>
+
+<rect x="490" y="55" width="190" height="36" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="585" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#27500A">Authorization Server</text>
+<text x="585" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A" font-style="italic">соцсеть, выдаёт токены</text>
+
+<rect x="710" y="55" width="170" height="36" rx="4" fill="#E0E9F2" stroke="#2A4A6B" stroke-width="1.5"/>
+<text x="795" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#1F3A5C">Resource Server</text>
+<text x="795" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1F3A5C" font-style="italic">API соцсети</text>
+
+<!-- Линии жизни -->
+<line x1="125" y1="92" x2="125" y2="490" stroke="#A32D2D" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="355" y1="92" x2="355" y2="490" stroke="#B07820" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="585" y1="92" x2="585" y2="490" stroke="#3B6D11" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="795" y1="92" x2="795" y2="490" stroke="#2A4A6B" stroke-width="1" stroke-dasharray="3,3"/>
+
+<!-- Шаг 1 — клиент перенаправляет пользователя на auth server -->
+<circle cx="60" cy="120" r="11" fill="#444441"/>
+<text x="60" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">1</text>
+<line x1="125" y1="120" x2="582" y2="120" stroke="#444441" stroke-width="1.2" marker-end="url(#oa_arr)"/>
+<text x="350" y="113" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">redirect: «прошу разрешить scope=publish_posts»</text>
+<text x="80" y="138" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">фитнес-приложение перенаправляет пользователя в соцсеть</text>
+
+<!-- Шаг 2 — пользователь логинится в auth server -->
+<circle cx="60" cy="170" r="11" fill="#444441"/>
+<text x="60" y="174" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">2</text>
+<line x1="125" y1="170" x2="582" y2="170" stroke="#444441" stroke-width="1.2" marker-end="url(#oa_arr)"/>
+<text x="350" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">login + password</text>
+<text x="80" y="188" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">пользователь вводит свой пароль соцсети — клиент его не видит</text>
+
+<!-- Шаг 3 — пользователь даёт согласие -->
+<circle cx="60" cy="220" r="11" fill="#444441"/>
+<text x="60" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">3</text>
+<line x1="125" y1="220" x2="582" y2="220" stroke="#444441" stroke-width="1.2" marker-end="url(#oa_arr)"/>
+<text x="350" y="213" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">«да, разрешаю публиковать посты»</text>
+<text x="80" y="238" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">пользователь видит scopes и явно соглашается</text>
+
+<!-- Шаг 4 — auth server выдаёт code -->
+<circle cx="240" cy="270" r="11" fill="#444441"/>
+<text x="240" y="274" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">4</text>
+<line x1="582" y1="270" x2="358" y2="270" stroke="#444441" stroke-width="1.2" marker-end="url(#oa_arr)"/>
+<text x="470" y="263" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">authorization code (одноразовый)</text>
+<text x="260" y="288" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">через redirect возвращается клиенту, в URL — код</text>
+
+<!-- Шаг 5 — клиент меняет code на token -->
+<circle cx="240" cy="335" r="11" fill="#444441"/>
+<text x="240" y="339" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">5</text>
+<line x1="358" y1="320" x2="582" y2="320" stroke="#444441" stroke-width="1.2" marker-end="url(#oa_arr)"/>
+<text x="470" y="313" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">code + client_secret</text>
+
+<line x1="582" y1="350" x2="358" y2="350" stroke="#27500A" stroke-width="1.5" marker-end="url(#oa_arr)"/>
+<text x="470" y="343" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#27500A">access_token + refresh_token</text>
+<text x="260" y="370" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">обмен кода на токен — server-to-server, через защищённый канал</text>
+
+<!-- Шаг 6 — клиент использует token для запросов к API -->
+<circle cx="240" cy="410" r="11" fill="#444441"/>
+<text x="240" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">6</text>
+<line x1="358" y1="410" x2="792" y2="410" stroke="#444441" stroke-width="1.2" marker-end="url(#oa_arr)"/>
+<text x="575" y="403" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">POST /posts  +  Authorization: Bearer access_token</text>
+
+<line x1="792" y1="440" x2="358" y2="440" stroke="#27500A" stroke-width="1.5" marker-end="url(#oa_arr)"/>
+<text x="575" y="433" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#27500A">200 OK — пост опубликован</text>
+<text x="260" y="460" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">фитнес-приложение использует токен для публикаций — пароль ему так и не достался</text>
+
+<!-- Итог -->
+<line x1="40" y1="510" x2="880" y2="510" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="4,3"/>
+<text x="460" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">Главное: пароль идёт только в соцсеть, клиент получает ограниченный токен.</text>
+<text x="460" y="555" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">В любой момент пользователь может отозвать токен — пароль менять не нужно.</text>
+</svg>

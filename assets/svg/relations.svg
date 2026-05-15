@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 700" role="img">
+<title>Виды связей между таблицами</title>
+<desc>Три типа связей: один к одному, один ко многим, многие ко многим. Для каждой показан пример с реальными таблицами и связями через ключи.</desc>
+<defs>
+<marker id="rel_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#185FA5"/>
+</marker>
+</defs>
+<text x="40" y="40" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#0C447C">1:1 — Один к одному</text>
+<text x="40" y="58" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">пользователь и его учётные данные (для безопасности вынесены отдельно)</text>
+<rect x="60" y="80" width="220" height="100" rx="4" fill="#FFFFFF" stroke="#185FA5" stroke-width="1.5"/>
+<rect x="60" y="80" width="220" height="22" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+<text x="170" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">users</text>
+<line x1="60" y1="120" x2="280" y2="120" stroke="#185FA5" stroke-width="0.5"/>
+<text x="75" y="115" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#0C447C">id</text>
+<text x="105" y="115" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#0C447C">email</text>
+<text x="200" y="115" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#0C447C">name</text>
+<text x="75" y="138" font-family="Arial, sans-serif" font-size="9" fill="#444441">42</text>
+<text x="105" y="138" font-family="Arial, sans-serif" font-size="9" fill="#444441">ivan@x.com</text>
+<text x="200" y="138" font-family="Arial, sans-serif" font-size="9" fill="#444441">Иван</text>
+<text x="75" y="156" font-family="Arial, sans-serif" font-size="9" fill="#444441">43</text>
+<text x="105" y="156" font-family="Arial, sans-serif" font-size="9" fill="#444441">anna@x.com</text>
+<text x="200" y="156" font-family="Arial, sans-serif" font-size="9" fill="#444441">Анна</text>
+<rect x="500" y="80" width="240" height="100" rx="4" fill="#FFFFFF" stroke="#185FA5" stroke-width="1.5"/>
+<rect x="500" y="80" width="240" height="22" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+<text x="620" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">user_credentials</text>
+<line x1="500" y1="120" x2="740" y2="120" stroke="#185FA5" stroke-width="0.5"/>
+<text x="510" y="115" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#0C447C">user_id</text>
+<text x="565" y="115" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#0C447C">password_hash</text>
+<text x="675" y="115" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#0C447C">last_login</text>
+<text x="510" y="138" font-family="Arial, sans-serif" font-size="9" fill="#444441">42</text>
+<text x="565" y="138" font-family="Arial, sans-serif" font-size="9" fill="#444441">$2y$10$ab...</text>
+<text x="675" y="138" font-family="Arial, sans-serif" font-size="9" fill="#444441">2026-05-04</text>
+<text x="510" y="156" font-family="Arial, sans-serif" font-size="9" fill="#444441">43</text>
+<text x="565" y="156" font-family="Arial, sans-serif" font-size="9" fill="#444441">$2y$10$cd...</text>
+<text x="675" y="156" font-family="Arial, sans-serif" font-size="9" fill="#444441">2026-05-03</text>
+<line x1="280" y1="138" x2="500" y2="138" stroke="#185FA5" stroke-width="1.5" marker-end="url(#rel_arr)"/>
+<text x="390" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#185FA5" font-style="italic">user_id → id</text>
+<text x="390" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#0C447C">1 ────── 1</text>
+<line x1="40" y1="220" x2="900" y2="220" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<text x="40" y="250" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#27500A">1:N — Один ко многим</text>
+<text x="40" y="268" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">один клиент имеет много заказов, у каждого заказа ровно один клиент</text>
+<rect x="60" y="290" width="220" height="100" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1.5"/>
+<rect x="60" y="290" width="220" height="22" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="170" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">clients</text>
+<line x1="60" y1="330" x2="280" y2="330" stroke="#3B6D11" stroke-width="0.5"/>
+<text x="75" y="325" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">id</text>
+<text x="120" y="325" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">name</text>
+<text x="75" y="348" font-family="Arial, sans-serif" font-size="9" fill="#444441">100</text>
+<text x="120" y="348" font-family="Arial, sans-serif" font-size="9" fill="#444441">Анна</text>
+<text x="75" y="368" font-family="Arial, sans-serif" font-size="9" fill="#444441">101</text>
+<text x="120" y="368" font-family="Arial, sans-serif" font-size="9" fill="#444441">Борис</text>
+<rect x="500" y="290" width="280" height="120" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1.5"/>
+<rect x="500" y="290" width="280" height="22" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="640" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">orders</text>
+<line x1="500" y1="330" x2="780" y2="330" stroke="#3B6D11" stroke-width="0.5"/>
+<text x="510" y="325" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">id</text>
+<text x="555" y="325" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">client_id</text>
+<text x="635" y="325" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">total</text>
+<text x="700" y="325" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">created_at</text>
+<text x="510" y="348" font-family="Arial, sans-serif" font-size="9" fill="#444441">5001</text>
+<text x="555" y="348" font-family="Arial, sans-serif" font-size="9" fill="#444441">100</text>
+<text x="635" y="348" font-family="Arial, sans-serif" font-size="9" fill="#444441">2500</text>
+<text x="700" y="348" font-family="Arial, sans-serif" font-size="9" fill="#444441">2026-05-01</text>
+<text x="510" y="366" font-family="Arial, sans-serif" font-size="9" fill="#444441">5002</text>
+<text x="555" y="366" font-family="Arial, sans-serif" font-size="9" fill="#444441">100</text>
+<text x="635" y="366" font-family="Arial, sans-serif" font-size="9" fill="#444441">1800</text>
+<text x="700" y="366" font-family="Arial, sans-serif" font-size="9" fill="#444441">2026-05-03</text>
+<text x="510" y="384" font-family="Arial, sans-serif" font-size="9" fill="#444441">5003</text>
+<text x="555" y="384" font-family="Arial, sans-serif" font-size="9" fill="#444441">101</text>
+<text x="635" y="384" font-family="Arial, sans-serif" font-size="9" fill="#444441">3200</text>
+<text x="700" y="384" font-family="Arial, sans-serif" font-size="9" fill="#444441">2026-05-04</text>
+<line x1="280" y1="350" x2="500" y2="350" stroke="#3B6D11" stroke-width="1.5" marker-end="url(#rel_arr)"/>
+<text x="390" y="342" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27500A" font-style="italic">client_id → id</text>
+<text x="390" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">1 ─────── ∞</text>
+<line x1="40" y1="430" x2="900" y2="430" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<text x="40" y="460" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#633806">M:N — Многие ко многим</text>
+<text x="40" y="478" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">студент посещает много курсов, на курсе много студентов — через промежуточную таблицу</text>
+<rect x="40" y="500" width="180" height="100" rx="4" fill="#FFFFFF" stroke="#854F0B" stroke-width="1.5"/>
+<rect x="40" y="500" width="180" height="22" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5"/>
+<text x="130" y="516" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#633806">students</text>
+<line x1="40" y1="540" x2="220" y2="540" stroke="#854F0B" stroke-width="0.5"/>
+<text x="55" y="535" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#633806">id</text>
+<text x="100" y="535" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#633806">name</text>
+<text x="55" y="556" font-family="Arial, sans-serif" font-size="9" fill="#444441">1</text>
+<text x="100" y="556" font-family="Arial, sans-serif" font-size="9" fill="#444441">Анна</text>
+<text x="55" y="574" font-family="Arial, sans-serif" font-size="9" fill="#444441">2</text>
+<text x="100" y="574" font-family="Arial, sans-serif" font-size="9" fill="#444441">Борис</text>
+<rect x="370" y="500" width="220" height="120" rx="4" fill="#FFFFFF" stroke="#854F0B" stroke-width="2"/>
+<rect x="370" y="500" width="220" height="22" fill="#FAEEDA" stroke="#854F0B" stroke-width="2"/>
+<text x="480" y="516" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#633806">student_courses</text>
+<line x1="370" y1="540" x2="590" y2="540" stroke="#854F0B" stroke-width="0.5"/>
+<text x="385" y="535" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#633806">student_id</text>
+<text x="465" y="535" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#633806">course_id</text>
+<text x="540" y="535" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#633806">grade</text>
+<text x="385" y="556" font-family="Arial, sans-serif" font-size="9" fill="#444441">1</text>
+<text x="465" y="556" font-family="Arial, sans-serif" font-size="9" fill="#444441">10</text>
+<text x="540" y="556" font-family="Arial, sans-serif" font-size="9" fill="#444441">5</text>
+<text x="385" y="574" font-family="Arial, sans-serif" font-size="9" fill="#444441">1</text>
+<text x="465" y="574" font-family="Arial, sans-serif" font-size="9" fill="#444441">11</text>
+<text x="540" y="574" font-family="Arial, sans-serif" font-size="9" fill="#444441">4</text>
+<text x="385" y="592" font-family="Arial, sans-serif" font-size="9" fill="#444441">2</text>
+<text x="465" y="592" font-family="Arial, sans-serif" font-size="9" fill="#444441">10</text>
+<text x="540" y="592" font-family="Arial, sans-serif" font-size="9" fill="#444441">5</text>
+<rect x="740" y="500" width="160" height="100" rx="4" fill="#FFFFFF" stroke="#854F0B" stroke-width="1.5"/>
+<rect x="740" y="500" width="160" height="22" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5"/>
+<text x="820" y="516" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#633806">courses</text>
+<line x1="740" y1="540" x2="900" y2="540" stroke="#854F0B" stroke-width="0.5"/>
+<text x="755" y="535" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#633806">id</text>
+<text x="790" y="535" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#633806">title</text>
+<text x="755" y="556" font-family="Arial, sans-serif" font-size="9" fill="#444441">10</text>
+<text x="790" y="556" font-family="Arial, sans-serif" font-size="9" fill="#444441">SQL</text>
+<text x="755" y="574" font-family="Arial, sans-serif" font-size="9" fill="#444441">11</text>
+<text x="790" y="574" font-family="Arial, sans-serif" font-size="9" fill="#444441">Java</text>
+<line x1="220" y1="556" x2="370" y2="556" stroke="#854F0B" stroke-width="1.5" marker-end="url(#rel_arr)"/>
+<text x="295" y="548" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#633806" font-style="italic">student_id</text>
+<text x="295" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#633806">1 ──── ∞</text>
+<line x1="740" y1="556" x2="590" y2="556" stroke="#854F0B" stroke-width="1.5" marker-end="url(#rel_arr)"/>
+<text x="665" y="548" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#633806" font-style="italic">course_id</text>
+<text x="665" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#633806">∞ ──── 1</text>
+<text x="480" y="650" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#5F5E5A" font-style="italic">M:N разворачивается в две связи 1:N через промежуточную таблицу</text>
+<text x="480" y="670" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#5F5E5A" font-style="italic">В неё можно добавить поля, описывающие сам факт связи (оценка, дата, статус)</text>
+</svg>

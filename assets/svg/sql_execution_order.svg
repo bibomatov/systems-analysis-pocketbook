@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 540" role="img">
+<title>Порядок выполнения частей SQL-запроса</title>
+<desc>Слева — порядок написания запроса, справа — реальный порядок выполнения. Сверху вниз идут: FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY, LIMIT.</desc>
+<defs>
+<marker id="sql_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#444441"/>
+</marker>
+</defs>
+<text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#791F1F">Как пишем (порядок чтения)</text>
+<rect x="100" y="60" width="200" height="36" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="200" y="83" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#791F1F">SELECT</text>
+<rect x="100" y="106" width="200" height="36" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="200" y="129" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#791F1F">FROM</text>
+<rect x="100" y="152" width="200" height="36" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="200" y="175" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#791F1F">WHERE</text>
+<rect x="100" y="198" width="200" height="36" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="200" y="221" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#791F1F">GROUP BY</text>
+<rect x="100" y="244" width="200" height="36" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="200" y="267" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#791F1F">HAVING</text>
+<rect x="100" y="290" width="200" height="36" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="200" y="313" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#791F1F">ORDER BY</text>
+<rect x="100" y="336" width="200" height="36" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="200" y="359" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#791F1F">LIMIT</text>
+<line x1="340" y1="220" x2="580" y2="220" stroke="#444441" stroke-width="2" marker-end="url(#sql_arr)"/>
+<text x="460" y="206" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">логический</text>
+<text x="460" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">порядок другой</text>
+<text x="720" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#27500A">Как выполняется (порядок логики)</text>
+<rect x="620" y="60" width="200" height="36" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<circle cx="600" cy="78" r="11" fill="#3B6D11"/>
+<text x="600" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#FFFFFF">1</text>
+<text x="720" y="83" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#27500A">FROM</text>
+<text x="830" y="83" font-family="Arial, sans-serif" font-size="10" fill="#444441" font-style="italic">источник</text>
+<rect x="620" y="106" width="200" height="36" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<circle cx="600" cy="124" r="11" fill="#3B6D11"/>
+<text x="600" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#FFFFFF">2</text>
+<text x="720" y="129" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#27500A">WHERE</text>
+<text x="830" y="129" font-family="Arial, sans-serif" font-size="10" fill="#444441" font-style="italic">фильтр строк</text>
+<rect x="620" y="152" width="200" height="36" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<circle cx="600" cy="170" r="11" fill="#3B6D11"/>
+<text x="600" y="174" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#FFFFFF">3</text>
+<text x="720" y="175" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#27500A">GROUP BY</text>
+<text x="830" y="175" font-family="Arial, sans-serif" font-size="10" fill="#444441" font-style="italic">группировка</text>
+<rect x="620" y="198" width="200" height="36" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<circle cx="600" cy="216" r="11" fill="#3B6D11"/>
+<text x="600" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#FFFFFF">4</text>
+<text x="720" y="221" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#27500A">HAVING</text>
+<text x="830" y="221" font-family="Arial, sans-serif" font-size="10" fill="#444441" font-style="italic">фильтр групп</text>
+<rect x="620" y="244" width="200" height="36" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<circle cx="600" cy="262" r="11" fill="#3B6D11"/>
+<text x="600" y="266" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#FFFFFF">5</text>
+<text x="720" y="267" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#27500A">SELECT</text>
+<text x="830" y="267" font-family="Arial, sans-serif" font-size="10" fill="#444441" font-style="italic">колонки</text>
+<rect x="620" y="290" width="200" height="36" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<circle cx="600" cy="308" r="11" fill="#3B6D11"/>
+<text x="600" y="312" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#FFFFFF">6</text>
+<text x="720" y="313" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#27500A">ORDER BY</text>
+<text x="830" y="313" font-family="Arial, sans-serif" font-size="10" fill="#444441" font-style="italic">сортировка</text>
+<rect x="620" y="336" width="200" height="36" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<circle cx="600" cy="354" r="11" fill="#3B6D11"/>
+<text x="600" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#FFFFFF">7</text>
+<text x="720" y="359" text-anchor="middle" font-family="Courier New, monospace" font-size="13" font-weight="500" fill="#27500A">LIMIT</text>
+<text x="830" y="359" font-family="Arial, sans-serif" font-size="10" fill="#444441" font-style="italic">срез</text>
+<rect x="60" y="420" width="800" height="100" rx="6" fill="#FAF9F5" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="80" y="446" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#444441">Главные следствия:</text>
+<text x="80" y="468" font-family="Arial, sans-serif" font-size="11" fill="#444441">• Псевдонимы из SELECT не работают в WHERE — на момент WHERE команда SELECT ещё не выполнена.</text>
+<text x="80" y="486" font-family="Arial, sans-serif" font-size="11" fill="#444441">• Агрегаты (SUM, COUNT) недоступны в WHERE — они появляются только после GROUP BY (фильтр через HAVING).</text>
+<text x="80" y="504" font-family="Arial, sans-serif" font-size="11" fill="#444441">• ORDER BY работает с псевдонимами из SELECT, потому что выполняется позже.</text>
+</svg>

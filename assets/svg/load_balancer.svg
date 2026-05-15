@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 540" role="img">
+<title>Балансировщик нагрузки и алгоритмы распределения</title>
+<desc>Балансировщик принимает запросы клиентов и распределяет их между несколькими экземплярами сервиса. Сверху показана общая схема, снизу — четыре алгоритма распределения: Round Robin, Least Connections, Weighted, IP Hash.</desc>
+<defs>
+<marker id="lb_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#444441"/>
+</marker>
+</defs>
+
+<!-- Общая схема сверху -->
+<text x="460" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#444441">Балансировщик распределяет запросы между экземплярами</text>
+
+<!-- Клиенты слева -->
+<rect x="40" y="60" width="100" height="28" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="90" y="79" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#791F1F">Клиент 1</text>
+<rect x="40" y="100" width="100" height="28" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="90" y="119" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#791F1F">Клиент 2</text>
+<rect x="40" y="140" width="100" height="28" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="90" y="159" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#791F1F">Клиент 3</text>
+<rect x="40" y="180" width="100" height="28" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="90" y="199" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#791F1F">Клиент 4</text>
+
+<!-- Стрелки от клиентов к балансировщику -->
+<line x1="140" y1="74" x2="278" y2="125" stroke="#444441" stroke-width="1.2" marker-end="url(#lb_arr)"/>
+<line x1="140" y1="114" x2="278" y2="130" stroke="#444441" stroke-width="1.2" marker-end="url(#lb_arr)"/>
+<line x1="140" y1="154" x2="278" y2="140" stroke="#444441" stroke-width="1.2" marker-end="url(#lb_arr)"/>
+<line x1="140" y1="194" x2="278" y2="145" stroke="#444441" stroke-width="1.2" marker-end="url(#lb_arr)"/>
+
+<!-- Балансировщик -->
+<rect x="280" y="100" width="160" height="70" rx="6" fill="#3B6D11" stroke="#27500A" stroke-width="1.5"/>
+<text x="360" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">Балансировщик</text>
+<text x="360" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF">распределение, health-checks,</text>
+<text x="360" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF">отказоустойчивость</text>
+
+<!-- Стрелки от балансировщика к экземплярам -->
+<line x1="440" y1="115" x2="558" y2="78" stroke="#444441" stroke-width="1.2" marker-end="url(#lb_arr)"/>
+<line x1="440" y1="125" x2="558" y2="118" stroke="#444441" stroke-width="1.2" marker-end="url(#lb_arr)"/>
+<line x1="440" y1="145" x2="558" y2="158" stroke="#444441" stroke-width="1.2" marker-end="url(#lb_arr)"/>
+<line x1="440" y1="155" x2="558" y2="198" stroke="#444441" stroke-width="1.2" marker-end="url(#lb_arr)"/>
+
+<!-- Экземпляры справа -->
+<rect x="560" y="60" width="120" height="28" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="620" y="79" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27500A">Экземпляр A</text>
+<rect x="560" y="100" width="120" height="28" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="620" y="119" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27500A">Экземпляр B</text>
+<rect x="560" y="140" width="120" height="28" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="620" y="159" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27500A">Экземпляр C</text>
+<rect x="560" y="180" width="120" height="28" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="620" y="199" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27500A">Экземпляр D</text>
+
+<!-- Описание справа -->
+<text x="720" y="100" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">все экземпляры</text>
+<text x="720" y="115" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">одинаковые,</text>
+<text x="720" y="130" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">могут</text>
+<text x="720" y="145" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">обработать</text>
+<text x="720" y="160" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">любой запрос</text>
+
+<!-- Разделитель -->
+<line x1="40" y1="240" x2="880" y2="240" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="4,3"/>
+
+<!-- Алгоритмы -->
+<text x="460" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#444441">Алгоритмы распределения</text>
+
+<!-- Round Robin -->
+<rect x="40" y="290" width="200" height="220" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="140" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#27500A">Round Robin</text>
+<text x="140" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">по очереди</text>
+
+<text x="60" y="350" font-family="Arial, sans-serif" font-size="10" fill="#27500A">Запрос 1 → A</text>
+<text x="60" y="368" font-family="Arial, sans-serif" font-size="10" fill="#27500A">Запрос 2 → B</text>
+<text x="60" y="386" font-family="Arial, sans-serif" font-size="10" fill="#27500A">Запрос 3 → C</text>
+<text x="60" y="404" font-family="Arial, sans-serif" font-size="10" fill="#27500A">Запрос 4 → D</text>
+<text x="60" y="422" font-family="Arial, sans-serif" font-size="10" fill="#27500A">Запрос 5 → A</text>
+<text x="60" y="440" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A">...</text>
+
+<text x="140" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">когда серверы</text>
+<text x="140" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">одинаковые и запросы</text>
+<text x="140" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">примерно равны</text>
+
+<!-- Least Connections -->
+<rect x="250" y="290" width="200" height="220" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="350" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#27500A">Least Connections</text>
+<text x="350" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">меньше активных</text>
+
+<text x="270" y="352" font-family="Arial, sans-serif" font-size="10" fill="#27500A">A: 12 соединений</text>
+<text x="270" y="370" font-family="Arial, sans-serif" font-size="10" fill="#27500A">B: 8 соединений</text>
+<text x="270" y="388" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#791F1F">C: 3 соединения ←</text>
+<text x="270" y="406" font-family="Arial, sans-serif" font-size="10" fill="#27500A">D: 15 соединений</text>
+
+<text x="270" y="430" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">Новый запрос → C</text>
+
+<text x="350" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">когда запросы</text>
+<text x="350" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">разные по тяжести</text>
+<text x="350" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">и времени обработки</text>
+
+<!-- Weighted -->
+<rect x="460" y="290" width="200" height="220" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="560" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#27500A">Weighted</text>
+<text x="560" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">с весами</text>
+
+<text x="480" y="352" font-family="Arial, sans-serif" font-size="10" fill="#27500A">A (вес 3): 30% запросов</text>
+<text x="480" y="370" font-family="Arial, sans-serif" font-size="10" fill="#27500A">B (вес 3): 30% запросов</text>
+<text x="480" y="388" font-family="Arial, sans-serif" font-size="10" fill="#27500A">C (вес 3): 30% запросов</text>
+<text x="480" y="406" font-family="Arial, sans-serif" font-size="10" fill="#27500A">D (вес 1): 10% запросов</text>
+
+<text x="480" y="438" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">D — слабее остальных</text>
+
+<text x="560" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">когда серверы</text>
+<text x="560" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">разной мощности</text>
+<text x="560" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">в одном кластере</text>
+
+<!-- IP Hash -->
+<rect x="670" y="290" width="210" height="220" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="775" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#27500A">IP Hash</text>
+<text x="775" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">хэш от IP клиента</text>
+
+<text x="690" y="352" font-family="Arial, sans-serif" font-size="10" fill="#27500A">192.168.1.5  → A</text>
+<text x="690" y="370" font-family="Arial, sans-serif" font-size="10" fill="#27500A">192.168.1.7  → C</text>
+<text x="690" y="388" font-family="Arial, sans-serif" font-size="10" fill="#27500A">192.168.1.5  → A</text>
+<text x="690" y="406" font-family="Arial, sans-serif" font-size="10" fill="#27500A">192.168.1.9  → B</text>
+<text x="690" y="424" font-family="Arial, sans-serif" font-size="10" fill="#27500A">192.168.1.5  → A</text>
+
+<text x="690" y="446" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">один клиент — один сервер</text>
+
+<text x="775" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">для sticky sessions</text>
+<text x="775" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">или кэширования</text>
+<text x="775" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">данных клиента</text>
+</svg>

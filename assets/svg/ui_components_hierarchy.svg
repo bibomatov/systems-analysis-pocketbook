@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 580" role="img">
+<title>Палитра подсказок и пояснений в UI</title>
+<desc>Семь способов сообщить пользователю дополнительную информацию: Placeholder, Hint, Tooltip, Popover, Modal, Toast, Banner. Различаются местом, видимостью, важностью, наличием действий внутри.</desc>
+
+<text x="460" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#444441">Палитра подсказок: куда что класть</text>
+
+<!-- Заголовок таблицы -->
+<rect x="40" y="55" width="840" height="30" fill="#444441" stroke="#444441" stroke-width="1"/>
+<text x="115" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Элемент</text>
+<text x="285" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Где живёт</text>
+<text x="460" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Видна постоянно?</text>
+<text x="615" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Действия внутри?</text>
+<text x="780" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Для чего</text>
+
+<!-- 1. Placeholder -->
+<rect x="40" y="85" width="840" height="50" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="115" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#444441">Placeholder</text>
+<text x="115" y="123" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">«заполнитель»</text>
+<text x="285" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">внутри пустого поля ввода</text>
+<text x="460" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">нет — пропадает после ввода</text>
+<text x="615" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">нет</text>
+<text x="780" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">формат, пример</text>
+
+<!-- 2. Hint / Help text -->
+<rect x="40" y="135" width="840" height="50" fill="#FAFAF7" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="115" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#444441">Hint / Help text</text>
+<text x="115" y="173" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">подсказка под полем</text>
+<text x="285" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">под полем ввода</text>
+<text x="460" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27500A">да</text>
+<text x="615" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">нет</text>
+<text x="780" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">правила заполнения</text>
+
+<!-- 3. Tooltip -->
+<rect x="40" y="185" width="840" height="50" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="115" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#444441">Tooltip</text>
+<text x="115" y="223" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">всплывающая</text>
+<text x="285" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">по наведению / фокусу</text>
+<text x="460" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">нет — только по запросу</text>
+<text x="615" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">нет</text>
+<text x="780" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">короткое пояснение, иконки</text>
+
+<!-- 4. Popover -->
+<rect x="40" y="235" width="840" height="50" fill="#FAFAF7" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="115" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#444441">Popover</text>
+<text x="115" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">расширенный tooltip</text>
+<text x="285" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">по клику, рядом с элементом</text>
+<text x="460" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">нет — открывается по клику</text>
+<text x="615" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27500A">да — кнопки, ссылки</text>
+<text x="780" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">расширенная справка</text>
+
+<!-- 5. Modal -->
+<rect x="40" y="285" width="840" height="50" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="115" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#444441">Modal</text>
+<text x="115" y="323" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">модальное окно</text>
+<text x="285" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">поверх всего экрана</text>
+<text x="460" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27500A">да — пока не закроют</text>
+<text x="615" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27500A">да — формы, подтверждения</text>
+<text x="780" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">важные действия</text>
+
+<!-- 6. Toast / Notification -->
+<rect x="40" y="335" width="840" height="50" fill="#FAFAF7" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="115" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#444441">Toast / Notification</text>
+<text x="115" y="373" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">короткое уведомление</text>
+<text x="285" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">в углу экрана</text>
+<text x="460" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#791F1F">нет — пропадает через 3–5 сек</text>
+<text x="615" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7A4A0E">иногда — «отменить»</text>
+<text x="780" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">подтверждение действия</text>
+
+<!-- 7. Banner -->
+<rect x="40" y="385" width="840" height="50" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="115" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#444441">Banner</text>
+<text x="115" y="423" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">постоянное уведомление</text>
+<text x="285" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">наверху страницы</text>
+<text x="460" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27500A">да — пока не закроют</text>
+<text x="615" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27500A">да — кнопки</text>
+<text x="780" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#444441">важные системные сообщения</text>
+
+<!-- Принципы выбора -->
+<rect x="40" y="465" width="840" height="100" rx="6" fill="#FFFAF0" stroke="#5F5E5A" stroke-width="1"/>
+<text x="460" y="488" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#444441">Как выбрать — четыре вопроса в правильном порядке</text>
+<text x="60" y="513" font-family="Arial, sans-serif" font-size="10" fill="#444441">1. Информация важная или дополнительная?  Важная → видна постоянно (Hint, Banner, Modal). Дополнительная → по запросу (Tooltip, Popover).</text>
+<text x="60" y="530" font-family="Arial, sans-serif" font-size="10" fill="#444441">2. Сколько текста?  1–2 строки → Tooltip / Toast. Абзац → Popover / Banner. Полная форма → Modal.</text>
+<text x="60" y="547" font-family="Arial, sans-serif" font-size="10" fill="#444441">3. Нужны действия внутри?  Да → Popover / Modal / Banner. Нет → Tooltip / Hint / Placeholder.</text>
+<text x="60" y="564" font-family="Arial, sans-serif" font-size="10" fill="#444441">4. Должно блокировать пользователя?  Да → Modal. Нет → всё остальное.</text>
+</svg>

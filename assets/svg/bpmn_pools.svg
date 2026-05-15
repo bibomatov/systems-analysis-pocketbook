@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 360" role="img">
+<title>Пулы и дорожки в BPMN</title>
+<desc>Пример с двумя пулами: Клиент и Магазин. Внутри пула Магазин — две дорожки: Менеджер и Склад. Сплошные стрелки — внутри пулов, пунктирная — между пулами.</desc>
+<defs>
+<marker id="pool_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#444441"/>
+</marker>
+<marker id="pool_arr_open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10" fill="none" stroke="#444441" stroke-width="1.5"/>
+</marker>
+</defs>
+<rect x="20" y="30" width="880" height="100" rx="4" fill="#FFFFFF" stroke="#185FA5" stroke-width="1"/>
+<rect x="20" y="30" width="32" height="100" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="36" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#0C447C" transform="rotate(-90 36 80)">Клиент</text>
+<circle cx="100" cy="80" r="16" fill="#FFFFFF" stroke="#185FA5" stroke-width="2"/>
+<rect x="180" y="60" width="120" height="40" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="240" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0C447C">Сделать заказ</text>
+<rect x="380" y="60" width="120" height="40" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="440" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0C447C">Оплатить</text>
+<line x1="116" y1="80" x2="178" y2="80" stroke="#444441" stroke-width="1.5" marker-end="url(#pool_arr)"/>
+<line x1="300" y1="80" x2="378" y2="80" stroke="#444441" stroke-width="1.5" marker-end="url(#pool_arr)"/>
+<rect x="20" y="170" width="880" height="170" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1"/>
+<rect x="20" y="170" width="32" height="170" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="36" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#27500A" transform="rotate(-90 36 255)">Магазин</text>
+<line x1="52" y1="255" x2="900" y2="255" stroke="#3B6D11" stroke-width="0.5" stroke-dasharray="2,2"/>
+<rect x="52" y="170" width="28" height="85" fill="#F4F8EE" stroke="#3B6D11" stroke-width="0.5"/>
+<text x="66" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A" transform="rotate(-90 66 212)">Менеджер</text>
+<rect x="180" y="190" width="140" height="40" rx="8" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="250" y="214" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#27500A">Принять заказ</text>
+<rect x="380" y="190" width="160" height="40" rx="8" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="460" y="214" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#27500A">Передать на склад</text>
+<line x1="320" y1="210" x2="378" y2="210" stroke="#444441" stroke-width="1.5" marker-end="url(#pool_arr)"/>
+<rect x="52" y="255" width="28" height="85" fill="#F4F8EE" stroke="#3B6D11" stroke-width="0.5"/>
+<text x="66" y="297" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A" transform="rotate(-90 66 297)">Склад</text>
+<rect x="600" y="275" width="140" height="40" rx="8" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="670" y="299" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#27500A">Собрать заказ</text>
+<rect x="780" y="275" width="120" height="40" rx="8" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="840" y="299" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#27500A">Отгрузить</text>
+<line x1="740" y1="295" x2="778" y2="295" stroke="#444441" stroke-width="1.5" marker-end="url(#pool_arr)"/>
+<path d="M 540 210 L 580 210 L 580 295 L 598 295" fill="none" stroke="#444441" stroke-width="1.5" marker-end="url(#pool_arr)"/>
+<path d="M 440 100 L 440 145 L 250 145 L 250 188" fill="none" stroke="#444441" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#pool_arr_open)"/>
+<text x="345" y="138" font-family="Arial, sans-serif" font-size="10" fill="#444441" font-style="italic">сообщение</text>
+</svg>

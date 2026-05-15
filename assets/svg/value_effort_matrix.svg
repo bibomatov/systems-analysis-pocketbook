@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 480" role="img">
+<title>Матрица приоритизации ценность × усилия</title>
+<desc>Двумерная матрица для приоритизации задач: вертикальная ось — ценность, горизонтальная — усилия. Четыре квадранта: быстрые победы, большие проекты, заполнение времени, не делать.</desc>
+<defs>
+<marker id="arrow_m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#444441"/>
+</marker>
+</defs>
+<line x1="180" y1="420" x2="180" y2="80" stroke="#444441" stroke-width="2" marker-end="url(#arrow_m)"/>
+<line x1="180" y1="420" x2="820" y2="420" stroke="#444441" stroke-width="2" marker-end="url(#arrow_m)"/>
+<text x="180" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#444441">Ценность</text>
+<text x="840" y="425" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#444441">Усилия</text>
+<text x="160" y="170" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#444441">высокая</text>
+<text x="160" y="335" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#444441">низкая</text>
+<text x="200" y="445" font-family="Arial, sans-serif" font-size="11" fill="#444441">низкие</text>
+<text x="800" y="445" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#444441">высокие</text>
+<line x1="500" y1="100" x2="500" y2="400" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<line x1="200" y1="250" x2="800" y2="250" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<rect x="200" y="100" width="290" height="140" rx="8" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="345" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#27500A">Быстрые победы</text>
+<text x="345" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27500A">высокая ценность,</text>
+<text x="345" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27500A">низкие усилия</text>
+<text x="345" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27500A" font-style="italic">делаем в первую очередь</text>
+<rect x="510" y="100" width="290" height="140" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="655" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#0C447C">Большие проекты</text>
+<text x="655" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#0C447C">высокая ценность,</text>
+<text x="655" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#0C447C">высокие усилия</text>
+<text x="655" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#0C447C" font-style="italic">планируем как стратегические</text>
+<rect x="200" y="260" width="290" height="140" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+<text x="345" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#633806">Заполнение времени</text>
+<text x="345" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#633806">низкая ценность,</text>
+<text x="345" y="346" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#633806">низкие усилия</text>
+<text x="345" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#633806" font-style="italic">берём, когда нет важных задач</text>
+<rect x="510" y="260" width="290" height="140" rx="8" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+<text x="655" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#791F1F">Не делать</text>
+<text x="655" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#791F1F">низкая ценность,</text>
+<text x="655" y="346" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#791F1F">высокие усилия</text>
+<text x="655" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#791F1F" font-style="italic">отбрасываем</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 480" role="img">
+<title>Очередь vs Топик</title>
+<desc>Слева очередь: одно сообщение получает только один из потребителей. Справа топик: каждый подписчик получает свою копию сообщения.</desc>
+<defs>
+<marker id="qt_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#444441"/>
+</marker>
+</defs>
+<text x="220" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#0C447C">Очередь (queue)</text>
+<text x="220" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">одно сообщение — одному потребителю</text>
+<rect x="60" y="160" width="100" height="60" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+<text x="110" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#0C447C">Producer</text>
+<text x="110" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#0C447C">отправитель</text>
+<rect x="190" y="170" width="140" height="40" rx="20" fill="#FFFFFF" stroke="#185FA5" stroke-width="1.5"/>
+<text x="290" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">очередь</text>
+<rect x="200" y="178" width="14" height="24" rx="2" fill="#185FA5"/>
+<rect x="217" y="178" width="14" height="24" rx="2" fill="#185FA5" opacity="0.7"/>
+<rect x="234" y="178" width="14" height="24" rx="2" fill="#185FA5" opacity="0.4"/>
+<line x1="160" y1="190" x2="188" y2="190" stroke="#444441" stroke-width="1.5" marker-end="url(#qt_arr)"/>
+<line x1="330" y1="190" x2="358" y2="170" stroke="#444441" stroke-width="1.5" marker-end="url(#qt_arr)"/>
+<rect x="360" y="120" width="100" height="40" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="410" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">Consumer A</text>
+<text x="410" y="153" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">получил msg 1</text>
+<rect x="360" y="170" width="100" height="40" rx="6" fill="#FAF9F5" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="410" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#5F5E5A">Consumer B</text>
+<text x="410" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">пропустил msg 1</text>
+<rect x="360" y="220" width="100" height="40" rx="6" fill="#FAF9F5" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="410" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#5F5E5A">Consumer C</text>
+<text x="410" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A" font-style="italic">пропустил msg 1</text>
+<text x="220" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">Каждое следующее сообщение брокер</text>
+<text x="220" y="326" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">отдаст следующему свободному потребителю</text>
+<text x="220" y="356" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">Применяется когда:</text>
+<text x="220" y="376" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A">• задача должна быть выполнена один раз</text>
+<text x="220" y="394" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A">• нужна балансировка между потребителями</text>
+<text x="220" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A">Пример: «отправить email клиенту 42»</text>
+<line x1="480" y1="40" x2="480" y2="450" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<text x="700" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#27500A">Топик (topic)</text>
+<text x="700" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">одно сообщение — каждому подписчику</text>
+<rect x="540" y="160" width="100" height="60" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="590" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#27500A">Producer</text>
+<text x="590" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27500A">отправитель</text>
+<rect x="670" y="170" width="140" height="40" rx="6" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="770" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">топик</text>
+<rect x="678" y="178" width="14" height="24" rx="2" fill="#3B6D11"/>
+<rect x="695" y="178" width="14" height="24" rx="2" fill="#3B6D11" opacity="0.7"/>
+<rect x="712" y="178" width="14" height="24" rx="2" fill="#3B6D11" opacity="0.4"/>
+<line x1="640" y1="190" x2="668" y2="190" stroke="#444441" stroke-width="1.5" marker-end="url(#qt_arr)"/>
+<line x1="810" y1="180" x2="818" y2="135" stroke="#444441" stroke-width="1.5" marker-end="url(#qt_arr)"/>
+<line x1="810" y1="190" x2="818" y2="187" stroke="#444441" stroke-width="1.5" marker-end="url(#qt_arr)"/>
+<line x1="810" y1="200" x2="818" y2="235" stroke="#444441" stroke-width="1.5" marker-end="url(#qt_arr)"/>
+<rect x="820" y="120" width="80" height="40" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="860" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">Consumer A</text>
+<text x="860" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">копия msg 1</text>
+<rect x="820" y="170" width="80" height="40" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="860" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">Consumer B</text>
+<text x="860" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">копия msg 1</text>
+<rect x="820" y="220" width="80" height="40" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="860" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#27500A">Consumer C</text>
+<text x="860" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500A">копия msg 1</text>
+<text x="700" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">Каждый подписчик получает</text>
+<text x="700" y="326" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">свою независимую копию сообщения</text>
+<text x="700" y="356" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">Применяется когда:</text>
+<text x="700" y="376" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A">• событие интересно нескольким системам</text>
+<text x="700" y="394" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A">• подписчики работают независимо</text>
+<text x="700" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A">Пример: «создан заказ #12345» → склад, бухгалтерия, аналитика</text>
+</svg>

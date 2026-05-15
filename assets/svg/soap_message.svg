@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 460" role="img">
+<title>Структура SOAP-сообщения</title>
+<desc>Корневой элемент Envelope содержит Header (необязательный, для метаданных) и Body (обязательный, для данных). При ошибке в Body вместо обычного ответа размещается элемент Fault.</desc>
+<rect x="40" y="40" width="600" height="360" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="2"/>
+<text x="60" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#0C447C">soap:Envelope</text>
+<text x="60" y="88" font-family="Arial, sans-serif" font-size="11" fill="#0C447C" font-style="italic">корневой элемент SOAP-сообщения</text>
+<rect x="70" y="110" width="540" height="100" rx="4" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5"/>
+<text x="90" y="135" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#633806">soap:Header</text>
+<text x="90" y="152" font-family="Arial, sans-serif" font-size="10" fill="#633806" font-style="italic">необязательный — метаданные</text>
+<text x="90" y="178" font-family="Arial, sans-serif" font-size="11" fill="#444441">• токены авторизации</text>
+<text x="90" y="194" font-family="Arial, sans-serif" font-size="11" fill="#444441">• идентификатор корреляции</text>
+<text x="350" y="178" font-family="Arial, sans-serif" font-size="11" fill="#444441">• параметры WS-Security</text>
+<text x="350" y="194" font-family="Arial, sans-serif" font-size="11" fill="#444441">• цифровые подписи</text>
+<rect x="70" y="225" width="540" height="160" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="90" y="250" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#27500A">soap:Body</text>
+<text x="90" y="267" font-family="Arial, sans-serif" font-size="10" fill="#27500A" font-style="italic">обязательный — содержимое запроса/ответа</text>
+<rect x="90" y="284" width="240" height="86" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1"/>
+<text x="100" y="302" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">При успехе</text>
+<text x="100" y="322" font-family="Courier New, monospace" font-size="10" fill="#27500A">&lt;GetClient&gt;</text>
+<text x="115" y="338" font-family="Courier New, monospace" font-size="10" fill="#27500A">&lt;ClientId&gt;42&lt;/ClientId&gt;</text>
+<text x="100" y="354" font-family="Courier New, monospace" font-size="10" fill="#27500A">&lt;/GetClient&gt;</text>
+<rect x="350" y="284" width="240" height="86" rx="4" fill="#FFFFFF" stroke="#A32D2D" stroke-width="1"/>
+<text x="360" y="302" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#791F1F">При ошибке — soap:Fault</text>
+<text x="360" y="322" font-family="Courier New, monospace" font-size="10" fill="#791F1F">&lt;Fault&gt;</text>
+<text x="375" y="338" font-family="Courier New, monospace" font-size="10" fill="#791F1F">&lt;Code&gt;...&lt;/Code&gt;</text>
+<text x="375" y="354" font-family="Courier New, monospace" font-size="10" fill="#791F1F">&lt;Reason&gt;...&lt;/Reason&gt;</text>
+<rect x="690" y="40" width="200" height="360" rx="6" fill="#FAF9F5" stroke="#B4B2A9" stroke-width="0.5"/>
+<text x="710" y="68" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#444441">Принципы:</text>
+<text x="710" y="92" font-family="Arial, sans-serif" font-size="10" fill="#444441">• сообщение всегда XML</text>
+<text x="710" y="112" font-family="Arial, sans-serif" font-size="10" fill="#444441">• Envelope обязателен</text>
+<text x="710" y="132" font-family="Arial, sans-serif" font-size="10" fill="#444441">• Header опционален</text>
+<text x="710" y="152" font-family="Arial, sans-serif" font-size="10" fill="#444441">• Body обязателен</text>
+<text x="710" y="172" font-family="Arial, sans-serif" font-size="10" fill="#444441">• ошибки — внутри Body</text>
+<text x="710" y="192" font-family="Arial, sans-serif" font-size="10" fill="#444441">• HTTP-код всегда 200</text>
+<text x="710" y="220" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#444441">Где используется:</text>
+<text x="710" y="244" font-family="Arial, sans-serif" font-size="10" fill="#444441">• банки, госсектор</text>
+<text x="710" y="264" font-family="Arial, sans-serif" font-size="10" fill="#444441">• страховые компании</text>
+<text x="710" y="284" font-family="Arial, sans-serif" font-size="10" fill="#444441">• телеком-биллинг</text>
+<text x="710" y="304" font-family="Arial, sans-serif" font-size="10" fill="#444441">• B2B-интеграции</text>
+<text x="710" y="324" font-family="Arial, sans-serif" font-size="10" fill="#444441">• legacy-системы</text>
+<text x="710" y="360" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#444441">Контракт:</text>
+<text x="710" y="382" font-family="Arial, sans-serif" font-size="10" fill="#444441">WSDL + XSD</text>
+</svg>

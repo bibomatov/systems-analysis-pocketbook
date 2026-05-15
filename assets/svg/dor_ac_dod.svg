@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 280" role="img">
+<title>Соотношение DoR, AC и DoD на временной оси задачи</title>
+<desc>Временная ось задачи. Слева DoR — фильтр на входе в спринт. В середине AC — критерии приёмки внутри задачи. Справа DoD — фильтр перед закрытием.</desc>
+<defs>
+<marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#444441"/>
+</marker>
+</defs>
+<line x1="60" y1="140" x2="860" y2="140" stroke="#444441" stroke-width="2" marker-end="url(#arrow2)"/>
+<text x="60" y="170" font-family="Arial, sans-serif" font-size="12" fill="#444441">Идея в бэклоге</text>
+<text x="860" y="170" font-family="Arial, sans-serif" font-size="12" fill="#444441" text-anchor="end">Задача закрыта</text>
+<rect x="140" y="40" width="120" height="60" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+<text x="200" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#633806">DoR</text>
+<text x="200" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#633806">входной фильтр</text>
+<line x1="200" y1="105" x2="200" y2="135" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow2)"/>
+<text x="200" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">«Можно ли брать</text>
+<text x="200" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">в работу?»</text>
+<text x="200" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">общий для команды</text>
+<rect x="400" y="40" width="120" height="60" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="460" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#085041">AC</text>
+<text x="460" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#085041">внутри задачи</text>
+<line x1="460" y1="105" x2="460" y2="135" stroke="#0F6E56" stroke-width="1.5" marker-end="url(#arrow2)"/>
+<text x="460" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">«Правильно ли</text>
+<text x="460" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">работает фича?»</text>
+<text x="460" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">свои у каждой задачи</text>
+<rect x="660" y="40" width="120" height="60" rx="8" fill="#EEEDFE" stroke="#3C3489" stroke-width="1"/>
+<text x="720" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#26215C">DoD</text>
+<text x="720" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#26215C">выходной фильтр</text>
+<line x1="720" y1="105" x2="720" y2="135" stroke="#3C3489" stroke-width="1.5" marker-end="url(#arrow2)"/>
+<text x="720" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">«Можно ли</text>
+<text x="720" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">закрывать задачу?»</text>
+<text x="720" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5F5E5A" font-style="italic">общий для команды</text>
+</svg>

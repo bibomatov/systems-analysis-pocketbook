@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 460" role="img">
+<title>Сравнение хранения данных в SQL и NoSQL</title>
+<desc>Слева реляционная БД: пользователь и адреса в двух связанных таблицах. Справа документная БД: один JSON-документ с вложенным массивом адресов.</desc>
+<text x="230" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#0C447C">Реляционная БД (SQL)</text>
+<text x="230" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">данные раскладываются по нескольким таблицам</text>
+<rect x="60" y="80" width="340" height="120" rx="4" fill="#FFFFFF" stroke="#185FA5" stroke-width="1.5"/>
+<rect x="60" y="80" width="340" height="26" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+<text x="230" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#0C447C">users</text>
+<line x1="60" y1="130" x2="400" y2="130" stroke="#185FA5" stroke-width="0.5"/>
+<text x="80" y="124" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">id</text>
+<text x="160" y="124" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">name</text>
+<text x="280" y="124" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">email</text>
+<text x="80" y="150" font-family="Arial, sans-serif" font-size="11" fill="#444441">123</text>
+<text x="160" y="150" font-family="Arial, sans-serif" font-size="11" fill="#444441">Иван Петров</text>
+<text x="280" y="150" font-family="Arial, sans-serif" font-size="11" fill="#444441">ivan@example.com</text>
+<text x="80" y="170" font-family="Arial, sans-serif" font-size="11" fill="#444441">124</text>
+<text x="160" y="170" font-family="Arial, sans-serif" font-size="11" fill="#444441">Анна Иванова</text>
+<text x="280" y="170" font-family="Arial, sans-serif" font-size="11" fill="#444441">anna@example.com</text>
+<text x="80" y="190" font-family="Arial, sans-serif" font-size="11" fill="#5F5E5A" font-style="italic">...</text>
+<rect x="60" y="240" width="340" height="160" rx="4" fill="#FFFFFF" stroke="#185FA5" stroke-width="1.5"/>
+<rect x="60" y="240" width="340" height="26" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+<text x="230" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#0C447C">addresses</text>
+<line x1="60" y1="290" x2="400" y2="290" stroke="#185FA5" stroke-width="0.5"/>
+<text x="80" y="284" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">user_id</text>
+<text x="160" y="284" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">type</text>
+<text x="240" y="284" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">city</text>
+<text x="320" y="284" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">street</text>
+<text x="80" y="310" font-family="Arial, sans-serif" font-size="11" fill="#444441">123</text>
+<text x="160" y="310" font-family="Arial, sans-serif" font-size="11" fill="#444441">home</text>
+<text x="240" y="310" font-family="Arial, sans-serif" font-size="11" fill="#444441">Москва</text>
+<text x="320" y="310" font-family="Arial, sans-serif" font-size="11" fill="#444441">Ленина 1</text>
+<text x="80" y="330" font-family="Arial, sans-serif" font-size="11" fill="#444441">123</text>
+<text x="160" y="330" font-family="Arial, sans-serif" font-size="11" fill="#444441">work</text>
+<text x="240" y="330" font-family="Arial, sans-serif" font-size="11" fill="#444441">СПб</text>
+<text x="320" y="330" font-family="Arial, sans-serif" font-size="11" fill="#444441">Невский 5</text>
+<text x="80" y="350" font-family="Arial, sans-serif" font-size="11" fill="#444441">124</text>
+<text x="160" y="350" font-family="Arial, sans-serif" font-size="11" fill="#444441">home</text>
+<text x="240" y="350" font-family="Arial, sans-serif" font-size="11" fill="#444441">Казань</text>
+<text x="320" y="350" font-family="Arial, sans-serif" font-size="11" fill="#444441">Баумана 3</text>
+<text x="80" y="370" font-family="Arial, sans-serif" font-size="11" fill="#5F5E5A" font-style="italic">...</text>
+<path d="M 110 200 Q 110 220 110 240" stroke="#185FA5" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+<text x="120" y="222" font-family="Arial, sans-serif" font-size="10" fill="#185FA5" font-style="italic">user_id → id</text>
+<text x="230" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#5F5E5A" font-style="italic">Связь через внешний ключ. Чтобы получить</text>
+<text x="230" y="446" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#5F5E5A" font-style="italic">пользователя с адресами — нужен JOIN.</text>
+<line x1="460" y1="80" x2="460" y2="400" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<text x="690" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#27500A">Документная БД (NoSQL)</text>
+<text x="690" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#444441">та же сущность лежит одним документом</text>
+<rect x="490" y="80" width="400" height="320" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1.5"/>
+<rect x="490" y="80" width="400" height="26" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+<text x="690" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#27500A">collection: users</text>
+<text x="510" y="130" font-family="Courier New, monospace" font-size="11" fill="#27500A">{</text>
+<text x="525" y="148" font-family="Courier New, monospace" font-size="11" fill="#27500A">"_id": "user_123",</text>
+<text x="525" y="166" font-family="Courier New, monospace" font-size="11" fill="#27500A">"name": "Иван Петров",</text>
+<text x="525" y="184" font-family="Courier New, monospace" font-size="11" fill="#27500A">"email": "ivan@example.com",</text>
+<text x="525" y="202" font-family="Courier New, monospace" font-size="11" fill="#27500A">"addresses": [</text>
+<text x="540" y="220" font-family="Courier New, monospace" font-size="11" fill="#27500A">{ "type": "home",</text>
+<text x="540" y="236" font-family="Courier New, monospace" font-size="11" fill="#27500A">  "city": "Москва",</text>
+<text x="540" y="252" font-family="Courier New, monospace" font-size="11" fill="#27500A">  "street": "Ленина 1" },</text>
+<text x="540" y="272" font-family="Courier New, monospace" font-size="11" fill="#27500A">{ "type": "work",</text>
+<text x="540" y="288" font-family="Courier New, monospace" font-size="11" fill="#27500A">  "city": "СПб",</text>
+<text x="540" y="304" font-family="Courier New, monospace" font-size="11" fill="#27500A">  "street": "Невский 5" }</text>
+<text x="525" y="322" font-family="Courier New, monospace" font-size="11" fill="#27500A">]</text>
+<text x="510" y="340" font-family="Courier New, monospace" font-size="11" fill="#27500A">}</text>
+<text x="690" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#5F5E5A" font-style="italic">Все данные пользователя — в одном документе.</text>
+<text x="690" y="446" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#5F5E5A" font-style="italic">Читается одним запросом без JOIN.</text>
+</svg>

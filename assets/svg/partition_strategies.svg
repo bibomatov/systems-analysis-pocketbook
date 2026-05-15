@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 720" role="img">
+<title>Четыре стратегии партиционирования</title>
+<desc>Range — деление по диапазонам дат. List — по фиксированным значениям регионов. Hash — равномерное распределение по хешу. Composite — комбинация Range и Hash.</desc>
+<text x="40" y="36" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#0C447C">1. Range — по диапазонам</text>
+<text x="40" y="54" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">диапазон значений → партиция (чаще всего по датам)</text>
+<rect x="40" y="70" width="200" height="80" rx="4" fill="#FFFFFF" stroke="#185FA5" stroke-width="1"/>
+<rect x="40" y="70" width="200" height="22" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="140" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">orders_2026_q1</text>
+<text x="55" y="110" font-family="Arial, sans-serif" font-size="10" fill="#444441">2026-01-15  · клиент 42</text>
+<text x="55" y="126" font-family="Arial, sans-serif" font-size="10" fill="#444441">2026-02-08  · клиент 17</text>
+<text x="55" y="142" font-family="Arial, sans-serif" font-size="10" fill="#444441">2026-03-22  · клиент 99</text>
+<rect x="260" y="70" width="200" height="80" rx="4" fill="#FFFFFF" stroke="#185FA5" stroke-width="1"/>
+<rect x="260" y="70" width="200" height="22" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="360" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">orders_2026_q2</text>
+<text x="275" y="110" font-family="Arial, sans-serif" font-size="10" fill="#444441">2026-04-03  · клиент 42</text>
+<text x="275" y="126" font-family="Arial, sans-serif" font-size="10" fill="#444441">2026-05-19  · клиент 7</text>
+<text x="275" y="142" font-family="Arial, sans-serif" font-size="10" fill="#444441">2026-06-30  · клиент 17</text>
+<rect x="480" y="70" width="200" height="80" rx="4" fill="#FFFFFF" stroke="#185FA5" stroke-width="1"/>
+<rect x="480" y="70" width="200" height="22" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="580" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#0C447C">orders_2026_q3</text>
+<text x="495" y="110" font-family="Arial, sans-serif" font-size="10" fill="#444441">2026-07-12  · клиент 99</text>
+<text x="495" y="126" font-family="Arial, sans-serif" font-size="10" fill="#444441">2026-08-04  · клиент 42</text>
+<text x="495" y="142" font-family="Arial, sans-serif" font-size="10" fill="#444441">2026-09-25  · клиент 7</text>
+<text x="700" y="106" font-family="Arial, sans-serif" font-size="11" fill="#444441">SELECT ... WHERE</text>
+<text x="700" y="120" font-family="Arial, sans-serif" font-size="11" fill="#444441">created_at &gt;= '2026-04-01'</text>
+<text x="700" y="142" font-family="Arial, sans-serif" font-size="10" fill="#27500A" font-style="italic">→ читаем только Q2 и Q3</text>
+<line x1="40" y1="170" x2="900" y2="170" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<text x="40" y="200" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#27500A">2. List — по списку значений</text>
+<text x="40" y="218" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">фиксированный набор значений → отдельная партиция</text>
+<rect x="40" y="234" width="200" height="80" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1"/>
+<rect x="40" y="234" width="200" height="22" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="140" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">orders_eu</text>
+<text x="50" y="266" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A">[DE, FR, IT, ES]</text>
+<text x="55" y="282" font-family="Arial, sans-serif" font-size="10" fill="#444441">DE · 2026-04-15  · клиент 42</text>
+<text x="55" y="298" font-family="Arial, sans-serif" font-size="10" fill="#444441">FR · 2026-05-01  · клиент 17</text>
+<rect x="260" y="234" width="200" height="80" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1"/>
+<rect x="260" y="234" width="200" height="22" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="360" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">orders_asia</text>
+<text x="270" y="266" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A">[CN, JP, KR]</text>
+<text x="275" y="282" font-family="Arial, sans-serif" font-size="10" fill="#444441">CN · 2026-04-10  · клиент 7</text>
+<text x="275" y="298" font-family="Arial, sans-serif" font-size="10" fill="#444441">JP · 2026-06-22  · клиент 99</text>
+<rect x="480" y="234" width="200" height="80" rx="4" fill="#FFFFFF" stroke="#3B6D11" stroke-width="1"/>
+<rect x="480" y="234" width="200" height="22" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="580" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#27500A">orders_other</text>
+<text x="490" y="266" font-family="Arial, sans-serif" font-size="9" fill="#5F5E5A">[DEFAULT]</text>
+<text x="495" y="282" font-family="Arial, sans-serif" font-size="10" fill="#444441">RU · 2026-05-04  · клиент 42</text>
+<text x="495" y="298" font-family="Arial, sans-serif" font-size="10" fill="#444441">BR · 2026-07-15  · клиент 7</text>
+<text x="700" y="270" font-family="Arial, sans-serif" font-size="11" fill="#444441">SELECT ... WHERE</text>
+<text x="700" y="284" font-family="Arial, sans-serif" font-size="11" fill="#444441">region = 'DE'</text>
+<text x="700" y="306" font-family="Arial, sans-serif" font-size="10" fill="#27500A" font-style="italic">→ читаем только orders_eu</text>
+<line x1="40" y1="334" x2="900" y2="334" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<text x="40" y="364" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#633806">3. Hash — равномерное распределение по хешу</text>
+<text x="40" y="382" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">БД сама раскладывает данные по N партициям через хеш-функцию</text>
+<rect x="40" y="398" width="200" height="80" rx="4" fill="#FFFFFF" stroke="#854F0B" stroke-width="1"/>
+<rect x="40" y="398" width="200" height="22" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+<text x="140" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#633806">partition 0</text>
+<text x="55" y="436" font-family="Arial, sans-serif" font-size="10" fill="#444441">клиент 17  · ...</text>
+<text x="55" y="452" font-family="Arial, sans-serif" font-size="10" fill="#444441">клиент 42  · ...</text>
+<text x="55" y="468" font-family="Arial, sans-serif" font-size="10" fill="#444441">клиент 99  · ...</text>
+<rect x="260" y="398" width="200" height="80" rx="4" fill="#FFFFFF" stroke="#854F0B" stroke-width="1"/>
+<rect x="260" y="398" width="200" height="22" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+<text x="360" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#633806">partition 1</text>
+<text x="275" y="436" font-family="Arial, sans-serif" font-size="10" fill="#444441">клиент 7   · ...</text>
+<text x="275" y="452" font-family="Arial, sans-serif" font-size="10" fill="#444441">клиент 23  · ...</text>
+<text x="275" y="468" font-family="Arial, sans-serif" font-size="10" fill="#444441">клиент 88  · ...</text>
+<rect x="480" y="398" width="200" height="80" rx="4" fill="#FFFFFF" stroke="#854F0B" stroke-width="1"/>
+<rect x="480" y="398" width="200" height="22" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+<text x="580" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#633806">partition 2</text>
+<text x="495" y="436" font-family="Arial, sans-serif" font-size="10" fill="#444441">клиент 11  · ...</text>
+<text x="495" y="452" font-family="Arial, sans-serif" font-size="10" fill="#444441">клиент 56  · ...</text>
+<text x="495" y="468" font-family="Arial, sans-serif" font-size="10" fill="#444441">клиент 71  · ...</text>
+<text x="700" y="430" font-family="Arial, sans-serif" font-size="11" fill="#444441">SELECT ... WHERE</text>
+<text x="700" y="444" font-family="Arial, sans-serif" font-size="11" fill="#444441">client_id = 42</text>
+<text x="700" y="466" font-family="Arial, sans-serif" font-size="10" fill="#27500A" font-style="italic">→ хеш(42) → partition 0</text>
+<line x1="40" y1="498" x2="900" y2="498" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<text x="40" y="528" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#26215C">4. Composite — комбинация (например, Range + Hash)</text>
+<text x="40" y="546" font-family="Arial, sans-serif" font-size="11" fill="#444441" font-style="italic">сначала Range по дате, потом внутри Hash по клиенту</text>
+<rect x="40" y="562" width="400" height="120" rx="4" fill="#FFFFFF" stroke="#534AB7" stroke-width="1.5"/>
+<rect x="40" y="562" width="400" height="22" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/>
+<text x="240" y="578" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#26215C">orders_2026_q2</text>
+<rect x="50" y="592" width="120" height="80" rx="3" fill="#F7F6FE" stroke="#534AB7" stroke-width="0.7"/>
+<text x="110" y="608" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#26215C">subpart 0</text>
+<text x="60" y="626" font-family="Arial, sans-serif" font-size="9" fill="#444441">04-15 · клиент 42</text>
+<text x="60" y="640" font-family="Arial, sans-serif" font-size="9" fill="#444441">05-22 · клиент 17</text>
+<text x="60" y="654" font-family="Arial, sans-serif" font-size="9" fill="#444441">06-08 · клиент 99</text>
+<rect x="180" y="592" width="120" height="80" rx="3" fill="#F7F6FE" stroke="#534AB7" stroke-width="0.7"/>
+<text x="240" y="608" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#26215C">subpart 1</text>
+<text x="190" y="626" font-family="Arial, sans-serif" font-size="9" fill="#444441">04-03 · клиент 7</text>
+<text x="190" y="640" font-family="Arial, sans-serif" font-size="9" fill="#444441">05-30 · клиент 23</text>
+<text x="190" y="654" font-family="Arial, sans-serif" font-size="9" fill="#444441">06-19 · клиент 88</text>
+<rect x="310" y="592" width="120" height="80" rx="3" fill="#F7F6FE" stroke="#534AB7" stroke-width="0.7"/>
+<text x="370" y="608" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#26215C">subpart 2</text>
+<text x="320" y="626" font-family="Arial, sans-serif" font-size="9" fill="#444441">04-25 · клиент 11</text>
+<text x="320" y="640" font-family="Arial, sans-serif" font-size="9" fill="#444441">05-14 · клиент 56</text>
+<text x="320" y="654" font-family="Arial, sans-serif" font-size="9" fill="#444441">06-27 · клиент 71</text>
+<rect x="460" y="562" width="380" height="120" rx="4" fill="#FFFFFF" stroke="#534AB7" stroke-width="1.5"/>
+<rect x="460" y="562" width="380" height="22" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/>
+<text x="650" y="578" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#26215C">orders_2026_q3</text>
+<rect x="470" y="592" width="115" height="80" rx="3" fill="#F7F6FE" stroke="#534AB7" stroke-width="0.7"/>
+<text x="528" y="608" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#26215C">subpart 0</text>
+<text x="478" y="626" font-family="Arial, sans-serif" font-size="9" fill="#444441">07-12 · клиент 42</text>
+<text x="478" y="640" font-family="Arial, sans-serif" font-size="9" fill="#444441">08-04 · клиент 17</text>
+<rect x="595" y="592" width="115" height="80" rx="3" fill="#F7F6FE" stroke="#534AB7" stroke-width="0.7"/>
+<text x="653" y="608" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#26215C">subpart 1</text>
+<text x="603" y="626" font-family="Arial, sans-serif" font-size="9" fill="#444441">07-25 · клиент 7</text>
+<text x="603" y="640" font-family="Arial, sans-serif" font-size="9" fill="#444441">09-19 · клиент 23</text>
+<rect x="720" y="592" width="115" height="80" rx="3" fill="#F7F6FE" stroke="#534AB7" stroke-width="0.7"/>
+<text x="778" y="608" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#26215C">subpart 2</text>
+<text x="728" y="626" font-family="Arial, sans-serif" font-size="9" fill="#444441">07-08 · клиент 11</text>
+<text x="728" y="640" font-family="Arial, sans-serif" font-size="9" fill="#444441">08-30 · клиент 56</text>
+<text x="40" y="700" font-family="Arial, sans-serif" font-size="11" fill="#26215C" font-style="italic">SELECT ... WHERE created_at &gt;= '2026-07-01' AND client_id = 42  →  только Q3 → subpart 0</text>
+</svg>

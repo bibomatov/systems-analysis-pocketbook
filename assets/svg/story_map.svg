@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 920 480" role="img">
+<title>Карта пользовательских историй</title>
+<desc>Двумерная карта: четыре шага пользовательского пути по горизонтали (выбрать товар, положить в корзину, оформить, оплатить) и три уровня реализации по вертикали (MVP, расширения, дополнительные функции).</desc>
+<defs>
+<marker id="arrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#444441"/>
+</marker>
+</defs>
+<text x="20" y="40" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#444441">Шаги пользователя:</text>
+<rect x="200" y="20" width="160" height="40" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+<text x="280" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#2C2C2A">Выбрать товар</text>
+<line x1="362" y1="40" x2="378" y2="40" stroke="#444441" stroke-width="1.5" marker-end="url(#arrow3)"/>
+<rect x="380" y="20" width="160" height="40" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+<text x="460" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#2C2C2A">Положить в корзину</text>
+<line x1="542" y1="40" x2="558" y2="40" stroke="#444441" stroke-width="1.5" marker-end="url(#arrow3)"/>
+<rect x="560" y="20" width="160" height="40" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+<text x="640" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#2C2C2A">Оформить</text>
+<line x1="722" y1="40" x2="738" y2="40" stroke="#444441" stroke-width="1.5" marker-end="url(#arrow3)"/>
+<rect x="740" y="20" width="160" height="40" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+<text x="820" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#2C2C2A">Оплатить</text>
+<line x1="20" y1="100" x2="900" y2="100" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<text x="20" y="140" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#3B6D11">MVP</text>
+<text x="20" y="156" font-family="Arial, sans-serif" font-size="11" fill="#444441">(минимум для запуска)</text>
+<rect x="200" y="120" width="160" height="60" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="280" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#27500A">Список товаров</text>
+<text x="280" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27500A">с ценой и фото</text>
+<rect x="380" y="120" width="160" height="60" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="460" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#27500A">Одна кнопка</text>
+<text x="460" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27500A">«В корзину»</text>
+<rect x="560" y="120" width="160" height="60" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="640" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#27500A">Доставка</text>
+<text x="640" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27500A">только Почтой</text>
+<rect x="740" y="120" width="160" height="60" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="820" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#27500A">Оплата</text>
+<text x="820" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27500A">только картой</text>
+<line x1="20" y1="200" x2="900" y2="200" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<text x="20" y="240" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#185FA5">Расширения</text>
+<text x="20" y="256" font-family="Arial, sans-serif" font-size="11" fill="#444441">(улучшения опыта)</text>
+<rect x="200" y="220" width="160" height="60" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="280" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0C447C">Фильтры</text>
+<text x="280" y="264" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#0C447C">по категориям</text>
+<rect x="380" y="220" width="160" height="60" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="460" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0C447C">Изменение</text>
+<text x="460" y="264" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#0C447C">количества</text>
+<rect x="560" y="220" width="160" height="60" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="640" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0C447C">Доставка СДЭК</text>
+<text x="640" y="264" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#0C447C">с расчётом цены</text>
+<rect x="740" y="220" width="160" height="60" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="820" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0C447C">Оплата СБП</text>
+<text x="820" y="264" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#0C447C">через QR-код</text>
+<line x1="20" y1="300" x2="900" y2="300" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3,3"/>
+<text x="20" y="340" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#534AB7">Дополнительно</text>
+<text x="20" y="356" font-family="Arial, sans-serif" font-size="11" fill="#444441">(когда будет время)</text>
+<rect x="200" y="320" width="160" height="60" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="280" y="346" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#26215C">Сравнение</text>
+<text x="280" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#26215C">товаров</text>
+<rect x="380" y="320" width="160" height="60" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="460" y="346" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#26215C">Избранное</text>
+<text x="460" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#26215C">и списки</text>
+<rect x="560" y="320" width="160" height="60" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="640" y="346" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#26215C">Пункты выдачи</text>
+<text x="640" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#26215C">на карте</text>
+<rect x="740" y="320" width="160" height="60" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="820" y="346" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#26215C">Оплата</text>
+<text x="820" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#26215C">частями</text>
+<text x="20" y="430" font-family="Arial, sans-serif" font-size="11" fill="#5F5E5A" font-style="italic">Каждая горизонтальная строка — отдельный релиз. Сначала выпускают MVP, потом постепенно добавляют функции из нижних строк.</text>
+</svg>
