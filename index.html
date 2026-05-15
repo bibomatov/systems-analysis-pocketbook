@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Системный анализ: карманный справочник</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="layout">
+
+<!-- TOC-GLOBAL-INCLUDE -->
+<aside class="toc-global">
+  <div class="toc-label">Карманный справочник</div>
+  <div class="toc-part">I. Профессия и процессы</div>
+  <ol>
+    <li><a href="chapters/01-role.html">Системный анализ как деятельность</a></li>
+    <li><a href="chapters/02-sdlc.html">SDLC и методологии</a></li>
+  </ol>
+  <div class="toc-part">II. Требования</div>
+  <ol style="counter-reset: tocchap 2">
+    <li><a href="chapters/03-requirements-types.html">Виды и свойства требований</a></li>
+    <li><a href="chapters/04-functional-requirements.html">Функциональные требования</a></li>
+    <li><a href="chapters/05-nfr.html">Нефункциональные требования</a></li>
+    <li><a href="chapters/06-requirements-management.html">Сбор, формализация, управление</a></li>
+    <li><a href="chapters/07-decomposition.html">Декомпозиция, оценка, приоритизация</a></li>
+  </ol>
+  <div class="toc-part">III. Моделирование</div>
+  <ol style="counter-reset: tocchap 7">
+    <li><a href="chapters/08-notations.html">Нотации моделирования</a></li>
+    <li><a href="chapters/09-documentation.html">Документация</a></li>
+  </ol>
+  <div class="toc-part">IV. Данные</div>
+  <ol style="counter-reset: tocchap 9">
+    <li><a href="chapters/10-databases.html">Базы данных</a></li>
+    <li><a href="chapters/11-sql.html">SQL</a></li>
+  </ol>
+  <div class="toc-part">V. Интеграции</div>
+  <ol style="counter-reset: tocchap 11">
+    <li><a href="chapters/12-sync.html">Синхронные интеграции</a></li>
+    <li><a href="chapters/13-async.html">Асинхронные интеграции</a></li>
+    <li><a href="chapters/14-other.html">Другие способы</a></li>
+    <li><a href="chapters/15-cross-cutting.html">Сквозные темы</a></li>
+  </ol>
+  <div class="toc-part">VI. Архитектура</div>
+  <ol style="counter-reset: tocchap 15">
+    <li><a href="chapters/16-arch-styles.html">Архитектурные стили</a></li>
+    <li><a href="chapters/17-distributed.html">Распределённые системы</a></li>
+  </ol>
+  <div class="toc-part">VII. Безопасность</div>
+  <ol style="counter-reset: tocchap 17">
+    <li><a href="chapters/18-security.html">Безопасность</a></li>
+  </ol>
+  <div class="toc-part">VIII. Интерфейс</div>
+  <ol style="counter-reset: tocchap 18">
+    <li><a href="chapters/19-ui.html">Пользовательский интерфейс</a></li>
+  </ol>
+</aside>
+<!-- /TOC-GLOBAL-INCLUDE -->
+
+<main>
+
+<!-- INDEX-CONTENT-START -->
+<article class="index-page">
+
+<header class="hero">
+  <div class="eyebrow">Системный анализ · v0.1</div>
+  <h1>Системный <em>анализ</em><br>в&nbsp;карманном формате</h1>
+  <p class="lede">
+    Справочник для системного аналитика: ключевые темы предметной области
+    в&nbsp;компактном формате — определение, ментальная модель, типичные ошибки,
+    чеклист, связи. Создан как открытый русскоязычный источник для развития
+    профессии в&nbsp;России.
+  </p>
+  <div class="meta">
+    <span>Автор<strong>Руслан Бибоматов</strong></span>
+    <span>Версия<strong>0.1 · 2026</strong></span>
+    <span>Глав<strong>19</strong></span>
+  </div>
+</header>
+
+<section id="mission">
+  <span class="section-num">§ 01</span>
+  <h2>Проблема и миссия</h2>
+  <p class="section-lede">
+    В русскоязычном пространстве нет единого открытого источника по системному анализу. Существующие материалы либо академичны и оторваны от практики, либо разрозненны и поверхностны, либо платные. Эта книга — попытка закрыть пробел.
+  </p>
+
+  <p>Книга создана для русскоязычных специалистов: начинающих аналитиков, которые входят в&nbsp;профессию; действующих, которые хотят структурировать знания; опытных, которым нужно поддерживать актуальность на смежных темах. Доступна безвозмездно.</p>
+
+  <div class="card card--def">
+    <div class="card-label">Главная цель</div>
+    <p>Развитие системного анализа в России и его представителей. Любое содержательное решение проверяется одним вопросом: «Помогает ли это русскоязычному специалисту в реальной работе или обучении?»</p>
+  </div>
+</section>
+
+<section id="how-to-use">
+  <span class="section-num">§ 02</span>
+  <h2>Как пользоваться книгой</h2>
+  <p class="section-lede">
+    Книга рассчитана на трёх типов читателей. Структура каждой темы устроена так, чтобы каждый нашёл нужное за минимальное время.
+  </p>
+
+  <ul>
+    <li><strong>Junior-аналитик</strong> читает тему сверху вниз, обращает внимание на определение, ментальную модель и пример. Блоки «когда применять» и «чеклист» можно пропускать — они для практики, которая придёт позже.</li>
+    <li><strong>Middle-аналитик</strong> прыгает к чеклисту и блоку типичных ошибок, использует книгу для освежения перед задачей или подготовкой к собеседованию.</li>
+    <li><strong>Senior</strong> читает определение и ментальную модель, использует таблицы сравнения для быстрого восстановления контекста по теме, которую давно не применял.</li>
+  </ul>
+
+  <p>Это <strong>справочник, а не учебник</strong>. Линейное чтение возможно, но основной режим — точечное обращение через оглавление и поиск.</p>
+
+  <h3>Условные обозначения</h3>
+  <p>В тексте встречаются повторяющиеся визуальные блоки. Их семантика фиксирована по всей книге:</p>
+
+  <div class="card card--def">
+    <div class="card-label">Определение</div>
+    <p>Лаконичное определение термина или ключевого понятия.</p>
+  </div>
+
+  <div class="card card--do">
+    <div class="card-label">Рекомендация</div>
+    <p>Хорошая практика, которой стоит следовать.</p>
+  </div>
+
+  <div class="card card--dont">
+    <div class="card-label">Антипаттерн</div>
+    <p>Типичная ошибка или вредная привычка.</p>
+  </div>
+
+  <div class="card card--warn">
+    <div class="card-label">Важно</div>
+    <p>Нюанс или предупреждение, на которое стоит обратить внимание.</p>
+  </div>
+
+  <p>Также встречаются <strong>заметки на полях</strong> — короткие сноски, которые выносятся в правое поле страницы на широких экранах. В них — уточнения, цитаты и связанные идеи, которые не должны прерывать основной текст.</p>
+</section>
+
+<section id="contents">
+  <span class="section-num">§ 03</span>
+  <h2>Содержание</h2>
+  <p class="section-lede">
+    Восемь частей, девятнадцать глав. Порядок — от мышления к технике. В составных главах темы сгруппированы в подразделы.
+  </p>
+
+  <div class="outline">
+
+    <div class="outline-part">
+      <div class="outline-part-title"><strong>Часть I.</strong> Профессия и процессы</div>
+      <ol class="outline-chapters">
+        <li><span class="ch-num">01</span><a href="chapters/01-role.html">Системный анализ как деятельность</a></li>
+        <li><span class="ch-num">02</span><a href="chapters/02-sdlc.html">Жизненный цикл разработки и методологии</a></li>
+      </ol>
+    </div>
+
+    <div class="outline-part">
+      <div class="outline-part-title"><strong>Часть II.</strong> Требования</div>
+      <ol class="outline-chapters">
+        <li><span class="ch-num">03</span><a href="chapters/03-requirements-types.html">Виды и свойства требований</a></li>
+        <li><span class="ch-num">04</span><a href="chapters/04-functional-requirements.html">Функциональные требования</a></li>
+        <li><span class="ch-num">05</span><a href="chapters/05-nfr.html">Нефункциональные требования</a></li>
+        <li><span class="ch-num">06</span><a href="chapters/06-requirements-management.html">Сбор, формализация и управление требованиями</a></li>
+        <li><span class="ch-num">07</span><a href="chapters/07-decomposition.html">Декомпозиция, оценка, приоритизация</a></li>
+      </ol>
+    </div>
+
+    <div class="outline-part">
+      <div class="outline-part-title"><strong>Часть III.</strong> Моделирование и документация</div>
+      <ol class="outline-chapters">
+        <li><span class="ch-num">08</span><a href="chapters/08-notations.html">Нотации моделирования (UML, BPMN, C4, DFD, ER)</a></li>
+        <li><span class="ch-num">09</span><a href="chapters/09-documentation.html">Документация: ТЗ, постановки на UI и интеграции</a></li>
+      </ol>
+    </div>
+
+    <div class="outline-part">
+      <div class="outline-part-title"><strong>Часть IV.</strong> Данные</div>
+      <ol class="outline-chapters">
+        <li><span class="ch-num">10</span><a href="chapters/10-databases.html">Базы данных и проектирование</a></li>
+        <li><span class="ch-num">11</span><a href="chapters/11-sql.html">SQL</a></li>
+      </ol>
+    </div>
+
+    <div class="outline-part">
+      <div class="outline-part-title"><strong>Часть V.</strong> Интеграции</div>
+      <ol class="outline-chapters">
+        <li><span class="ch-num">12</span><a href="chapters/12-sync.html">Синхронные интеграции: HTTP, REST, SOAP</a></li>
+        <li><span class="ch-num">13</span><a href="chapters/13-async.html">Асинхронные интеграции и брокеры</a></li>
+        <li><span class="ch-num">14</span><a href="chapters/14-other.html">Другие способы интеграции</a></li>
+        <li><span class="ch-num">15</span><a href="chapters/15-cross-cutting.html">Сквозные темы интеграций</a></li>
+      </ol>
+    </div>
+
+    <div class="outline-part">
+      <div class="outline-part-title"><strong>Часть VI.</strong> Архитектура</div>
+      <ol class="outline-chapters">
+        <li><span class="ch-num">16</span><a href="chapters/16-arch-styles.html">Архитектурные стили</a></li>
+        <li><span class="ch-num">17</span><a href="chapters/17-distributed.html">Распределённые системы и масштабирование</a></li>
+      </ol>
+    </div>
+
+    <div class="outline-part">
+      <div class="outline-part-title"><strong>Часть VII.</strong> Безопасность</div>
+      <ol class="outline-chapters">
+        <li><span class="ch-num">18</span><a href="chapters/18-security.html">Безопасность</a></li>
+      </ol>
+    </div>
+
+    <div class="outline-part">
+      <div class="outline-part-title"><strong>Часть VIII.</strong> Интерфейс</div>
+      <ol class="outline-chapters">
+        <li><span class="ch-num">19</span><a href="chapters/19-ui.html">Пользовательский интерфейс</a></li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<div class="note">
+  <span class="mark">— · —</span><br>
+  Системный анализ: карманный справочник · v0.1 · в&nbsp;разработке
+</div>
+
+</article>
+<!-- INDEX-CONTENT-END -->
+
+</main>
+
+</div>
+
+<a href="#top" class="back-to-top" aria-label="Наверх">↑</a>
+
+</body>
+</html>
