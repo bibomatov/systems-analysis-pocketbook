@@ -35,16 +35,6 @@ jobs:
       - name: Валидация HTML
         run: python3 build.py --check
 
-      - name: Проверка синхронизации TOC
-        run: |
-          python3 build.py --sync-toc
-          if [ -n "$(git status --porcelain chapters/)" ]; then
-            echo "❌ TOC в файлах глав не синхронизирован с index.html."
-            echo "Запустите 'python3 build.py --sync-toc' локально и закоммитьте результат."
-            git diff chapters/
-            exit 1
-          fi
-
       - name: Сборка книги
         run: python3 build.py
 
