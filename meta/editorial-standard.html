@@ -58,7 +58,7 @@
     <li><strong>Стиль</strong> — профессиональный без академической сухости и без разговорной фамильярности. Минимум англицизмов. Источники в «Дополнительных источниках» — только русскоязычные.</li>
     <li><strong>Структура</strong> — 19 глав в 8 частях. Три шаблона темы: полный, средний, краткий. В составных главах темы группируются в подразделы. Подробнее: § 03, § 04.</li>
     <li><strong>Ревью</strong> — каждая глава ревьюится тремя ролями: senior-аналитик (контент), литературный редактор (стиль), senior-верстальщик (техника, после части целиком). При несогласии AI-ревьюера и автора — приоритет за автором. Подробнее: § 10.</li>
-    <li><strong>Технически</strong> — отдельный HTML-файл на главу, общая дизайн-система в styles.css, сборка скриптом build.py. Подробнее: § 12.</li>
+    <li><strong>Технически</strong> — отдельный HTML-файл на главу, общая дизайн-система в <code>styles.css</code>, сборка скриптом <code>build.py</code>. Рабочие документы — в <code>meta/</code>, автосборка и публикация на GitHub Pages — через Actions. Подробнее: § 12.</li>
   </ol>
 </section>
 
@@ -995,13 +995,15 @@ Content-Type: application/json
   <p>Глоссарий — точка входа для junior-аналитика, который встретил незнакомый термин и хочет получить определение в одну строку, а не читать целую главу. Для middle и опытного читателя — справочное приложение для быстрой проверки.</p>
 
   <h3>Структура записи</h3>
-  <p>Каждая запись содержит четыре элемента: термин, краткое определение в одно-два предложения, английский эквивалент в скобках, ссылку на основную главу.</p>
+  <p>Каждая запись содержит четыре элемента: термин, краткое определение в одно-два предложения, английский эквивалент в скобках, ссылку на основную главу. У каждой записи есть якорь вида <code>gloss-{slug}</code> — для прямых ссылок из глав.</p>
 
   <div class="code-block">
-<span class="c-keyword">Идемпотентность</span> (idempotency)
-Свойство операции, при котором повторное выполнение
-с теми же параметрами даёт тот же результат.
-<span class="c-comment">→ Глава 13. Сквозные темы интеграций</span>
+&lt;article id=<span class="c-string">"gloss-idempotency"</span>&gt;
+  <span class="c-keyword">Идемпотентность</span> (idempotency)
+  Свойство операции, при котором повторное выполнение
+  с теми же параметрами даёт тот же результат.
+  <span class="c-comment">→ Глава 15. Сквозные темы интеграций</span>
+&lt;/article&gt;
   </div>
 
   <h3>Правила составления</h3>
@@ -1018,8 +1020,8 @@ Content-Type: application/json
     <p>Каждая написанная тема обязательно добавляет в глоссарий минимум один термин — обычно тот, который сформулирован в блоке «Определение». Глоссарий собирается не итоговой задачей в конце книги, а растёт параллельно с написанием глав. Без этого правила глоссарий не появится никогда.</p>
   </div>
 
-  <h3>Размещение</h3>
-  <p>Файл <code>glossary.html</code> в корне репозитория. В оглавлении книги — отдельная позиция после всех глав. В кросс-ссылках внутри глав термины из глоссария могут указываться как <code>&lt;a href="glossary.html#термин"&gt;</code>.</p>
+  <h3>Размещение и якоря</h3>
+  <p>Файл <code>glossary.html</code> в корне репозитория. В оглавлении книги — отдельная позиция после всех глав. Якорь каждой записи имеет формат <code>gloss-{slug}</code>, где slug — короткое английское обозначение термина латиницей, через дефис, без подчёркиваний и заглавных букв (например, <code>gloss-idempotency</code>, <code>gloss-saga</code>, <code>gloss-cap-theorem</code>). Кросс-ссылки из глав используют этот якорь: <code>&lt;a href="../glossary.html#gloss-idempotency"&gt;идемпотентность&lt;/a&gt;</code>.</p>
 </section>
 
 <!-- 9. SOURCES -->
@@ -1202,87 +1204,125 @@ Content-Type: application/json
   <span class="section-num">§ 12</span>
   <h2>Структура репозитория и сборка</h2>
   <p class="section-lede">
-    Документ хранится разбитым на файлы — это нужно для удобства Git, чистых diff'ов и предсказуемых правок. Финальная версия для чтения собирается в один HTML.
+    Документ хранится разбитым на файлы — это нужно для удобства Git, чистых diff'ов и предсказуемых правок. Финальная версия для чтения собирается в один HTML и публикуется автоматически на GitHub Pages.
   </p>
 
   <h3>Структура файлов</h3>
   <div class="code-block">
 pocket-book-sa/
-├── styles.css              <span class="c-comment"># все стили в одном файле</span>
-├── index.html              <span class="c-comment"># главная: hero, оглавление, введение</span>
+├── styles.css                       <span class="c-comment"># единая дизайн-система</span>
+├── index.html                       <span class="c-comment"># главная: hero, миссия, оглавление (эталон TOC)</span>
 ├── chapters/
-│   ├── 01-role.html        <span class="c-comment"># одна глава = один файл</span>
+│   ├── 00-intro.html                <span class="c-comment"># введение</span>
+│   ├── 01-role.html                 <span class="c-comment"># одна глава = один файл</span>
 │   ├── 02-sdlc.html
 │   ├── 03-requirements-types.html
-│   └── ...                 <span class="c-comment"># всего 19 файлов</span>
-├── assets/
-│   └── svg/                <span class="c-comment"># SVG-исходники: 34 готовых + новые при написании глав</span>
-├── build.py                <span class="c-comment"># скрипт сборки в один HTML</span>
-├── pocket-book.html        <span class="c-comment"># финальный собранный файл</span>
-└── README.md
+│   └── ...                          <span class="c-comment"># всего 19 глав + введение</span>
+├── meta/                            <span class="c-comment"># документы о книге, не часть книги</span>
+│   ├── editorial-standard.html      <span class="c-comment"># этот документ</span>
+│   └── project-instructions.md      <span class="c-comment"># инструкции для AI-ассистента</span>
+├── assets/svg/                      <span class="c-comment"># SVG-исходники: 34 готовых + новые при написании глав</span>
+├── .github/workflows/
+│   └── build-and-deploy.yml         <span class="c-comment"># автосборка и публикация на Pages</span>
+├── build.py                         <span class="c-comment"># скрипт сборки и валидации</span>
+├── pocket-book.html                 <span class="c-comment"># финальный собранный файл (в .gitignore)</span>
+├── glossary.html                    <span class="c-comment"># глоссарий, растёт параллельно с главами</span>
+├── README.md
+├── CONTRIBUTING.md
+├── LICENSE                          <span class="c-comment"># CC BY 4.0</span>
+└── .gitignore
   </div>
 
-  <h3>Что даёт такая структура</h3>
+  <h3>Разделение «книга» и «документы о книге»</h3>
+  <p>Файлы книги (<code>index.html</code>, <code>chapters/*.html</code>, <code>glossary.html</code>, <code>styles.css</code>) попадают в собранный <code>pocket-book.html</code> и публикуются как корневой сайт. Файлы в <code>meta/</code> — рабочие документы для авторов и редакторов: они не входят в собранную книгу, но публикуются отдельно на Pages по адресу <code>/meta/</code>.</p>
+
+  <h3>Маркеры в файлах</h3>
+  <p>Сборка и синхронизация работают по служебным маркерам-комментариям. Они не удаляются и не переименовываются — на них ориентируется <code>build.py</code>:</p>
   <table class="compare">
-    <thead><tr><th>Кому</th><th>Что даёт</th></tr></thead>
+    <thead><tr><th>Маркер</th><th>Где живёт</th><th>Назначение</th></tr></thead>
     <tbody>
-      <tr>
-        <td>Автору</td>
-        <td>Чистые diff'ы в Git, удобство правок одной главы, отделение стилей от контента</td>
-      </tr>
-      <tr>
-        <td>Соавтору-AI</td>
-        <td>На каждой итерации читает одну главу, а не весь файл — экономия контекста, меньше ошибок</td>
-      </tr>
-      <tr>
-        <td>Читателям</td>
-        <td>Финальный <code>pocket-book.html</code> — один файл без зависимостей, открывается в браузере</td>
-      </tr>
-      <tr>
-        <td>Распространению</td>
-        <td>Каждую главу можно отправить отдельно (она самодостаточна), или собранный файл целиком</td>
-      </tr>
+      <tr><td><code>&lt;!-- INDEX-CONTENT-START --&gt;</code> / <code>END</code></td><td><code>index.html</code></td><td>Границы основного контента главной — попадает в pocket-book.html перед главами</td></tr>
+      <tr><td><code>&lt;!-- CHAPTER-CONTENT-START --&gt;</code> / <code>END</code></td><td><code>chapters/*.html</code></td><td>Границы контента главы — то, что извлекается при сборке</td></tr>
+      <tr><td><code>&lt;!-- TOC-GLOBAL-INCLUDE --&gt;</code> / <code>/...</code></td><td><code>index.html</code>, все главы</td><td>Глобальное оглавление — один источник правды в <code>index.html</code>, синхронизируется во все главы</td></tr>
+      <tr><td><code>&lt;!-- TOC-LOCAL-INCLUDE --&gt;</code> / <code>/...</code></td><td><code>chapters/*.html</code></td><td>Локальное оглавление главы — темы текущей главы для правой колонки</td></tr>
     </tbody>
   </table>
 
-  <h3>Как происходит сборка</h3>
-  <p>Сборка выполняется скриптом <code>build.py</code> на Python без сторонних зависимостей (Python 3.10+). Скрипт читает <code>styles.css</code>, шаблон из <code>index.html</code>, проходит по файлам в <code>chapters/</code> в порядке нумерации, извлекает основной контент каждой главы (теги <code>&lt;article class="chapter"&gt;...&lt;/article&gt;</code>), склеивает всё в один HTML и записывает <code>pocket-book.html</code>.</p>
+  <h3>Соглашение по ID и якорям</h3>
+  <p>Чтобы избежать конфликтов идентификаторов между главами при росте книги:</p>
+  <table class="compare">
+    <thead><tr><th>Сущность</th><th>Формат</th><th>Пример</th></tr></thead>
+    <tbody>
+      <tr><td>Файл главы</td><td><code>chapters/NN-slug.html</code></td><td><code>chapters/04-functional-requirements.html</code></td></tr>
+      <tr><td>ID главы (article)</td><td><code>ch-NN</code></td><td><code>id="ch-04"</code></td></tr>
+      <tr><td>ID темы (section)</td><td><code>ch{NN}-{slug}</code></td><td><code>id="ch04-user-stories"</code></td></tr>
+      <tr><td>ID подраздела</td><td><code>ch{NN}-sub-{slug}</code></td><td><code>id="ch04-sub-formalization"</code></td></tr>
+      <tr><td>ID статьи глоссария</td><td><code>gloss-{term}</code></td><td><code>id="gloss-idempotency"</code></td></tr>
+    </tbody>
+  </table>
+  <p>Slug — короткое английское обозначение латиницей, через дефис, без пробелов, подчёркиваний и заглавных букв. ID главы (<code>ch-NN</code>) проставляется автоматически скриптом сборки при создании <code>pocket-book.html</code>.</p>
 
-  <div class="margin-host">
-    <div class="margin-content">
-      <p>Команда для запуска:</p>
-      <div class="code-block">python3 build.py</div>
-      <p>Результат — файл <code>pocket-book.html</code> в корне репозитория, готовый к распространению. Содержит весь контент книги, все стили inline, без зависимостей от внешних файлов (кроме шрифтов с CDN).</p>
-    </div>
-    <aside class="margin-note">
-      <div class="card-label">Если нет Python</div>
-      <p>На macOS и Linux Python предустановлен. На Windows можно установить с python.org или попросить AI-ассистента собрать версию в его среде.</p>
-    </aside>
+  <h3>Скрипт сборки</h3>
+  <div class="code-block" data-lang="shell">
+<span class="prompt">python3 build.py</span>              <span class="c-comment"># собрать pocket-book.html</span>
+<span class="prompt">python3 build.py --check</span>      <span class="c-comment"># проверить HTML на баланс тегов и маркеры</span>
+<span class="prompt">python3 build.py --sync-toc</span>   <span class="c-comment"># синхронизировать глобальный TOC во всех главах</span>
+  </div>
+  <p>Скрипт работает на Python 3.10+ без сторонних зависимостей. Логика сборки: читает <code>styles.css</code>, извлекает контент из <code>index.html</code> (по маркерам <code>INDEX-CONTENT</code>) и из <code>chapters/*.html</code> (по маркерам <code>CHAPTER-CONTENT</code>), проставляет якоря <code>id="ch-NN"</code>, преобразует кросс-ссылки на файлы глав в якорные, собирает один HTML со стилями inline и пишет в <code>pocket-book.html</code>.</p>
+
+  <div class="card card--warn">
+    <div class="card-label">Правило</div>
+    <p>Глобальный TOC — один источник правды в <code>index.html</code>. При добавлении, переименовании или изменении порядка глав правится только <code>index.html</code>, затем запускается <code>python3 build.py --sync-toc</code>. Скрипт обновит блок <code>TOC-GLOBAL-INCLUDE</code> во всех файлах <code>chapters/*.html</code> и адаптирует ссылки (уберёт префикс <code>chapters/</code>, поставит <code>class="is-current"</code> на текущую главу).</p>
   </div>
 
+  <h3>Автосборка через GitHub Actions</h3>
+  <p>При каждом push в <code>main</code> запускается workflow <code>.github/workflows/build-and-deploy.yml</code>:</p>
+  <ol>
+    <li><code>python3 build.py --check</code> — валидация HTML</li>
+    <li>Проверка, что TOC во всех главах синхронизирован с <code>index.html</code></li>
+    <li><code>python3 build.py</code> — сборка <code>pocket-book.html</code></li>
+    <li>Подготовка артефактов: книга кладётся в корень <code>_site/</code> как <code>index.html</code>, документы из <code>meta/</code> — в <code>_site/meta/</code></li>
+    <li>Деплой на GitHub Pages</li>
+  </ol>
+
+  <p>После настройки Pages (Settings → Pages → Source: GitHub Actions) книга доступна по адресу <code>https://&lt;username&gt;.github.io/&lt;repo&gt;/</code>, редстандарт — по <code>https://&lt;username&gt;.github.io/&lt;repo&gt;/meta/editorial-standard.html</code>.</p>
+
   <h3>Структура одной главы</h3>
-  <p>Каждый файл главы — самодостаточный HTML, который можно открыть отдельно. При сборке извлекается содержимое <code>&lt;article class="chapter"&gt;</code>:</p>
+  <p>Каждый файл главы — самодостаточный HTML, который можно открыть отдельно. При сборке извлекается содержимое между маркерами <code>CHAPTER-CONTENT</code>:</p>
   <div class="code-block">
 &lt;!DOCTYPE html&gt;
-&lt;html lang="ru"&gt;
+&lt;html lang=<span class="c-string">"ru"</span>&gt;
 &lt;head&gt;
-  &lt;link rel="stylesheet" href="../styles.css"&gt;
-  &lt;title&gt;Глава 1. Системный анализ как деятельность — Карманный справочник&lt;/title&gt;
+  &lt;link rel=<span class="c-string">"stylesheet"</span> href=<span class="c-string">"../styles.css"</span>&gt;
+  &lt;title&gt;Глава 4. Функциональные требования — Системный анализ: карманный справочник&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;div class="layout"&gt;
-  &lt;aside class="toc-global"&gt;...&lt;/aside&gt;
+&lt;div class=<span class="c-string">"layout"</span>&gt;
+
+  <span class="c-comment">&lt;!-- TOC-GLOBAL-INCLUDE --&gt;</span>
+  &lt;aside class=<span class="c-string">"toc-global"</span>&gt;...&lt;/aside&gt;
+  <span class="c-comment">&lt;!-- /TOC-GLOBAL-INCLUDE --&gt;</span>
+
   &lt;main&gt;
-    <span class="c-keyword">&lt;article class="chapter" data-chapter="01"&gt;</span>
-      &lt;header&gt;Глава 01 · Роль системного аналитика&lt;/header&gt;
-      &lt;section id="role-01-01"&gt;Тема 1...&lt;/section&gt;
-      &lt;section id="role-01-02"&gt;Тема 2...&lt;/section&gt;
-    <span class="c-keyword">&lt;/article&gt;</span>
+    <span class="c-comment">&lt;!-- CHAPTER-CONTENT-START --&gt;</span>
+    &lt;article class=<span class="c-string">"chapter"</span> data-chapter=<span class="c-string">"04"</span>&gt;
+      &lt;header class=<span class="c-string">"chapter-header"</span>&gt;...&lt;/header&gt;
+      &lt;section id=<span class="c-string">"ch04-use-cases"</span>&gt;Тема 1...&lt;/section&gt;
+      &lt;section id=<span class="c-string">"ch04-user-stories"</span>&gt;Тема 2...&lt;/section&gt;
+    &lt;/article&gt;
+    <span class="c-comment">&lt;!-- CHAPTER-CONTENT-END --&gt;</span>
   &lt;/main&gt;
-  &lt;aside class="toc-local"&gt;...&lt;/aside&gt;
+
+  <span class="c-comment">&lt;!-- TOC-LOCAL-INCLUDE --&gt;</span>
+  &lt;aside class=<span class="c-string">"toc-local"</span>&gt;...&lt;/aside&gt;
+  <span class="c-comment">&lt;!-- /TOC-LOCAL-INCLUDE --&gt;</span>
+
 &lt;/div&gt;
 &lt;/body&gt;&lt;/html&gt;
   </div>
+
+  <h3>Если нет Python</h3>
+  <p>На macOS и Linux Python предустановлен. На Windows можно установить с python.org. Если ставить Python нет возможности — сборка выполнится автоматически через GitHub Actions при push в <code>main</code>; локальная сборка нужна только для проверки результата перед коммитом.</p>
 </section>
 
 <div class="note">
