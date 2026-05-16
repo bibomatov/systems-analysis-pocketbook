@@ -205,6 +205,10 @@ def transform_chapter_links(html: str, chapter_filenames: list[str]) -> str:
         anchor = f"#ch-{num}"
         for prefix in ("../chapters/", "chapters/", ""):
             html = html.replace(f'href="{prefix}{fname}"', f'href="{anchor}"')
+    # Ссылки из глав на meta/ записаны относительно chapters/ (../meta/...).
+    # В собранной книге pocket-book.html лежит в корне, поэтому ../meta/
+    # указывает выше корня сайта. Адаптируем под корневое расположение.
+    html = html.replace('href="../meta/', 'href="meta/')
     return html
 
 
@@ -320,12 +324,10 @@ def build() -> int:
   }}
 
   const observer = new IntersectionObserver(entries => {{
-    // Берём первую главу, у которой топ выше середины экрана
     const visible = entries
       .filter(e => e.isIntersecting)
       .map(e => e.target);
     if (!visible.length) return;
-    // Самая верхняя видимая глава = текущая
     visible.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
     const top = visible[0];
     if (top.id) setCurrent(top.id);

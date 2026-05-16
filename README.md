@@ -6,7 +6,8 @@
 
 ## Читать книгу
 
-- **Онлайн:** см. публикацию на GitHub Pages (ссылка появляется после настройки в Settings → Pages)
+- **Онлайн:** [bibomatov.github.io/systems-analysis-pocketbook](https://bibomatov.github.io/systems-analysis-pocketbook/)
+- **Редакционный стандарт:** [bibomatov.github.io/systems-analysis-pocketbook/meta/editorial-standard.html](https://bibomatov.github.io/systems-analysis-pocketbook/meta/editorial-standard.html)
 - **Локально:** открыть `index.html` или собранный `pocket-book.html` в браузере
 
 ## Структура репозитория
@@ -16,9 +17,10 @@ pocket-book-sa/
 ├── styles.css                  # Единые стили для книги и meta-документов
 ├── index.html                  # Главная: hero, миссия, оглавление (эталон TOC)
 ├── chapters/                   # Главы — один файл на главу
+│   ├── 00-intro.html           # Введение
 │   ├── 01-role.html
 │   ├── 02-sdlc.html
-│   └── ...                     # всего 19 глав
+│   └── ...                     # всего 19 глав + введение
 ├── meta/                       # Документы о книге, НЕ являются её частью
 │   ├── editorial-standard.html # Редакционный стандарт
 │   └── project-instructions.md # Инструкции для AI-ассистента
@@ -28,6 +30,8 @@ pocket-book-sa/
 ├── glossary.html               # Глоссарий, растёт параллельно с главами
 ├── pocket-book.html            # Финальный собранный файл (в .gitignore)
 ├── README.md
+├── CONTRIBUTING.md
+├── LICENSE                     # CC BY 4.0
 └── .gitignore
 ```
 
@@ -108,8 +112,8 @@ python3 build.py --sync-toc   # Синхронизировать глобаль�
 1. **Settings → Pages**
 2. **Source:** GitHub Actions
 3. Дождаться workflow (~1 минута после первого push)
-4. Книга доступна по адресу `https://<username>.github.io/<repo-name>/`
-5. Редстандарт — `https://<username>.github.io/<repo-name>/meta/editorial-standard.html`
+4. Книга доступна по адресу `https://bibomatov.github.io/systems-analysis-pocketbook/`
+5. Редстандарт — `https://bibomatov.github.io/systems-analysis-pocketbook/meta/editorial-standard.html`
 
 ## Соглашение по ID и якорям
 
