@@ -24,7 +24,6 @@ pocket-book-sa/
 │   └── project-instructions.md # Инструкции для AI-ассистента
 ├── assets/svg/                 # SVG-исходники (34 готовых + новые при написании глав)
 ├── .github/workflows/          # GitHub Actions: автосборка и публикация
-├── .github/dependabot.yml      # Конфиг автоматических PR на обновление actions
 ├── build.py                    # Скрипт сборки и валидации
 ├── glossary.html               # Глоссарий, растёт параллельно с главами
 ├── pocket-book.html            # Финальный собранный файл (в .gitignore)
