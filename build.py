@@ -4,10 +4,12 @@
 Сборка карманного справочника по системному анализу.
 
 Использование:
-    python3 build.py              — собрать pocket-book.html
-    python3 build.py --sync-toc   — синхронизировать глобальный TOC во всех главах
-                                     по эталону из index.html
-    python3 build.py --check      — проверить HTML на баланс тегов и наличие маркеров
+    python3 build.py                   — собрать pocket-book.html
+    python3 build.py --sync-toc        — синхронизировать глобальный TOC во всех главах
+                                          по эталону из index.html
+    python3 build.py --check-toc-sync  — проверить, что TOC во всех главах
+                                          синхронизирован с index.html (без изменений)
+    python3 build.py --check           — проверить HTML на баланс тегов и наличие маркеров
 
 Никаких внешних зависимостей. Python 3.10+.
 """
@@ -148,7 +150,7 @@ def adapt_toc_for_chapter(toc_html: str, current_chapter_filename: str) -> str:
     return adapted
 
 
-def sync_toc() -> int:
+def sync_toc(check_only: bool = False) -> int:
     toc = get_toc_from_index()
 
     # Валидация эталонного TOC перед распространением
@@ -169,6 +171,7 @@ def sync_toc() -> int:
         re.DOTALL,
     )
 
+    out_of_sync = []
     updated = 0
     for f in files:
         text = read_text(f)
@@ -181,11 +184,23 @@ def sync_toc() -> int:
         new_text = pattern.sub(new_block, text, count=1)
 
         if new_text != text:
-            write_text(f, new_text)
-            updated += 1
-            print(f"  ✓ {f.name}")
+            if check_only:
+                out_of_sync.append(f.name)
+                print(f"  ✗ {f.name} (требует синхронизации)")
+            else:
+                write_text(f, new_text)
+                updated += 1
+                print(f"  ✓ {f.name}")
         else:
             print(f"  · {f.name} (без изменений)")
+
+    if check_only:
+        if out_of_sync:
+            print(f"\n❌ TOC рассинхронизирован в {len(out_of_sync)} файлах из {len(files)}.")
+            print("   Запустите локально: python3 build.py --sync-toc")
+            return 1
+        print(f"\n✓ TOC синхронизирован во всех {len(files)} файлах")
+        return 0
 
     print(f"\n✓ Синхронизировано: {updated} из {len(files)}")
     return 0
@@ -362,6 +377,8 @@ def main():
     cmd = args[0]
     if cmd in ("--sync-toc", "sync-toc"):
         sys.exit(sync_toc())
+    if cmd in ("--check-toc-sync", "check-toc-sync"):
+        sys.exit(sync_toc(check_only=True))
     if cmd in ("--check", "check"):
         sys.exit(run_checks())
     if cmd in ("-h", "--help", "help"):

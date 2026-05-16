@@ -35,6 +35,9 @@ jobs:
       - name: Валидация HTML
         run: python3 build.py --check
 
+      - name: Проверка синхронности TOC
+        run: python3 build.py --check-toc-sync
+
       - name: Сборка книги
         run: python3 build.py
 
