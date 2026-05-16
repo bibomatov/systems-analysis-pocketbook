@@ -94,11 +94,13 @@ python3 build.py --sync-toc   # Синхронизировать глобаль�
 
 ## Автосборка через GitHub Actions
 
-При каждом push в `main` запускается workflow `.github/workflows/build-and-deploy.yml`:
+Изменения попадают в `main` через pull request — прямой push в `main` закрыт защитой ветки. При каждом merge PR в `main` запускается workflow `.github/workflows/build-and-deploy.yml`:
 1. `python3 build.py --check` — валидация
 2. `python3 build.py` — сборка `pocket-book.html`
 3. Подготовка артефактов для Pages (книга + meta-документы + стили)
 4. Деплой на GitHub Pages
+
+Тот же workflow в режиме проверки запускается на каждом PR — это страхует `main` от попадания сломанной сборки.
 
 ## Настройка GitHub Pages (одноразово)
 

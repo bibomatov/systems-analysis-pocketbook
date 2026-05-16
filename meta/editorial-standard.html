@@ -1275,8 +1275,8 @@ pocket-book-sa/
     <p>Глобальный TOC — один источник правды в <code>index.html</code>. При добавлении, переименовании или изменении порядка глав правится только <code>index.html</code>, затем запускается <code>python3 build.py --sync-toc</code>. Скрипт обновит блок <code>TOC-GLOBAL-INCLUDE</code> во всех файлах <code>chapters/*.html</code> и адаптирует ссылки (уберёт префикс <code>chapters/</code>, поставит <code>class="is-current"</code> на текущую главу).</p>
   </div>
 
-  <h3>Автосборка через GitHub Actions</h3>
-  <p>При каждом push в <code>main</code> запускается workflow <code>.github/workflows/build-and-deploy.yml</code>:</p>
+ <h3>Автосборка через GitHub Actions</h3>
+  <p>Изменения попадают в <code>main</code> через pull request — прямой push в <code>main</code> закрыт защитой ветки. При каждом merge PR в <code>main</code> запускается workflow <code>.github/workflows/build-and-deploy.yml</code>:</p>
   <ol>
     <li><code>python3 build.py --check</code> — валидация HTML</li>
     <li>Проверка, что TOC во всех главах синхронизирован с <code>index.html</code></li>
@@ -1284,6 +1284,7 @@ pocket-book-sa/
     <li>Подготовка артефактов: книга кладётся в корень <code>_site/</code> как <code>index.html</code>, документы из <code>meta/</code> — в <code>_site/meta/</code></li>
     <li>Деплой на GitHub Pages</li>
   </ol>
+  <p>Тот же workflow в режиме проверки запускается на каждом PR — это страхует <code>main</code> от попадания сломанной сборки.</p>
 
   <p>После настройки Pages (Settings → Pages → Source: GitHub Actions) книга доступна по адресу <code>https://&lt;username&gt;.github.io/&lt;repo&gt;/</code>, редстандарт — по <code>https://&lt;username&gt;.github.io/&lt;repo&gt;/meta/editorial-standard.html</code>.</p>
 
