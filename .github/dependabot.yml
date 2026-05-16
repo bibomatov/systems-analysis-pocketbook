@@ -1,0 +1,24 @@
+version: 2
+updates:
+  # Обновление GitHub Actions в workflow-файлах
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Europe/Moscow"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "инфра"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    # Группируем обновления minor и patch в один PR, major идут отдельно —
+    # major обычно содержат breaking changes и заслуживают отдельного ревью
+    groups:
+      actions-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"

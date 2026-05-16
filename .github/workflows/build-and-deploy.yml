@@ -55,6 +55,7 @@ jobs:
           mkdir -p _site/meta
           cp pocket-book.html _site/index.html
           cp styles.css _site/styles.css
+          cp glossary.html _site/glossary.html 2>/dev/null || true
           cp -r meta/*.html _site/meta/ 2>/dev/null || true
           cp -r meta/*.md _site/meta/ 2>/dev/null || true
 

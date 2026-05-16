@@ -24,7 +24,9 @@ pocket-book-sa/
 │   └── project-instructions.md # Инструкции для AI-ассистента
 ├── assets/svg/                 # SVG-исходники (34 готовых + новые при написании глав)
 ├── .github/workflows/          # GitHub Actions: автосборка и публикация
+├── .github/dependabot.yml      # Конфиг автоматических PR на обновление actions
 ├── build.py                    # Скрипт сборки и валидации
+├── glossary.html               # Глоссарий, растёт параллельно с главами
 ├── pocket-book.html            # Финальный собранный файл (в .gitignore)
 ├── README.md
 └── .gitignore
@@ -32,7 +34,7 @@ pocket-book-sa/
 
 ## Разделение «книга» и «документы о книге»
 
-- **Файлы книги:** `index.html`, `chapters/*.html`, `styles.css`. Эти файлы попадают в собранный `pocket-book.html` и публикуются на сайте.
+- **Файлы книги:** `index.html`, `chapters/*.html`, `glossary.html`, `styles.css`. Эти файлы попадают в собранный `pocket-book.html` и публикуются на сайте.
 - **Файлы о книге** (`meta/`): редстандарт, инструкции, рабочие документы. Они **не входят** в собранную книгу — это инструменты для авторов и редакторов.
 
 ## Как редактировать главы
