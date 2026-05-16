@@ -1,7 +1,7 @@
 name: Сборка и публикация книги
 
 # Триггеры:
-# - push в main (например, после merge PR с новой главой)
+# - push в main (после merge PR с правкой)
 # - ручной запуск через Actions UI
 on:
   push:
@@ -25,10 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Чекаут репо
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Установка Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
@@ -58,6 +58,11 @@ jobs:
           cp -r meta/*.html _site/meta/ 2>/dev/null || true
           cp -r meta/*.md _site/meta/ 2>/dev/null || true
 
+      # TODO: проверять каждые 3 месяца, не появились ли Node 24 версии.
+      # Следующая проверка: август 2026.
+      # Когда GitHub выпустит upload-pages-artifact@v4 и deploy-pages@v5 на Node 24 —
+      # обновить здесь и убрать этот комментарий.
+      # Отслеживание: https://github.com/actions/upload-pages-artifact/issues/138
       - name: Загрузка артефакта Pages
         uses: actions/upload-pages-artifact@v3
         with:
