@@ -820,9 +820,12 @@ blockquote cite::before { content: '— '; }
   text-decoration: none;
   font-size: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,.04);
-  transition: color .15s, border-color .15s;
+  opacity: .35;
+  transition: opacity .15s, color .15s, border-color .15s;
 }
-.back-to-top:hover {
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  opacity: 1;
   color: var(--text);
   border-color: var(--text-3);
 }

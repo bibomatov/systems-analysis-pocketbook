@@ -34,8 +34,8 @@ TOC_GLOBAL_MARKER = ("<!-- TOC-GLOBAL-INCLUDE -->", "<!-- /TOC-GLOBAL-INCLUDE --
 TOC_LOCAL_MARKER = ("<!-- TOC-LOCAL-INCLUDE -->", "<!-- /TOC-LOCAL-INCLUDE -->")
 
 BALANCED_TAGS = ["section", "div", "article", "aside", "main", "header",
-                 "ol", "ul", "li", "table", "tr", "td", "th",
-                 "h1", "h2", "h3", "h4", "p"]
+                 "ol", "ul", "table", "tr", "td", "th",
+                 "h1", "h2", "h3", "h4"]
 
 
 # ────────────────────────────────────────────────────────────
