@@ -188,6 +188,15 @@ body {
   color: var(--text-3);
   letter-spacing: .05em;
 }
+/* Подсекция «Приложение» в книжном TOC — без автонумерации,
+   используется для глоссария и других элементов вне основной нумерации глав. */
+.toc-global ol.toc-appendix li {
+  padding-left: 0;
+  counter-increment: none;
+}
+.toc-global ol.toc-appendix li::before {
+  content: none;
+}
 .toc-global ol li a {
   color: var(--text-2);
   text-decoration: none;

@@ -47,20 +47,26 @@
     <li><a href="chapters/12-sync.html">Синхронные интеграции</a></li>
     <li><a href="chapters/13-async.html">Асинхронные интеграции</a></li>
     <li><a href="chapters/14-other.html">Другие способы</a></li>
-    <li><a href="chapters/15-cross-cutting.html">Сквозные темы</a></li>
+    <li><a href="chapters/15-integration-choice.html">Выбор способа интеграции</a></li>
+    <li><a href="chapters/16-cross-cutting.html">Сквозные темы</a></li>
   </ol>
   <div class="toc-part">VI. Архитектура</div>
-  <ol style="counter-reset: tocchap 15">
-    <li><a href="chapters/16-arch-styles.html">Архитектурные стили</a></li>
-    <li><a href="chapters/17-distributed.html">Распределённые системы</a></li>
+  <ol style="counter-reset: tocchap 16">
+    <li><a href="chapters/17-arch-styles.html">Архитектурные стили</a></li>
+    <li><a href="chapters/18-distributed.html">Распределённые системы</a></li>
   </ol>
   <div class="toc-part">VII. Безопасность</div>
-  <ol style="counter-reset: tocchap 17">
-    <li><a href="chapters/18-security.html">Безопасность</a></li>
+  <ol style="counter-reset: tocchap 18">
+    <li><a href="chapters/19-security.html">Безопасность</a></li>
   </ol>
   <div class="toc-part">VIII. Интерфейс</div>
-  <ol style="counter-reset: tocchap 18">
-    <li><a href="chapters/19-ui.html">Пользовательский интерфейс</a></li>
+  <ol style="counter-reset: tocchap 19">
+    <li><a href="chapters/20-ui.html">Пользовательский интерфейс</a></li>
+  </ol>
+
+  <div class="toc-part">Приложение</div>
+  <ol class="toc-appendix">
+    <li><a href="glossary.html">Глоссарий</a></li>
   </ol>
 </aside>
 <!-- /TOC-GLOBAL-INCLUDE -->
@@ -74,7 +80,7 @@
   <div class="eyebrow">Системный анализ · v0.1</div>
   <h1>Системный <em>анализ</em>:<br>карманный&nbsp;справочник</h1>
   <p class="lede">
-    Справочник по&nbsp;ключевым темам системного анализа: процессы и&nbsp;роли,
+    Справочник по&nbsp;ключевым темам системного анализа в&nbsp;IT: процессы и&nbsp;роли,
     требования, моделирование, базы данных и&nbsp;SQL, интеграции, архитектура,
     безопасность, интерфейс. Открытый русскоязычный источник для развития профессии
     в&nbsp;России.
@@ -82,7 +88,7 @@
   <div class="meta">
     <span>Автор<strong>Руслан Бибоматов</strong></span>
     <span>Версия<strong>0.1 · 2026</strong></span>
-    <span>Глав<strong>19</strong></span>
+    <span>Глав<strong>20</strong></span>
   </div>
 </header>
 
@@ -93,11 +99,11 @@
     В русскоязычном пространстве нет единого открытого источника по системному анализу. Существующие материалы либо академичны и оторваны от практики, либо разрозненны и поверхностны, либо платные. Эта книга закрывает пробел.
   </p>
 
-  <p>Книга создана для русскоязычных специалистов: начинающих аналитиков, которые входят в&nbsp;профессию; действующих, которые хотят структурировать знания; опытных, которым нужно поддерживать актуальность на смежных темах. Доступна безвозмездно.</p>
+  <p>Книга создана для русскоязычных специалистов, которые входят в&nbsp;профессию или растут внутри неё: помогает закрыть пробелы, систематизировать знания, подготовиться к&nbsp;следующему уровню ответственности. Доступна безвозмездно.</p>
 
   <div class="card card--def">
     <div class="card-label">Главная цель</div>
-    <p>Развитие системного анализа в России и его представителей. Любое содержательное решение проверяется одним вопросом: «Помогает ли это русскоязычному специалисту в реальной работе или обучении?»</p>
+    <p>Развитие системного анализа в России и сообщества его специалистов. Любое содержательное решение проверяется одним вопросом: «Помогает ли это русскоязычному специалисту в реальной работе или обучении?»</p>
   </div>
 </section>
 
@@ -105,23 +111,17 @@
   <span class="section-num">§ 02</span>
   <h2>Кому книга и как читать</h2>
   <p class="section-lede">
-    Книга адресована трём типам читателей. Это справочник, а не учебник — основной режим чтения точечный, через оглавление и поиск.
+    Книга адресована практикующим аналитикам с опытом 1–4 лет, которые заполняют пробелы в системной картине профессии: junior, стремящимся стать middle, и middle, систематизирующим знания.
   </p>
 
-  <ul>
-    <li><strong>Junior-аналитик</strong> читает тему сверху вниз, обращает внимание на определение, ментальную модель и пример.</li>
-    <li><strong>Middle-аналитик</strong> прыгает к чеклисту и блоку типичных ошибок, использует книгу для освежения перед задачей или подготовкой к собеседованию.</li>
-    <li><strong>Senior</strong> читает определение и ментальную модель, использует таблицы сравнения для быстрого восстановления контекста по теме, которую давно не применял.</li>
-  </ul>
-
-  <p>Полное введение — кому подходит каждая роль, как устроена тема, что такое условные обозначения — в <a href="chapters/00-intro.html">вводной главе</a>.</p>
+  <p>Это справочник, а не учебник — основной режим чтения точечный, через оглавление или поиск. Полное описание читателей, режима чтения и условных обозначений — в <a href="chapters/00-intro.html">вводной главе</a>.</p>
 </section>
 
 <section id="contents">
   <span class="section-num">§ 03</span>
   <h2>Содержание</h2>
   <p class="section-lede">
-    Восемь частей, девятнадцать глав. Порядок — от мышления к технике. В составных главах темы сгруппированы в подразделы.
+    Восемь частей, двадцать глав. Порядок — от мышления к технике. В составных главах темы сгруппированы в подразделы.
   </p>
 
   <div class="outline">
@@ -174,29 +174,37 @@
         <li><span class="ch-num">12</span><a href="chapters/12-sync.html">Синхронные интеграции: HTTP, REST, SOAP</a></li>
         <li><span class="ch-num">13</span><a href="chapters/13-async.html">Асинхронные интеграции и брокеры</a></li>
         <li><span class="ch-num">14</span><a href="chapters/14-other.html">Другие способы интеграции</a></li>
-        <li><span class="ch-num">15</span><a href="chapters/15-cross-cutting.html">Сквозные темы интеграций</a></li>
+        <li><span class="ch-num">15</span><a href="chapters/15-integration-choice.html">Выбор способа интеграции</a></li>
+        <li><span class="ch-num">16</span><a href="chapters/16-cross-cutting.html">Сквозные темы интеграций</a></li>
       </ol>
     </div>
 
     <div class="outline-part">
       <div class="outline-part-title"><strong>Часть VI.</strong> Архитектура</div>
       <ol class="outline-chapters">
-        <li><span class="ch-num">16</span><a href="chapters/16-arch-styles.html">Архитектурные стили</a></li>
-        <li><span class="ch-num">17</span><a href="chapters/17-distributed.html">Распределённые системы и масштабирование</a></li>
+        <li><span class="ch-num">17</span><a href="chapters/17-arch-styles.html">Архитектурные стили</a></li>
+        <li><span class="ch-num">18</span><a href="chapters/18-distributed.html">Распределённые системы и масштабирование</a></li>
       </ol>
     </div>
 
     <div class="outline-part">
       <div class="outline-part-title"><strong>Часть VII.</strong> Безопасность</div>
       <ol class="outline-chapters">
-        <li><span class="ch-num">18</span><a href="chapters/18-security.html">Безопасность</a></li>
+        <li><span class="ch-num">19</span><a href="chapters/19-security.html">Безопасность</a></li>
       </ol>
     </div>
 
     <div class="outline-part">
       <div class="outline-part-title"><strong>Часть VIII.</strong> Интерфейс</div>
       <ol class="outline-chapters">
-        <li><span class="ch-num">19</span><a href="chapters/19-ui.html">Пользовательский интерфейс</a></li>
+        <li><span class="ch-num">20</span><a href="chapters/20-ui.html">Пользовательский интерфейс</a></li>
+      </ol>
+    </div>
+
+    <div class="outline-part">
+      <div class="outline-part-title"><strong>Приложение</strong></div>
+      <ol class="outline-chapters">
+        <li><span class="ch-num">—</span><a href="glossary.html">Глоссарий</a></li>
       </ol>
     </div>
 
