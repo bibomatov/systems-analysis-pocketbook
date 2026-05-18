@@ -172,6 +172,13 @@ body {
   padding: 0;
   counter-reset: tocchap;
 }
+/* Если <ol> имеет HTML-атрибут start, синхронизируем CSS-счётчик с этой нумерацией:
+   первый li должен показать N, для этого счётчик до инкремента = N − 1.
+   Поддерживается современными Chrome/Edge/Safari; в старых браузерах
+   нумерация откатится к началу с 01 — это деградация без поломки. */
+.toc-global ol[start] {
+  counter-reset: tocchap calc(attr(start integer, 1) - 1);
+}
 .toc-global ol li {
   counter-increment: tocchap;
   position: relative;
@@ -828,6 +835,10 @@ blockquote cite::before { content: '— '; }
   opacity: 1;
   color: var(--text);
   border-color: var(--text-3);
+}
+.back-to-top:focus-visible {
+  outline: 2px solid var(--def-accent);
+  outline-offset: 2px;
 }
 
 /* ─────────────────────────────────────────────

@@ -9,16 +9,16 @@
 <body id="top">
 <div class="layout">
 
-<!-- TOC-GLOBAL-INCLUDE -->
 <!-- TOC намеренно не синхронизируется с index.html:
-     это плоский указатель для meta-документа -->
+     это плоский указатель для meta-документа.
+     Маркеры TOC-GLOBAL-INCLUDE здесь не используются — build.py --sync-toc
+     обрабатывает только chapters/*.html. -->
 <aside class="toc-global toc-flat" aria-label="Оглавление книги">
   <div class="toc-label">Содержание</div>
   <ol>
     <li><a href="index.html">Главная</a></li>
   </ol>
 </aside>
-<!-- /TOC-GLOBAL-INCLUDE -->
 
 <main>
 
@@ -53,7 +53,7 @@
 
 </div>
 
-<a href="#top" class="back-to-top" aria-label="Наверх">↑</a>
+<a href="#top" class="back-to-top" aria-label="Наверх"><span aria-hidden="true">↑</span></a>
 
 </body>
 </html>
