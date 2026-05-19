@@ -1,6 +1,15 @@
 /* =====================================================
    Системный анализ: карманный справочник
-   Дизайн-система v1.0
+   Дизайн-система v1.1
+
+   Изменения v1.1 относительно v1.0:
+   — Три уровня визуальных разделителей (часть → глава → подраздел).
+   — Обёртки .chapter-learn и .chapter-summary как выделенные блоки.
+   — .card--dont переведена на нейтральный фон + боковая полоса.
+   — .checklist: вместо квадратиков-чекбоксов — статичные галочки ✓.
+   — Новый компонент .topic-links — компактная карточка блока связей.
+   — Трёхколоночный лейаут на ≥1500px; .toc-local — рабочая правая колонка.
+   — Подсветка текущей темы в toc-local (поведение — в build.py).
    ===================================================== */
 
 /* Локальные шрифты IBM Plex.
@@ -122,7 +131,10 @@ body {
   padding: 3rem 2rem;
 }
 
-/* На широких экранах появляется правая колонка с локальной навигацией главы */
+/* На широких экранах появляется правая колонка с локальной навигацией главы.
+   Layout превращается в три колонки: глобальный TOC слева, контент в центре,
+   локальный TOC главы — справа. На узких экранах правая колонка скрыта
+   правилом для .toc-local (display: none) ниже. */
 @media (min-width: 1500px) {
   .layout {
     grid-template-columns: 240px minmax(0, 1fr) 220px;
@@ -232,6 +244,10 @@ body {
 
 /* ─────────────────────────────────────────────
    RIGHT TOC (локальная навигация по темам главы)
+   Появляется на широких экранах (≥1500px) как правая колонка
+   лейаута. На узких — полностью скрыта (display: none).
+   Подсветка текущей темы навешивается в собранной книге через
+   IntersectionObserver — см. build.py.
    ───────────────────────────────────────────── */
 
 .toc-local {
@@ -268,11 +284,50 @@ body {
   display: block;
   padding: 3px 0;
   line-height: 1.4;
+  border-bottom: 0;
+  transition: color .15s;
 }
-.toc-local ul li a:hover,
+.toc-local ul li a:hover {
+  color: var(--text);
+}
 .toc-local ul li a.is-current {
   color: var(--text);
   font-weight: 500;
+}
+
+/* Хост-контейнер для нескольких toc-local в собранной книге.
+   В отдельных файлах глав есть один <aside class="toc-local">.
+   В pocket-book.html build.py собирает все toc-local внутрь общей
+   обёртки .toc-local-host, и JS переключает видимость активного
+   блока на основе текущей главы. Сам хост занимает третью колонку
+   лейаута и виден только на широких экранах. */
+.toc-local-host {
+  display: none;
+}
+@media (min-width: 1500px) {
+  .toc-local-host {
+    display: block;
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    max-height: calc(100vh - 4rem);
+  }
+}
+/* Внутри хоста сам .toc-local не делает повторно sticky — это уже
+   делает хост. И поскольку хост виден только на широких экранах,
+   медиа-точка display:none у .toc-local здесь не мешает. */
+@media (min-width: 1500px) {
+  .toc-local-host .toc-local {
+    display: none;
+    position: static;
+    max-height: none;
+    overflow-y: auto;
+    padding-left: 12px;
+    border-left: 1px solid var(--border);
+  }
+  .toc-local-host .toc-local.is-active {
+    display: block;
+  }
 }
 
 /* ─────────────────────────────────────────────
@@ -315,15 +370,106 @@ main .margin-host {
 main .card p,
 main .card ul,
 main .card ol { max-width: none; }
+main .chapter-learn p,
+main .chapter-learn ul,
+main .chapter-summary p,
+main .chapter-summary ul { max-width: none; }
+
+/* ─────────────────────────────────────────────
+   PART TITLE — титульная вставка части
+   Самый сильный визуальный разделитель: появляется только в собранной
+   книге перед первой главой каждой части. В отдельных файлах глав
+   этого блока нет.
+
+   Типографское решение: крупный римский номер серифом + название
+   части. Большой воздух сверху и снизу — это разделитель верхнего
+   уровня, ему нужна пустота вокруг.
+   ───────────────────────────────────────────── */
+
+.part-title {
+  margin: 6rem 0 5rem;
+  padding-top: 4rem;
+  text-align: left;
+  max-width: 760px;
+  border-top: 1px solid var(--border-strong);
+}
+/* Первая часть в книге следует сразу за вводной главой —
+   отступ сверху достаточный без дополнительного. */
+.part-title:first-of-type {
+  margin-top: 5rem;
+}
+.part-title .roman {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 1;
+  color: var(--text-3);
+  display: block;
+  margin-bottom: 1rem;
+  letter-spacing: -.02em;
+}
+.part-title .name {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--text);
+  display: block;
+  max-width: 620px;
+}
+.part-title .eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Глава, следующая сразу за титульной вставкой части, не получает
+   собственный верхний разделитель — его уже несёт сама вставка. */
+.part-title + article.chapter > .chapter-header {
+  margin-top: 2rem;
+  padding-top: 0;
+  border-top: 0;
+}
 
 /* ─────────────────────────────────────────────
    HERO / Заголовок главы или документа
    ───────────────────────────────────────────── */
 
-.hero, .chapter-header {
+/* Hero — у документа в целом (главная книги, редстандарт).
+   У hero не должно быть верхней отбивки: он стоит первым в потоке. */
+.hero {
   margin-bottom: 4rem;
   padding-bottom: 2.5rem;
   border-bottom: 1px solid var(--border);
+}
+
+/* Заголовок главы. Усиленный разделитель сверху — это второй уровень
+   визуальной иерархии книги: часть > глава > подраздел.
+   В собранной книге chapter-header стоит после нескольких тем предыдущей
+   главы (или после титульной вставки части), и читатель должен с первого
+   взгляда понимать, что зашёл в новую главу. На странице отдельной главы
+   верхний padding визуально незаметен (соседей сверху нет) — это ок. */
+.chapter-header {
+  margin-top: 5.5rem;
+  margin-bottom: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 2.5rem;
+  border-top: 2px solid var(--text);
+  border-bottom: 1px solid var(--border);
+}
+/* На странице отдельной главы (а не в собранной книге) chapter-header
+   обычно идёт первым — убираем у первого в потоке верхнюю отбивку,
+   чтобы не было пустого пространства до заголовка. */
+main > article > .chapter-header:first-child,
+main > .chapter-header:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .eyebrow, .chapter-num {
@@ -407,6 +553,113 @@ section > .section-lede {
   max-width: 700px;
 }
 
+/* ─── Подраздел внутри составной главы ───
+   Третий уровень визуальной иерархии (часть > глава > подраздел).
+   В разметке — обычная <section> с id вида ch{NN}-sub-{slug}: соглашение
+   об идентификаторах задано в project-instructions.md.
+   Селектор по id-pattern: класса на разделе пока нет, миграция может
+   произойти позже без потери стилизации (правило продолжит работать
+   рядом с любым новым классом). */
+section[id*="-sub-"] {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--border-strong);
+}
+section[id*="-sub-"] > h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--text-2);
+  letter-spacing: 0;
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1.6rem;
+}
+/* Маркер подраздела — короткая вертикальная риска слева от заголовка.
+   Сигнал «зашёл в группу тем», без визуального крика. */
+section[id*="-sub-"] > h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 3px;
+  height: 0.85em;
+  background: var(--text-3);
+  border-radius: 1px;
+}
+section[id*="-sub-"] > p {
+  font-size: 14.5px;
+  color: var(--text-2);
+  max-width: 700px;
+}
+
+/* ─── Обёртки главы: «Что вы узнаете» и «Резюме главы» ───
+   Это не обычные секции с h3, а визуально выделенные блоки —
+   «вход» и «выход» главы. В режиме точечного обращения читатель
+   должен опознавать их с первого взгляда (редстандарт § 04).
+
+   Общее: тонкая боковая полоса слева, фон поверхности, серифный
+   заголовок. На «входе» полоса акцентная (def-accent — приглушённый
+   фиолетово-синий, тот же, что у определения), на «выходе» —
+   нейтральная (text-3 — серый), как у завершающего блока. */
+
+.chapter-learn,
+.chapter-summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.8rem 2rem 1.6rem;
+  margin: 2.5rem 0 3.5rem;
+  max-width: 760px;
+  position: relative;
+}
+.chapter-learn {
+  border-left: 3px solid var(--def-accent);
+}
+.chapter-summary {
+  border-left: 3px solid var(--text-3);
+  margin-top: 4rem;
+}
+
+.chapter-learn-title,
+.chapter-summary-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 0 0 1.2rem;
+  letter-spacing: -.005em;
+  color: var(--text);
+}
+
+/* Списки внутри обёрток — без буллетов вида «точка», с тире-маркером
+   слева, чтобы блок не выглядел как обычный <ul> в тексте. */
+.chapter-learn ul,
+.chapter-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.chapter-learn li,
+.chapter-summary li {
+  padding-left: 1.2rem;
+  position: relative;
+  margin-bottom: .7rem;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.chapter-learn li:last-child,
+.chapter-summary li:last-child { margin-bottom: 0; }
+.chapter-learn li::before,
+.chapter-summary li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--text-3);
+  font-family: var(--mono);
+}
+
 h3 {
   font-family: var(--font);
   font-weight: 600;
@@ -475,10 +728,70 @@ code {
 .card--def .card-label { color: var(--def-accent); }
 .card--do { background: var(--do-bg); border-color: var(--do-border); }
 .card--do .card-label { color: var(--do-accent); }
-.card--dont { background: var(--dont-bg); border-color: var(--dont-border); }
+
+/* Антипаттерн: нейтральный фон поверхности + акцентная боковая полоса.
+   Цель — снять визуальную перегрузку, когда несколько антипаттернов
+   идут подряд (типично в темах «типичные ошибки»). Полоса слева несёт
+   сигнал «блок-предупреждение», лейбл в красно-коралловой семантике
+   сохраняет узнаваемость при беглом просмотре. */
+.card--dont {
+  background: var(--surface);
+  border-color: var(--border);
+  border-left: 3px solid var(--dont-accent);
+}
 .card--dont .card-label { color: var(--dont-accent); }
+
 .card--warn { background: var(--warn-bg); border-color: var(--warn-border); }
 .card--warn .card-label { color: var(--warn-accent); }
+
+/* ─── Блок связей с другими темами ───
+   Сдержанный служебный блок в конце темы. Намеренно отступает на
+   задний план: лейбл в третичном тексте, список ссылок — мелкий,
+   без буллетов и без отдельного <h3>. Это «точки выхода», а не
+   часть основного потока.
+
+   Контент главы (на момент CSS v1.1) ещё использует <h3> и <ul>
+   для связей. Под новый класс CSS готов; миграция разметки —
+   задача чата 3. */
+.topic-links {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: .9rem 1.2rem 1rem;
+  margin: 2rem 0 1rem;
+  max-width: 760px;
+}
+.topic-links-label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text-3);
+  margin-bottom: 8px;
+  display: block;
+}
+.topic-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.topic-links li {
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin-bottom: 4px;
+  padding-left: 0;
+  color: var(--text-2);
+}
+.topic-links li:last-child { margin-bottom: 0; }
+.topic-links a {
+  color: var(--text-2);
+  border-bottom: 1px dotted var(--border-strong);
+}
+.topic-links a:hover {
+  color: var(--text);
+  border-bottom-color: var(--text-3);
+}
 
 /* ─────────────────────────────────────────────
    DO / DONT — двухколоночные блоки
@@ -635,6 +948,10 @@ table.compare td:first-child {
 
 /* ─────────────────────────────────────────────
    CHECKLIST
+   Не интерактивный to-do, а перечень результатов: каждый пункт —
+   признак того, как выглядит правильно выполненная работа.
+   Маркер — статичная галочка ✓ зелёной семантики (do-accent),
+   а не квадратик-чекбокс, чтобы читатель не ожидал нажатия.
    ───────────────────────────────────────────── */
 
 .checklist {
@@ -648,14 +965,15 @@ table.compare td:first-child {
   margin-bottom: .5rem;
 }
 .checklist li::before {
-  content: '';
+  content: '✓';
   position: absolute;
   left: 0;
-  top: 4px;
-  width: 14px; height: 14px;
-  border: 1.5px solid var(--border-strong);
-  border-radius: 3px;
-  background: var(--surface);
+  top: 0;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.65;
+  color: var(--do-accent);
 }
 
 /* ─────────────────────────────────────────────
@@ -1099,4 +1417,24 @@ blockquote cite::before { content: '— '; }
   }
   .hero h1, .chapter-header h1 { font-size: 32px; }
   section > h2 { font-size: 24px; }
+  /* Уменьшаем кегль больших римских номеров части на узких экранах */
+  .part-title {
+    margin: 4rem 0 3rem;
+    padding-top: 2.5rem;
+  }
+  .part-title .roman { font-size: 56px; }
+  .part-title .name { font-size: 22px; }
+  /* Обёртки главы — чуть компактнее */
+  .chapter-learn,
+  .chapter-summary {
+    padding: 1.4rem 1.4rem 1.2rem;
+  }
+  .chapter-learn-title,
+  .chapter-summary-title { font-size: 19px; }
+  /* Подраздел — без жирного верхнего отступа */
+  section[id*="-sub-"] {
+    margin-top: 2.5rem;
+    padding-top: 1.4rem;
+  }
+  section[id*="-sub-"] > h2 { font-size: 20px; }
 }
