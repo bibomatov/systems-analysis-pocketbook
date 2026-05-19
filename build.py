@@ -189,6 +189,9 @@ def adapt_toc_for_chapter(toc_html: str, current_chapter_filename: str) -> str:
     adapted = toc_html.replace('href="chapters/', 'href="')
     # Ссылки на корневые файлы (glossary.html и т.п.) из chapters/ ведут на уровень выше
     adapted = adapted.replace('href="glossary.html"', 'href="../glossary.html"')
+    # То же для файлов в meta/ (редакционный стандарт и др.):
+    # из chapters/ путь начинается с ../meta/
+    adapted = adapted.replace('href="meta/', 'href="../meta/')
     adapted = re.sub(r'\s*class="is-current"', '', adapted)
     adapted = adapted.replace(
         f'href="{current_chapter_filename}"',
