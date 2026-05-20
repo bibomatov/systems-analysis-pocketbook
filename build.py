@@ -10,8 +10,10 @@
     python3 build.py --check-toc-sync  — проверить, что TOC во всех главах
                                           синхронизирован с index.html (без изменений)
     python3 build.py --check           — проверить HTML на баланс тегов и наличие маркеров,
-                                          а также наличие обязательных блоков в предметных главах
-                                          (chapter-learn, chapter-summary, chapter-sources)
+                                          наличие обязательных блоков в предметных главах
+                                          (chapter-learn, chapter-summary, chapter-sources),
+                                          а также вывести справочный отчёт о ссылках на ещё
+                                          не написанные главы (не блокирует сборку)
 
 Никаких внешних зависимостей. Python 3.10+.
 """
@@ -111,6 +113,48 @@ def has_class(html: str, class_name: str) -> bool:
     return False
 
 
+# ────────────────────────────────────────────────────────────
+# Отчёт о ссылках на ещё не написанные главы
+# ────────────────────────────────────────────────────────────
+# Главы пишутся последовательно, и в коде уже написанной главы могут
+# встречаться ссылки на главы, которые ещё не существуют (например,
+# из гл. 02 на § 04-XX). Это допустимо по редстандарту § 05.10:
+# ссылки в пустоту не блокируют сборку, но build.py --check выдаёт
+# по ним справочный отчёт, чтобы автор видел текущее состояние.
+
+# Регулярное выражение для кросс-ссылок вида NN-name.html(#anchor)?
+CROSS_LINK_RE = re.compile(r'href="(\d{2}-[a-z0-9-]+\.html)(#[a-z0-9-]+)?"')
+
+
+def collect_dangling_chapter_links(chapter_files: list[Path]) -> list[str]:
+    """Находит в файлах глав ссылки на главы, которых ещё нет в chapters/.
+    Возвращает список строк вида '01-role.html → 04-functional-requirements.html#ch04-dor-dod'.
+
+    Глобальный TOC исключается из проверки: он намеренно содержит ссылки на все
+    20 глав, в т.ч. на ещё не написанные. Это часть архитектуры (заглушки в боковой
+    панели нужны для устойчивой навигации), а не проблема.
+    """
+    existing = {f.name for f in chapter_files}
+    dangling = []
+    for f in chapter_files:
+        text = read_text(f)
+        # Вырезаем содержимое TOC-GLOBAL из проверяемого текста
+        toc_content = extract_between(text, *TOC_GLOBAL_MARKER)
+        if toc_content:
+            text_to_check = text.replace(toc_content, '')
+        else:
+            text_to_check = text
+        for target_file, anchor in CROSS_LINK_RE.findall(text_to_check):
+            if target_file == f.name:
+                # внутриглавная ссылка через имя файла — отдельный случай,
+                # не считаем dangling, но отмечаем как стилистическое отклонение
+                continue
+            if target_file not in existing:
+                full = target_file + (anchor or '')
+                dangling.append(f"  {f.name} → {full}")
+    return sorted(set(dangling))
+
+
 def check_required_chapter_blocks(html: str, label: str) -> list[str]:
     """Проверка наличия обязательных блоков предметной главы.
     Для вводной главы 00 не применяется (её структура упрощена,
@@ -158,6 +202,15 @@ def run_checks() -> int:
         # Для предметных глав — проверка обязательных блоков обёртки.
         if not is_intro_chapter(f.name):
             all_problems.extend(check_required_chapter_blocks(text, f.name))
+
+    # Справочный отчёт о ссылках на ещё не написанные главы.
+    # НЕ блокирует сборку: главы пишутся последовательно, такие
+    # ссылки допустимы (см. редстандарт § 05.10).
+    dangling = collect_dangling_chapter_links(files)
+    if dangling:
+        print(f"ℹ Ссылки на ещё не написанные главы ({len(dangling)} шт., не блокирует):")
+        for d in dangling:
+            print(d)
 
     if all_problems:
         print("❌ Проблемы:")

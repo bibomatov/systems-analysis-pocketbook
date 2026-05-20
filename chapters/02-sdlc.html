@@ -11,7 +11,7 @@
 <div class="layout">
 
 <!-- TOC-GLOBAL-INCLUDE -->
-<aside class="toc-global" aria-label="Оглавление книги">
+<aside class="toc-global" role="navigation" aria-label="Оглавление книги">
   <div class="toc-label">Карманный справочник</div>
 
   <div class="toc-part">Введение</div>
@@ -118,7 +118,8 @@
 
   <p>В классическом представлении SDLC состоит из шести фаз. В реальных проектах фазы могут перекрываться, возвращаться и называться по-разному, но логика сохраняется.</p>
 
-  <div class="svg-frame">
+  <figure class="svg-frame" aria-labelledby="sdlc-fig-title">
+    <figcaption id="sdlc-fig-title" class="caption">Шесть фаз SDLC и обратная петля. На схеме слева направо: анализ требований (зона аналитика) → проектирование (архитектура, ТЗ) → разработка (написание кода) → тестирование (проверка) → внедрение (релиз в продакшен) → эксплуатация (поддержка, рост). От «эксплуатации» обратная пунктирная стрелка ведёт к «анализу требований» — новые требования открывают следующий цикл.</figcaption>
     <svg viewBox="0 0 760 200" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;" role="img" aria-label="Шесть фаз SDLC от анализа требований до эксплуатации, со стрелками между фазами и обратной петлёй от эксплуатации к анализу">
       <defs>
         <marker id="sdlc_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
@@ -126,51 +127,50 @@
         </marker>
       </defs>
 
-      <rect x="10"  y="60" width="108" height="56" rx="8" fill="#f4f3fb" stroke="#d8d4ef" stroke-width="1.5"/>
-      <text x="64"  y="84"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#3c3489">Анализ</text>
-      <text x="64"  y="99"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#3c3489">требований</text>
-      <text x="64"  y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"  fill="#6e6c68">← аналитик</text>
+      <rect x="10"  y="60" width="108" height="56" rx="8" fill="#e8e6dd" stroke="#c8c5bb" stroke-width="1.5"/>
+      <text x="64"  y="84"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Анализ</text>
+      <text x="64"  y="99"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">требований</text>
+      <text x="64"  y="130" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9"  fill="#6e6c68">← аналитик</text>
 
       <line x1="118" y1="88" x2="130" y2="88" stroke="#5a5855" stroke-width="1.3" marker-end="url(#sdlc_arr)"/>
 
-      <rect x="131" y="60" width="100" height="56" rx="8" fill="#f4f3fb" stroke="#d8d4ef" stroke-width="1.5"/>
-      <text x="181" y="84"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#3c3489">Проекти-</text>
-      <text x="181" y="99"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#3c3489">рование</text>
-      <text x="181" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"  fill="#6e6c68">архитектура, ТЗ</text>
+      <rect x="131" y="60" width="100" height="56" rx="8" fill="#f0efe9" stroke="#e2e0d8" stroke-width="1.5"/>
+      <text x="181" y="84"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Проекти-</text>
+      <text x="181" y="99"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">рование</text>
+      <text x="181" y="130" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9"  fill="#6e6c68">архитектура, ТЗ</text>
 
       <line x1="231" y1="88" x2="243" y2="88" stroke="#5a5855" stroke-width="1.3" marker-end="url(#sdlc_arr)"/>
 
-      <rect x="244" y="60" width="100" height="56" rx="8" fill="#eff5ec" stroke="#cfdfc6" stroke-width="1.5"/>
-      <text x="294" y="84"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500a">Разра-</text>
-      <text x="294" y="99"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500a">ботка</text>
-      <text x="294" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"  fill="#6e6c68">написание кода</text>
+      <rect x="244" y="60" width="100" height="56" rx="8" fill="#f0efe9" stroke="#e2e0d8" stroke-width="1.5"/>
+      <text x="294" y="84"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Разра-</text>
+      <text x="294" y="99"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">ботка</text>
+      <text x="294" y="130" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9"  fill="#6e6c68">написание кода</text>
 
       <line x1="344" y1="88" x2="356" y2="88" stroke="#5a5855" stroke-width="1.3" marker-end="url(#sdlc_arr)"/>
 
-      <rect x="357" y="60" width="100" height="56" rx="8" fill="#eff5ec" stroke="#cfdfc6" stroke-width="1.5"/>
-      <text x="407" y="84"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500a">Тестиро-</text>
-      <text x="407" y="99"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500a">вание</text>
-      <text x="407" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"  fill="#6e6c68">проверка</text>
+      <rect x="357" y="60" width="100" height="56" rx="8" fill="#f0efe9" stroke="#e2e0d8" stroke-width="1.5"/>
+      <text x="407" y="84"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Тестиро-</text>
+      <text x="407" y="99"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">вание</text>
+      <text x="407" y="130" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9"  fill="#6e6c68">проверка</text>
 
       <line x1="457" y1="88" x2="469" y2="88" stroke="#5a5855" stroke-width="1.3" marker-end="url(#sdlc_arr)"/>
 
-      <rect x="470" y="60" width="100" height="56" rx="8" fill="#fbf3e3" stroke="#ecdcb1" stroke-width="1.5"/>
-      <text x="520" y="84"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#633806">Внедре-</text>
-      <text x="520" y="99"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#633806">ние</text>
-      <text x="520" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"  fill="#6e6c68">релиз в прод</text>
+      <rect x="470" y="60" width="100" height="56" rx="8" fill="#f0efe9" stroke="#e2e0d8" stroke-width="1.5"/>
+      <text x="520" y="84"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Внедре-</text>
+      <text x="520" y="99"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">ние</text>
+      <text x="520" y="130" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9"  fill="#6e6c68">релиз в продакшен</text>
 
       <line x1="570" y1="88" x2="582" y2="88" stroke="#5a5855" stroke-width="1.3" marker-end="url(#sdlc_arr)"/>
 
-      <rect x="583" y="60" width="100" height="56" rx="8" fill="#fbf3e3" stroke="#ecdcb1" stroke-width="1.5"/>
-      <text x="633" y="84"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#633806">Эксплуа-</text>
-      <text x="633" y="99"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#633806">тация</text>
-      <text x="633" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"  fill="#6e6c68">поддержка, рост</text>
+      <rect x="583" y="60" width="100" height="56" rx="8" fill="#f0efe9" stroke="#e2e0d8" stroke-width="1.5"/>
+      <text x="633" y="84"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Эксплуа-</text>
+      <text x="633" y="99"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">тация</text>
+      <text x="633" y="130" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9"  fill="#6e6c68">поддержка, рост</text>
 
       <path d="M 683 88 L 710 88 L 710 170 L 64 170 L 64 118" fill="none" stroke="#c8c5bb" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#sdlc_arr)"/>
-      <text x="387" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6e6c68" font-style="italic">новые требования → следующий цикл</text>
+      <text x="387" y="188" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#6e6c68" font-style="italic">новые требования → следующий цикл</text>
     </svg>
-    <div class="caption">Шесть фаз SDLC и обратная петля</div>
-  </div>
+  </figure>
 
   <p><strong>Анализ требований.</strong> Выясняется, что именно нужно построить: собираются и формализуются требования, согласовываются со стейкхолдерами. Главная фаза для аналитика — ошибки здесь самые дешёвые для исправления. Результат: согласованный набор требований с критериями приёмки.</p>
 
@@ -182,7 +182,7 @@
 
   <p><strong>Внедрение.</strong> Система выходит в продакшен. Аналитик обеспечивает передачу знаний: документация, обучение пользователей при необходимости.</p>
 
-  <p><strong>Эксплуатация.</strong> Система работает в проде. Появляются новые требования, обнаруживаются дефекты — цикл начинается заново.</p>
+  <p><strong>Эксплуатация.</strong> Система работает в продакшене. Появляются новые требования, обнаруживаются дефекты — цикл начинается заново.</p>
 
   <h3>Классические модели: Waterfall и V-модель</h3>
 
@@ -195,6 +195,8 @@
   <p>Ограничение Waterfall: обратная связь от пользователей появляется только на фазе тестирования или внедрения. Если требования сформулированы неверно, исправлять их к этому моменту дорого.</p>
 
   <p><strong>V-модель</strong> — расширение Waterfall, которое явно связывает каждую фазу проектирования с соответствующей фазой тестирования. Левая ветвь «V» — фазы разработки (анализ, проектирование, разработка), правая — соответствующие виды тестирования (приёмочное, интеграционное, модульное). В вершине — сама разработка кода.</p>
+
+  <p>Парность фаз даёт каждому артефакту проектирования партнёра на стороне проверки. Спецификация требований ↔ приёмочные тесты: что заказчик подтверждает на сдаче. Архитектурный дизайн ↔ интеграционные тесты: как компоненты работают вместе. Детальный технический дизайн ↔ модульные тесты: каждый блок реализован по описанию.</p>
 
   <p>Для аналитика V-модель важна тем, что делает явной связь между требованиями и критериями их проверки: каждое требование, сформулированное на фазе анализа, должно иметь соответствующий приёмочный тест. Это дисциплинирует — требование без проверяемого критерия не является завершённым.</p>
 
@@ -217,7 +219,7 @@
 
   <div class="card card--dont">
     <div class="card-label">Антипаттерн</div>
-    <p><strong>Пропускать фазу анализа под давлением сроков.</strong> «Давайте начнём разрабатывать, а требования уточним по ходу» — классическая ловушка. Разработка стартует с неполным пониманием задачи, уточнения приходят в процессе, архитектурные решения принимаются без нужного контекста. Исправление требований на фазе разработки обходится в разы дороже, чем уточнение на фазе анализа.</p>
+    <p><strong>Пропускать фазу анализа под давлением сроков.</strong> «Давайте начнём разрабатывать, а требования уточним по ходу» — распространённая ловушка. Разработка стартует с неполным пониманием задачи, уточнения приходят в процессе, архитектурные решения принимаются без нужного контекста. По отраслевым наблюдениям исправление требований на фазе разработки обходится заметно дороже, чем уточнение на фазе анализа — этот эффект подробно разобран в § 01-01.</p>
   </div>
 
   <div class="card card--dont">
@@ -229,8 +231,8 @@
     <span class="topic-links-label">Связи</span>
     <ul>
       <li><a href="01-role.html#ch01-task-lifecycle">§ 01-04 · Жизненный цикл задачи аналитика</a> — как жизненный цикл задачи встраивается в жизненный цикл проекта</li>
-      <li><a href="02-sdlc.html#ch02-agile">§ 02-02 · Agile</a> — итеративный подход как ответ на ограничения последовательных моделей</li>
-      <li><a href="02-sdlc.html#ch02-scrum">§ 02-03 · Scrum</a> — конкретная реализация итеративного SDLC</li>
+      <li><a href="#ch02-agile">§ 02-02 · Agile</a> — итеративный подход как ответ на ограничения последовательных моделей</li>
+      <li><a href="#ch02-scrum">§ 02-03 · Scrum</a> — конкретная реализация итеративного SDLC</li>
       <li><a href="09-documentation.html">Глава 09 · Документация</a> — артефакты, которые аналитик создаёт на фазах анализа и проектирования</li>
     </ul>
   </div>
@@ -270,39 +272,40 @@
   <p>Манифест Agile формулирует четыре ценности как противопоставления. Правая сторона каждой пары не отвергается — она просто ценится меньше, чем левая.</p>
 
   <table class="compare">
+    <caption>Четыре ценности Манифеста Agile — противопоставления</caption>
     <thead>
       <tr>
-        <th>Ценится больше</th>
-        <th>Ценится меньше</th>
+        <th scope="col">Ценится больше</th>
+        <th scope="col">Ценится меньше</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><strong>Люди и взаимодействие</strong></td>
+        <td scope="row"><strong>Люди и взаимодействие</strong></td>
         <td>Процессы и инструменты</td>
       </tr>
       <tr>
-        <td><strong>Работающий продукт</strong></td>
+        <td scope="row"><strong>Работающий продукт</strong></td>
         <td>Исчерпывающая документация</td>
       </tr>
       <tr>
-        <td><strong>Сотрудничество с заказчиком</strong></td>
+        <td scope="row"><strong>Сотрудничество с заказчиком</strong></td>
         <td>Согласование условий контракта</td>
       </tr>
       <tr>
-        <td><strong>Готовность к изменениям</strong></td>
+        <td scope="row"><strong>Готовность к изменениям</strong></td>
         <td>Следование первоначальному плану</td>
       </tr>
     </tbody>
   </table>
 
-  <p>Для аналитика вторая ценность — самая часто понимаемая неверно. «Исчерпывающая документация ценится меньше» не означает «документация не нужна». Означает: документация — не самоцель. Документ, который никто не читает, — меньшая ценность, чем работающая функциональность. Документ, который помогает команде работать, — полезен и нужен.</p>
+  <p>Для аналитика вторая ценность чаще всего понимается неверно. «Исчерпывающая документация ценится меньше» не означает «документация не нужна». Означает: документация — не самоцель. Документ, который никто не читает, — меньшая ценность, чем работающая функциональность. Документ, который помогает команде работать, — полезен и нужен.</p>
 
   <h4>Принципы, важные для аналитика</h4>
 
-  <p>Из двенадцати принципов Манифеста несколько непосредственно влияют на работу аналитика.</p>
+  <p>Из двенадцати принципов Манифеста ниже разобраны четыре — особенно значимых для работы аналитика. Полный список доступен в самом Манифесте (ссылка в «Дополнительных источниках» главы).</p>
 
-  <p><strong>«Принимайте изменения требований даже в конце разработки».</strong> В Agile изменение требований — не чрезвычайная ситуация, а ожидаемое событие. Это меняет отношение аналитика к своим артефактам: требования — не контракт, который нельзя трогать, а живой документ, который обновляется по мере понимания.</p>
+  <p><strong>«Принимайте изменения требований даже в конце разработки».</strong> В Agile изменение требований — не чрезвычайная ситуация, а ожидаемое событие. Это меняет отношение аналитика к своим артефактам: требования — не неприкосновенный контракт, а живой документ, обновляемый по мере понимания.</p>
 
   <p><strong>«Поставляйте работающее программное обеспечение часто — каждые несколько недель».</strong> Короткие итерации означают, что аналитик не может уйти на три месяца и вернуться с полной спецификацией. Требования прорабатываются непрерывно, небольшими порциями — ровно столько, сколько нужно для следующей итерации.</p>
 
@@ -333,7 +336,7 @@
 
   <div class="card card--dont">
     <div class="card-label">Антипаттерн</div>
-    <p><strong>Принимать любое изменение требований без оценки последствий.</strong> Готовность к изменениям не означает безграничную гибкость. Изменение требований в середине спринта, которое обесценивает уже сделанную работу, — проблема. Аналитик должен уметь объяснять цену изменения: «это изменение затронет текущий и следующий спринт, нужно согласование PO».</p>
+    <p><strong>Принимать любое изменение требований без оценки последствий.</strong> Готовность к изменениям не означает отсутствие границ. Изменение требований в середине спринта, которое обесценивает уже сделанную работу, — проблема. Аналитик должен уметь объяснять цену изменения: «это изменение затронет текущий и следующий спринт, нужно согласование PO».</p>
   </div>
 
   <div class="card card--dont">
@@ -344,9 +347,9 @@
   <div class="topic-links">
     <span class="topic-links-label">Связи</span>
     <ul>
-      <li><a href="02-sdlc.html#ch02-sdlc">§ 02-01 · SDLC</a> — место Agile в контексте моделей жизненного цикла</li>
-      <li><a href="02-sdlc.html#ch02-scrum">§ 02-03 · Scrum</a> — конкретный фреймворк, реализующий принципы Agile</li>
-      <li><a href="02-sdlc.html#ch02-kanban">§ 02-04 · Kanban</a> — альтернативный agile-подход с другой механикой</li>
+      <li><a href="#ch02-sdlc">§ 02-01 · SDLC</a> — место Agile в контексте моделей жизненного цикла</li>
+      <li><a href="#ch02-scrum">§ 02-03 · Scrum</a> — конкретный фреймворк, реализующий принципы Agile</li>
+      <li><a href="#ch02-kanban">§ 02-04 · Kanban</a> — альтернативный agile-подход с другой механикой</li>
       <li><a href="06-requirements-management.html">Глава 06 · Сбор, формализация, управление требованиями</a> — как принципы Agile меняют практику работы с требованиями</li>
     </ul>
   </div>
@@ -365,16 +368,21 @@
 
   <div class="card card--def">
     <div class="card-label">Определение</div>
-    <p><strong>Scrum</strong> — лёгкий фреймворк для разработки продукта в условиях сложности и неопределённости. Работает через короткие итерации — спринты — внутри которых команда планирует, строит и проверяет результат. Scrum не описывает, как именно делать работу: он задаёт структуру, которая делает прогресс и проблемы видимыми.</p>
+    <p><strong>Scrum</strong> — лёгкий фреймворк для разработки продукта в условиях сложности и неопределённости. Работает через короткие итерации — спринты — внутри которых команда планирует, строит и проверяет результат. Scrum не описывает, как именно делать работу: он задаёт структуру, которая делает прогресс и проблемы наблюдаемыми.</p>
   </div>
 
   <p>Scrum — не методология в смысле «делайте шаги 1–2–3». Это фреймворк: минимальный набор ролей, событий и артефактов, внутри которого команда сама определяет, как работать. Именно поэтому Scrum в разных компаниях выглядит по-разному — один и тот же фреймворк, разная реализация.</p>
 
   <h3>Зачем это нужно аналитику</h3>
 
-  <p>Аналитик в Scrum — не наблюдатель, а активный участник цикла. Его работа разбивается на два параллельных потока. Первый — <em>текущий спринт</em>: отвечать на вопросы по задачам, участвовать в демо, помогать с приёмкой. Второй — <em>следующий спринт</em>: прорабатывать и детализировать задачи, которые команда возьмёт через одну-две недели.</p>
+  <p>Аналитик в Scrum — не наблюдатель, а активный участник цикла. У него всегда два направления работы одновременно. Первое — <em>текущий спринт</em>: отвечать на вопросы по задачам, участвовать в демо, помогать с приёмкой. Второе — <em>следующий спринт</em>: прорабатывать и детализировать задачи, которые команда возьмёт через одну-две недели.</p>
 
-  <p>Аналитик, который понимает механику Scrum, знает: если задача не проработана до начала спринта, это не проблема разработки — это проблема аналитика. Backlog refinement существует именно для того, чтобы этого не происходило.</p>
+  <div class="card card--warn">
+    <div class="card-label">Scrum Guide и российская практика</div>
+    <p>Scrum Guide не выделяет аналитика как отдельную роль — в каноне есть Product Owner, Scrum Master и кросс-функциональная команда разработки. Однако в большинстве российских IT-команд аналитик присутствует как фактическая роль с зоной ответственности: проработка задач до DoR, формализация требований, сопровождение разработки. Дальнейшее описание исходит именно из этой распространённой практики, а не из буквального чтения Scrum Guide.</p>
+  </div>
+
+  <p>В такой практической схеме действует устойчивое разделение ответственности: если задача пришла в спринт непроработанной, это не проблема разработки — это пробел в работе аналитика. Backlog refinement (рефайнмент) существует именно для того, чтобы этого не происходило.</p>
 
   <h3>Ментальная модель</h3>
 
@@ -382,7 +390,8 @@
 
   <p>Артефакты — это «память» колеса: они фиксируют, что запланировано, что взято в работу, что готово. События — это «точки синхронизации»: когда именно команда смотрит на состояние и принимает решения. Роли — это «ответственности»: кто принимает какие решения.</p>
 
-  <div class="svg-frame">
+  <figure class="svg-frame" aria-labelledby="scrum-fig-title">
+    <figcaption id="scrum-fig-title" class="caption">Scrum-цикл: один спринт — один оборот. Слева — Product Backlog (упорядоченный список задач). Внутри блока «Спринт · 1–4 недели»: Sprint Planning — выбор задач из бэклога в Sprint Backlog; Daily Scrum — ежедневная синхронизация; Refinement — точка работы аналитика; Increment — готовый результат, соответствующий DoD. Справа — Sprint Review (демо стейкхолдерам) и Retrospective (улучшение процесса). Пунктирная стрелка от Retrospective ведёт обратно к Product Backlog — следующий спринт.</figcaption>
     <svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;" role="img" aria-label="Scrum-цикл: спринт как повторяющийся оборот от планирования к ретроспективе">
       <defs>
         <marker id="sc_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
@@ -390,97 +399,113 @@
         </marker>
       </defs>
 
-      <rect x="20" y="100" width="130" height="120" rx="8" fill="#f4f3fb" stroke="#d8d4ef" stroke-width="1.5"/>
-      <text x="85" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#3c3489">Product</text>
-      <text x="85" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#3c3489">Backlog</text>
-      <rect x="36" y="160" width="98" height="10" rx="2" fill="#d8d4ef"/>
-      <rect x="36" y="176" width="76" height="10" rx="2" fill="#d8d4ef"/>
-      <rect x="36" y="192" width="88" height="10" rx="2" fill="#d8d4ef"/>
-      <text x="85" y="232" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6e6c68" font-style="italic">упорядоченный</text>
+      <rect x="20" y="100" width="130" height="120" rx="8" fill="#e8e6dd" stroke="#c8c5bb" stroke-width="1.5"/>
+      <text x="85" y="128" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="12" font-weight="600" fill="#1a1917">Product</text>
+      <text x="85" y="145" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="12" font-weight="600" fill="#1a1917">Backlog</text>
+      <rect x="36" y="160" width="98" height="10" rx="2" fill="#c8c5bb"/>
+      <rect x="36" y="176" width="76" height="10" rx="2" fill="#c8c5bb"/>
+      <rect x="36" y="192" width="88" height="10" rx="2" fill="#c8c5bb"/>
+      <text x="85" y="232" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="10" fill="#6e6c68" font-style="italic">упорядоченный</text>
 
       <line x1="150" y1="160" x2="198" y2="160" stroke="#5a5855" stroke-width="1.5" marker-end="url(#sc_arr)"/>
-      <text x="174" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6e6c68">выбор</text>
+      <text x="174" y="150" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="10" fill="#6e6c68">выбор</text>
 
       <rect x="200" y="60" width="360" height="200" rx="10" fill="#ffffff" stroke="#c8c5bb" stroke-width="1.5" stroke-dasharray="5,3"/>
-      <text x="380" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#6e6c68" letter-spacing="2">СПРИНТ · 1–4 НЕДЕЛИ</text>
+      <text x="380" y="86" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#6e6c68" letter-spacing="2">СПРИНТ · 1–4 НЕДЕЛИ</text>
 
-      <rect x="218" y="100" width="100" height="46" rx="6" fill="#eff5ec" stroke="#cfdfc6" stroke-width="1"/>
-      <text x="268" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500a">Sprint</text>
-      <text x="268" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500a">Planning</text>
+      <rect x="218" y="100" width="100" height="46" rx="6" fill="#f0efe9" stroke="#e2e0d8" stroke-width="1"/>
+      <text x="268" y="120" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Sprint</text>
+      <text x="268" y="135" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Planning</text>
 
-      <rect x="330" y="100" width="100" height="46" rx="6" fill="#f4f3fb" stroke="#d8d4ef" stroke-width="1"/>
-      <text x="380" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#3c3489">Sprint</text>
-      <text x="380" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#3c3489">Backlog</text>
+      <rect x="330" y="100" width="100" height="46" rx="6" fill="#f0efe9" stroke="#e2e0d8" stroke-width="1"/>
+      <text x="380" y="120" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Sprint</text>
+      <text x="380" y="135" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Backlog</text>
 
-      <rect x="218" y="188" width="100" height="46" rx="6" fill="#eff5ec" stroke="#cfdfc6" stroke-width="1"/>
-      <text x="268" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500a">Daily</text>
-      <text x="268" y="223" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500a">Scrum</text>
+      <rect x="218" y="188" width="100" height="46" rx="6" fill="#f0efe9" stroke="#e2e0d8" stroke-width="1"/>
+      <text x="268" y="208" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Daily</text>
+      <text x="268" y="223" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Scrum</text>
 
-      <rect x="442" y="100" width="100" height="46" rx="6" fill="#eff5ec" stroke="#cfdfc6" stroke-width="1"/>
-      <text x="492" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500a">Increment</text>
-      <text x="492" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#5a5855">(+ DoD)</text>
+      <rect x="442" y="100" width="100" height="46" rx="6" fill="#f0efe9" stroke="#e2e0d8" stroke-width="1"/>
+      <text x="492" y="120" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Increment</text>
+      <text x="492" y="135" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" fill="#5a5855">(+ DoD)</text>
 
-      <rect x="330" y="188" width="100" height="46" rx="6" fill="#fbf3e3" stroke="#ecdcb1" stroke-width="1"/>
-      <text x="380" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#633806">Refinement</text>
-      <text x="380" y="223" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#633806">← аналитик</text>
+      <rect x="330" y="188" width="100" height="46" rx="6" fill="#e8e6dd" stroke="#c8c5bb" stroke-width="1"/>
+      <text x="380" y="208" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Refinement</text>
+      <text x="380" y="223" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" fill="#5a5855">← аналитик</text>
 
       <line x1="318" y1="123" x2="329" y2="123" stroke="#5a5855" stroke-width="1.2" marker-end="url(#sc_arr)"/>
       <line x1="430" y1="123" x2="441" y2="123" stroke="#5a5855" stroke-width="1.2" marker-end="url(#sc_arr)"/>
       <line x1="560" y1="123" x2="608" y2="123" stroke="#5a5855" stroke-width="1.5" marker-end="url(#sc_arr)"/>
 
-      <rect x="610" y="80" width="130" height="50" rx="8" fill="#eff5ec" stroke="#cfdfc6" stroke-width="1.5"/>
-      <text x="675" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500a">Sprint Review</text>
-      <text x="675" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5a5855">демо стейкхолдерам</text>
+      <rect x="610" y="80" width="130" height="50" rx="8" fill="#f0efe9" stroke="#e2e0d8" stroke-width="1.5"/>
+      <text x="675" y="102" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Sprint Review</text>
+      <text x="675" y="118" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="10" fill="#5a5855">демо стейкхолдерам</text>
 
-      <rect x="610" y="148" width="130" height="50" rx="8" fill="#eff5ec" stroke="#cfdfc6" stroke-width="1.5"/>
-      <text x="675" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500a">Retrospective</text>
-      <text x="675" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5a5855">улучшение процесса</text>
+      <rect x="610" y="148" width="130" height="50" rx="8" fill="#f0efe9" stroke="#e2e0d8" stroke-width="1.5"/>
+      <text x="675" y="170" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Retrospective</text>
+      <text x="675" y="186" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="10" fill="#5a5855">улучшение процесса</text>
 
       <path d="M 675 198 L 675 280 L 85 280 L 85 222" fill="none" stroke="#c8c5bb" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#sc_arr)"/>
-      <text x="380" y="296" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6e6c68" font-style="italic">следующий спринт</text>
+      <text x="380" y="296" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="10" fill="#6e6c68" font-style="italic">следующий спринт</text>
     </svg>
-    <div class="caption">Scrum-цикл: один спринт — один оборот</div>
-  </div>
+  </figure>
 
   <h3>Как устроено</h3>
 
-  <p>Scrum описывается через три категории: роли, события, артефакты.</p>
+  <p>Scrum описывается через три категории: роли, события, артефакты. Каждая категория ниже оформлена как список определений: термин — расшифровка с описанием функции и роли аналитика.</p>
 
   <h4>Роли</h4>
 
   <p>Scrum определяет три роли, у каждой — своя зона ответственности.</p>
 
-  <p><strong>Product Owner (владелец продукта)</strong> отвечает за ценность того, что создаёт команда. Он формирует и упорядочивает Product Backlog, принимает решение о приоритетах — что делать следующим. Для аналитика PO — ключевой источник бизнес-контекста и приоритетов. Важно: PO принимает решение о том, <em>что</em> строить, аналитик отвечает за то, чтобы команда знала, <em>как именно</em>.</p>
+  <dl>
+    <dt>Product Owner (владелец продукта)</dt>
+    <dd>Отвечает за ценность того, что создаёт команда. Формирует и упорядочивает Product Backlog, принимает решение о приоритетах — что делать следующим. Для аналитика PO — ключевой источник бизнес-контекста и приоритетов. PO принимает решение о том, <em>что</em> строить, аналитик отвечает за то, чтобы команда знала, <em>как именно</em>.</dd>
 
-  <p><strong>Scrum Master</strong> отвечает за то, чтобы команда понимала и соблюдала Scrum. Устраняет препятствия, ведёт события, помогает команде работать эффективнее. Не руководитель, не менеджер задач. Для аналитика Scrum Master — союзник при системных проблемах: «не хватает времени на рефайнмент», «задачи приходят в спринт непроработанными».</p>
+    <dt>Scrum Master</dt>
+    <dd>Отвечает за то, чтобы команда понимала и соблюдала Scrum. Устраняет препятствия, ведёт события, помогает команде работать эффективнее. Не руководитель и не менеджер задач. Для аналитика Scrum Master — союзник при системных проблемах: «не хватает времени на рефайнмент», «задачи приходят в спринт непроработанными».</dd>
 
-  <p><strong>Команда разработки</strong> — кросс-функциональная группа, которая создаёт инкремент. В Scrum нет жёстких ролей внутри команды: разработчик, тестировщик, аналитик — все входят в команду разработки. В некоторых российских командах аналитик формально стоит вне Scrum-команды — работает «при заказчике» или «при PO». Это осложняет участие в рефайнменте и доступ к Daily: такую ситуацию стоит выявить на старте и договориться о формате участия.</p>
+    <dt>Команда разработки</dt>
+    <dd>Кросс-функциональная группа, которая создаёт инкремент. В каноне Scrum нет жёстких ролей внутри команды: разработчик, тестировщик, аналитик — все входят в команду разработки. В некоторых российских командах аналитик формально стоит вне Scrum-команды — работает «при заказчике» или «при PO». Это осложняет участие в рефайнменте и доступ к Daily: такую ситуацию стоит выявить на старте и договориться о формате участия.</dd>
+  </dl>
 
   <h4>События</h4>
 
-  <p><strong>Sprint Planning (планирование спринта)</strong> открывает каждый спринт. Команда и PO договариваются о цели спринта и выбирают задачи из Product Backlog в Sprint Backlog. Для аналитика это точка ответственности: задачи, которые команда берёт в спринт, должны быть проработаны до уровня, при котором разработка может начинать без дополнительных вопросов по существу.</p>
+  <dl>
+    <dt>Sprint Planning (планирование спринта)</dt>
+    <dd>Открывает каждый спринт. Команда и PO договариваются о цели спринта и выбирают задачи из Product Backlog в Sprint Backlog. Для аналитика это точка ответственности: задачи, которые команда берёт в спринт, должны быть проработаны до уровня, при котором разработка может начинать без дополнительных вопросов по существу.</dd>
 
-  <p><strong>Daily Scrum (ежедневный скрам)</strong> — 15-минутная синхронизация команды каждый день. Не статус-митинг для менеджмента, а инструмент команды для координации: что было сделано, что планируется, есть ли препятствия. На Daily аналитик доступен для вопросов по задачам и замечает ранние сигналы отклонения от требований — до того, как это станет дефектом.</p>
+    <dt>Daily Scrum (ежедневный скрам)</dt>
+    <dd>Короткая синхронизация команды каждый день — по канону 15 минут, на практике обычно 10–20. Не статус-митинг для менеджмента, а инструмент команды для координации: что было сделано, что планируется, есть ли препятствия. На Daily аналитик доступен для вопросов по задачам и замечает ранние сигналы отклонения от требований — до того, как это станет дефектом.</dd>
 
-  <p><strong>Sprint Review (ревью спринта)</strong> — показ результата стейкхолдерам в конце спринта. Команда демонстрирует готовый инкремент, PO и стейкхолдеры дают обратную связь, которая влияет на Product Backlog. Аналитик участвует: он понимает, что было сделано и как обратная связь меняет следующие задачи.</p>
+    <dt>Sprint Review (ревью спринта)</dt>
+    <dd>Показ результата стейкхолдерам в конце спринта. Команда демонстрирует готовый инкремент, PO и стейкхолдеры дают обратную связь, которая влияет на Product Backlog. Аналитик участвует: он понимает, что было сделано и как обратная связь меняет следующие задачи.</dd>
 
-  <p><strong>Sprint Retrospective (ретроспектива)</strong> — внутренняя встреча команды для улучшения процесса. Что работало хорошо, что мешало, что изменим. Аналитик — полноправный участник: проблемы в качестве требований, несвоевременная проработка задач, неясные критерии приёмки — типичные темы, которые поднимает аналитик на ретро.</p>
+    <dt>Sprint Retrospective (ретроспектива)</dt>
+    <dd>Внутренняя встреча команды для улучшения процесса. Что работало хорошо, что мешало, что изменим. Аналитик — полноправный участник: проблемы в качестве требований, несвоевременная проработка задач, неясные критерии приёмки — типичные темы, которые поднимает аналитик на ретро.</dd>
 
-  <p><strong>Backlog Refinement (грумминг)</strong> — не официальное событие Scrum, но повсеместная практика. Команда регулярно просматривает и детализирует задачи из Product Backlog, которые ещё не взяты в работу. Это главная площадка аналитика: именно здесь задачи прорабатываются до уровня готовности, оцениваются и приоритизируются. Рефайнмент обычно занимает 5–10% времени спринта.</p>
+    <dt>Backlog Refinement (рефайнмент)</dt>
+    <dd>Не официальное событие Scrum Guide, но повсеместная практика. Команда регулярно просматривает и детализирует задачи из Product Backlog, которые ещё не взяты в работу. Это главная площадка аналитика: именно здесь задачи прорабатываются до уровня готовности, оцениваются и приоритизируются. Обычно — несколько встреч в течение спринта; точный объём времени команда настраивает под себя.</dd>
+  </dl>
 
   <h4>Артефакты</h4>
 
-  <p><strong>Product Backlog</strong> — упорядоченный список всего, что может быть сделано для продукта. Управляет PO. Задачи в бэклоге имеют разный уровень детализации: ближние — проработаны и оценены, дальние — крупные и примерные. Аналитик участвует в детализации задач по мере их приближения к спринту.</p>
+  <dl>
+    <dt>Product Backlog</dt>
+    <dd>Упорядоченный список всего, что может быть сделано для продукта. Управляет PO. Задачи в бэклоге имеют разный уровень детализации: ближние — проработаны и оценены, дальние — крупные и примерные. Аналитик участвует в детализации задач по мере их приближения к спринту.</dd>
 
-  <p><strong>Sprint Backlog</strong> — набор задач, который команда взяла в конкретный спринт, плюс план по их выполнению. Принадлежит команде разработки. В течение спринта команда обновляет состояние задач и видит, укладывается ли в цель спринта.</p>
+    <dt>Sprint Backlog</dt>
+    <dd>Набор задач, который команда взяла в конкретный спринт, плюс план по их выполнению. Принадлежит команде разработки. В течение спринта команда обновляет состояние задач и видит, укладывается ли в цель спринта.</dd>
 
-  <p><strong>Increment (инкремент)</strong> — готовый к использованию результат спринта. Не «почти готово», не «готово кроме тестирования» — результат, который соответствует Definition of Done. Каждый инкремент добавляется к предыдущим, продукт растёт.</p>
+    <dt>Increment (инкремент)</dt>
+    <dd>Готовый к использованию результат спринта. Не «почти готово», не «готово кроме тестирования» — результат, который соответствует Definition of Done. Каждый инкремент добавляется к предыдущим, продукт растёт.</dd>
+  </dl>
 
   <div class="card card--def">
     <div class="card-label">Definition of Ready и Definition of Done</div>
-    <p><strong>Definition of Ready (DoR)</strong> — набор критериев, при выполнении которых задача считается готовой к взятию в спринт. Устанавливает команда. Типичные критерии: требования описаны и согласованы, критерии приёмки сформулированы, задача оценена, зависимости выявлены. DoR защищает спринт от задач, которые начнут, но не смогут завершить. Аналитик отвечает за то, чтобы задачи удовлетворяли DoR до планирования.<br><br>
-    <strong>Definition of Done (DoD)</strong> — набор критериев, при выполнении которых задача считается завершённой. Устанавливает команда. Типичные критерии: код написан и ревьюирован, тесты пройдены, документация обновлена, задача развёрнута в нужном окружении. DoD защищает от «почти готово» и обеспечивает предсказуемое качество инкремента.<br><br>
-    Подробнее DoR и DoD раскрываются в контексте требований — <a href="04-functional-requirements.html#ch04-dor-dod">§ 04-05 · Definition of Ready и Definition of Done</a>.</p>
+    <p><strong>Definition of Ready (DoR)</strong> — набор критериев, при выполнении которых задача считается готовой к взятию в спринт. Устанавливает команда. Типичные критерии: требования описаны и согласованы, критерии приёмки сформулированы, задача оценена, зависимости выявлены. DoR защищает спринт от задач, которые начнут, но не смогут завершить. Аналитик отвечает за то, чтобы задачи удовлетворяли DoR до планирования.</p>
+    <p><strong>Definition of Done (DoD)</strong> — набор критериев, при выполнении которых задача считается завершённой. Устанавливает команда. Типичные критерии: код написан и ревьюирован, тесты пройдены, документация обновлена, задача развёрнута в нужном окружении. DoD защищает от «почти готово» и обеспечивает предсказуемое качество инкремента.</p>
+    <p>Подробнее DoR и DoD раскрываются в контексте требований — <a href="04-functional-requirements.html#ch04-dor-dod">§ 04-05 · Definition of Ready и Definition of Done</a>.</p>
   </div>
 
   <h3>Пример из практики</h3>
@@ -552,10 +577,8 @@
   <h3>Чеклист аналитика в Scrum</h3>
 
   <ul class="checklist">
-    <li>DoR для задач определён и актуален: команда знает, что значит «готово к спринту»</li>
-    <li>Задачи следующего спринта проработаны в ходе текущего — рефайнмент регулярен</li>
-    <li>На каждой задаче в Sprint Backlog есть критерии приёмки до начала разработки</li>
-    <li>Зависимости между задачами и внешними системами выявлены до планирования</li>
+    <li>DoR определён и актуален: команда знает, что значит «готово к спринту», а задачи следующего спринта проработаны в ходе текущего</li>
+    <li>На каждой задаче в Sprint Backlog есть критерии приёмки до начала разработки, а зависимости с внешними системами выявлены ещё до планирования</li>
     <li>На Sprint Planning аналитик готов ответить на вопросы по бизнес-логике задач</li>
     <li>Изменения в требованиях в ходе спринта фиксируются и согласовываются с PO</li>
     <li>На Sprint Review аналитик участвует и фиксирует обратную связь как входные данные для проработки</li>
@@ -565,9 +588,9 @@
   <div class="topic-links">
     <span class="topic-links-label">Связи</span>
     <ul>
-      <li><a href="02-sdlc.html#ch02-sdlc">§ 02-01 · SDLC</a> — Scrum как одно из воплощений итеративного жизненного цикла</li>
-      <li><a href="02-sdlc.html#ch02-agile">§ 02-02 · Agile</a> — ценности и принципы, которые лежат в основе Scrum</li>
-      <li><a href="02-sdlc.html#ch02-kanban">§ 02-04 · Kanban</a> — альтернативный фреймворк и критерии выбора</li>
+      <li><a href="#ch02-sdlc">§ 02-01 · SDLC</a> — Scrum как одно из воплощений итеративного жизненного цикла</li>
+      <li><a href="#ch02-agile">§ 02-02 · Agile</a> — ценности и принципы, которые лежат в основе Scrum</li>
+      <li><a href="#ch02-kanban">§ 02-04 · Kanban</a> — альтернативный фреймворк и критерии выбора</li>
       <li><a href="04-functional-requirements.html#ch04-dor-dod">§ 04-05 · Definition of Ready и Definition of Done</a> — детальное раскрытие DoR и DoD в контексте требований</li>
       <li><a href="01-role.html#ch01-task-lifecycle">§ 01-04 · Жизненный цикл задачи аналитика</a> — как работа аналитика встраивается в ритм спринта</li>
     </ul>
@@ -598,7 +621,7 @@
 
   <p><strong>Визуализация работы.</strong> Все задачи отображаются на доске — карточки в колонках, соответствующих этапам работы. Типичная доска: «Бэклог → Анализ → Разработка → Тестирование → Готово». Состояние системы видно в любой момент без статус-митингов.</p>
 
-  <p><strong>Ограничение WIP (work in progress).</strong> Ключевое правило Kanban: каждая колонка имеет лимит — максимальное количество задач, которые могут в ней находиться одновременно. Например, «Разработка: не более 3». Лимит предотвращает ситуацию, когда задач взято много, а завершается мало. Если колонка упёрлась в лимит, система останавливается до завершения текущих задач, а не берёт новые — это делает узкие места видимыми.</p>
+  <p><strong>Ограничение WIP (work in progress).</strong> Ключевое правило Kanban: каждая колонка имеет лимит — максимальное количество задач, которые могут в ней находиться одновременно. Например, «Разработка: не более 3». Лимит предотвращает ситуацию, когда задач взято много, а завершается мало. Если колонка упёрлась в лимит, система останавливается до завершения текущих задач, а не берёт новые — это выявляет узкие места.</p>
 
   <p><strong>Управление потоком.</strong> Цель — чтобы задачи двигались через доску равномерно и быстро. Узкие места (bottlenecks) — этапы, где задачи накапливаются, — выявляются визуально и устраняются.</p>
 
@@ -612,9 +635,14 @@
 
   <p><strong>Cycle time (время цикла)</strong> — время от момента, когда команда взяла задачу в работу, до её завершения. Показывает реальную производительность без учёта времени в очереди. Cycle time всегда меньше или равен lead time.</p>
 
+  <p><strong>Throughput (пропускная способность)</strong> — количество задач, завершённых за единицу времени (например, восемь задач в неделю). Отвечает на вопрос «сколько работы команда реально успевает». В отличие от story points, throughput считается в готовых задачах и не зависит от соглашений по оценке.</p>
+
+  <p>Три метрики связаны законом Литтла: при стабильной системе средний lead time ≈ среднее количество задач в работе (WIP) ÷ throughput. Из этой связи следует практический вывод: чтобы сократить время выполнения, нужно либо уменьшить WIP, либо повысить пропускную способность. Накопление задач «в работе» без повышения throughput только удлиняет lead time, не ускоряя поставку.</p>
+
   <p>Рост lead time при стабильном cycle time — сигнал о накоплении очереди на входе. Рост обоих — признак перегрузки или узкого места в процессе.</p>
 
-  <div class="svg-frame">
+  <figure class="svg-frame" aria-labelledby="kanban-fig-title">
+    <figcaption id="kanban-fig-title" class="caption">Kanban-доска с пятью колонками: Бэклог (без лимита), Анализ (WIP ≤ 2), Разработка (WIP ≤ 3), Тестирование (WIP ≤ 2), Готово. Карточки задач движутся слева направо. Lead time — от появления задачи в бэклоге до «Готово». Cycle time — от взятия задачи в работу (колонка «Анализ») до «Готово». Cycle time всегда меньше или равен lead time.</figcaption>
     <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;" role="img" aria-label="Kanban-доска с пятью колонками и WIP-лимитами, стрелки показывают lead time и cycle time">
       <defs>
         <marker id="kb_arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
@@ -623,60 +651,59 @@
       </defs>
 
       <rect x="10"  y="10" width="120" height="140" rx="6" fill="#f0efe9" stroke="#c8c5bb" stroke-width="1"/>
-      <text x="70"  y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#1a1917">Бэклог</text>
-      <text x="70"  y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"  fill="#6e6c68">без лимита</text>
-      <rect x="22"  y="56" width="96" height="22" rx="3" fill="#f4f3fb" stroke="#d8d4ef" stroke-width="1"/>
-      <text x="70"  y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3c3489">Фильтры каталога</text>
-      <rect x="22"  y="84" width="96" height="22" rx="3" fill="#f4f3fb" stroke="#d8d4ef" stroke-width="1"/>
-      <text x="70"  y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3c3489">Личный кабинет</text>
-      <rect x="22" y="112" width="96" height="22" rx="3" fill="#f4f3fb" stroke="#d8d4ef" stroke-width="1"/>
-      <text x="70" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3c3489">Push-уведомления</text>
+      <text x="70"  y="30" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Бэклог</text>
+      <text x="70"  y="45" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9"  fill="#6e6c68">без лимита</text>
+      <rect x="22"  y="56" width="96" height="22" rx="3" fill="#ffffff" stroke="#e2e0d8" stroke-width="1"/>
+      <text x="70"  y="71" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#1a1917">Фильтры каталога</text>
+      <rect x="22"  y="84" width="96" height="22" rx="3" fill="#ffffff" stroke="#e2e0d8" stroke-width="1"/>
+      <text x="70"  y="99" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#1a1917">Личный кабинет</text>
+      <rect x="22" y="112" width="96" height="22" rx="3" fill="#ffffff" stroke="#e2e0d8" stroke-width="1"/>
+      <text x="70" y="127" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#1a1917">Push-уведомления</text>
 
       <line x1="130" y1="80" x2="143" y2="80" stroke="#5a5855" stroke-width="1.2" marker-end="url(#kb_arr)"/>
 
       <rect x="144" y="10" width="120" height="140" rx="6" fill="#f0efe9" stroke="#c8c5bb" stroke-width="1"/>
-      <text x="204" y="30"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#1a1917">Анализ</text>
-      <text x="204" y="45"  text-anchor="middle" font-family="Arial, sans-serif" font-size="9"  fill="#633806">WIP ≤ 2</text>
-      <rect x="156" y="56" width="96" height="22" rx="3" fill="#fbf3e3" stroke="#ecdcb1" stroke-width="1"/>
-      <text x="204" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#633806">Корзина: пустое</text>
-      <rect x="156" y="84" width="96" height="22" rx="3" fill="#fbf3e3" stroke="#ecdcb1" stroke-width="1"/>
-      <text x="204" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#633806">Оплата СБП</text>
+      <text x="204" y="30"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Анализ</text>
+      <text x="204" y="45"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9"  fill="#6e6c68">WIP ≤ 2</text>
+      <rect x="156" y="56" width="96" height="22" rx="3" fill="#ffffff" stroke="#e2e0d8" stroke-width="1"/>
+      <text x="204" y="71" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#1a1917">Корзина: пустое</text>
+      <rect x="156" y="84" width="96" height="22" rx="3" fill="#ffffff" stroke="#e2e0d8" stroke-width="1"/>
+      <text x="204" y="99" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#1a1917">Оплата СБП</text>
 
       <line x1="264" y1="80" x2="277" y2="80" stroke="#5a5855" stroke-width="1.2" marker-end="url(#kb_arr)"/>
 
       <rect x="278" y="10" width="120" height="140" rx="6" fill="#f0efe9" stroke="#c8c5bb" stroke-width="1"/>
-      <text x="338" y="30"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#1a1917">Разработка</text>
-      <text x="338" y="45"  text-anchor="middle" font-family="Arial, sans-serif" font-size="9"  fill="#633806">WIP ≤ 3</text>
-      <rect x="290" y="56" width="96" height="22" rx="3" fill="#eff5ec" stroke="#cfdfc6" stroke-width="1"/>
-      <text x="338" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500a">Регистрация</text>
-      <rect x="290" y="84" width="96" height="22" rx="3" fill="#eff5ec" stroke="#cfdfc6" stroke-width="1"/>
-      <text x="338" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500a">Карточка товара</text>
+      <text x="338" y="30"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Разработка</text>
+      <text x="338" y="45"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9"  fill="#6e6c68">WIP ≤ 3</text>
+      <rect x="290" y="56" width="96" height="22" rx="3" fill="#ffffff" stroke="#e2e0d8" stroke-width="1"/>
+      <text x="338" y="71" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#1a1917">Регистрация</text>
+      <rect x="290" y="84" width="96" height="22" rx="3" fill="#ffffff" stroke="#e2e0d8" stroke-width="1"/>
+      <text x="338" y="99" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#1a1917">Карточка товара</text>
 
       <line x1="398" y1="80" x2="411" y2="80" stroke="#5a5855" stroke-width="1.2" marker-end="url(#kb_arr)"/>
 
       <rect x="412" y="10" width="120" height="140" rx="6" fill="#f0efe9" stroke="#c8c5bb" stroke-width="1"/>
-      <text x="472" y="30"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#1a1917">Тестирование</text>
-      <text x="472" y="45"  text-anchor="middle" font-family="Arial, sans-serif" font-size="9"  fill="#633806">WIP ≤ 2</text>
-      <rect x="424" y="56" width="96" height="22" rx="3" fill="#eff5ec" stroke="#cfdfc6" stroke-width="1"/>
-      <text x="472" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500a">Авторизация</text>
+      <text x="472" y="30"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Тестирование</text>
+      <text x="472" y="45"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9"  fill="#6e6c68">WIP ≤ 2</text>
+      <rect x="424" y="56" width="96" height="22" rx="3" fill="#ffffff" stroke="#e2e0d8" stroke-width="1"/>
+      <text x="472" y="71" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#1a1917">Авторизация</text>
 
       <line x1="532" y1="80" x2="545" y2="80" stroke="#5a5855" stroke-width="1.2" marker-end="url(#kb_arr)"/>
 
-      <rect x="546" y="10" width="120" height="140" rx="6" fill="#eff5ec" stroke="#cfdfc6" stroke-width="1"/>
-      <text x="606" y="30"  text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#27500a">Готово</text>
-      <rect x="558" y="56" width="96" height="22" rx="3" fill="#eff5ec" stroke="#3B6D11" stroke-width="1"/>
-      <text x="606" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500a">Главная страница</text>
-      <rect x="558" y="84" width="96" height="22" rx="3" fill="#eff5ec" stroke="#3B6D11" stroke-width="1"/>
-      <text x="606" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500a">Поиск</text>
+      <rect x="546" y="10" width="120" height="140" rx="6" fill="#e8e6dd" stroke="#c8c5bb" stroke-width="1"/>
+      <text x="606" y="30"  text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#1a1917">Готово</text>
+      <rect x="558" y="56" width="96" height="22" rx="3" fill="#ffffff" stroke="#c8c5bb" stroke-width="1"/>
+      <text x="606" y="71" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#1a1917">Главная страница</text>
+      <rect x="558" y="84" width="96" height="22" rx="3" fill="#ffffff" stroke="#c8c5bb" stroke-width="1"/>
+      <text x="606" y="99" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#1a1917">Поиск</text>
 
-      <line x1="10" y1="165" x2="666" y2="165" stroke="#d8d4ef" stroke-width="1" marker-end="url(#kb_arr)"/>
-      <text x="338" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3c3489">Lead time: от появления задачи в бэклоге до «Готово»</text>
+      <line x1="10" y1="165" x2="666" y2="165" stroke="#c8c5bb" stroke-width="1" marker-end="url(#kb_arr)"/>
+      <text x="338" y="180" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#5a5855">Lead time: от появления задачи в бэклоге до «Готово»</text>
 
-      <line x1="144" y1="155" x2="666" y2="155" stroke="#cfdfc6" stroke-width="1.5" marker-end="url(#kb_arr)"/>
-      <text x="430" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27500a">Cycle time: от взятия в работу до «Готово»</text>
+      <line x1="144" y1="155" x2="666" y2="155" stroke="#5a5855" stroke-width="1.5" marker-end="url(#kb_arr)"/>
+      <text x="430" y="148" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-size="9" fill="#1a1917">Cycle time: от взятия в работу до «Готово»</text>
     </svg>
-    <div class="caption">Kanban-доска: WIP-лимиты и метрики потока</div>
-  </div>
+  </figure>
 
   <h4>Kanban и Scrum: в чём разница для аналитика</h4>
 
@@ -691,41 +718,42 @@
   <p>На практике выбор между Scrum, Kanban и другими подходами определяется характером работы, а не предпочтениями команды.</p>
 
   <table class="compare">
+    <caption>Выбор между Scrum, Kanban и Waterfall по характеру работы</caption>
     <thead>
       <tr>
-        <th>Критерий</th>
-        <th>Scrum</th>
-        <th>Kanban</th>
-        <th>Waterfall</th>
+        <th scope="col">Критерий</th>
+        <th scope="col">Scrum</th>
+        <th scope="col">Kanban</th>
+        <th scope="col">Waterfall</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><strong>Тип требований</strong></td>
+        <td scope="row"><strong>Тип требований</strong></td>
         <td>Меняются, уточняются итеративно</td>
         <td>Разнородный поток, приоритеты меняются</td>
         <td>Зафиксированы контрактом или регулятором</td>
       </tr>
       <tr>
-        <td><strong>Ритм поставки</strong></td>
+        <td scope="row"><strong>Ритм поставки</strong></td>
         <td>Пакетами раз в 1–4 недели</td>
         <td>Непрерывно, по завершении задачи</td>
         <td>Один раз в конце проекта</td>
       </tr>
       <tr>
-        <td><strong>Обратная связь</strong></td>
+        <td scope="row"><strong>Обратная связь</strong></td>
         <td>Каждый спринт на Review</td>
         <td>По завершении задачи или по запросу</td>
         <td>На фазе тестирования или сдачи</td>
       </tr>
       <tr>
-        <td><strong>Тип команды</strong></td>
+        <td scope="row"><strong>Тип команды</strong></td>
         <td>Кросс-функциональная, стабильная</td>
         <td>Любая, в т.ч. поддержка и Operations</td>
         <td>Может быть проектной, не постоянной</td>
       </tr>
       <tr>
-        <td><strong>Типичный контекст</strong></td>
+        <td scope="row"><strong>Типичный контекст</strong></td>
         <td>Продуктовая разработка, новый функционал</td>
         <td>Поддержка, исправление дефектов, внутренние сервисы</td>
         <td>Госконтракты, интеграции с фиксированным ТЗ</td>
@@ -735,7 +763,7 @@
 
   <div class="card card--warn">
     <div class="card-label">Важно</div>
-    <p>Большинство реальных команд не следуют ни одной методологии в чистом виде. Распространённая комбинация — <strong>Scrumban</strong>: спринты из Scrum как организационная единица, WIP-лимиты и метрики потока из Kanban. Другой вариант: продуктовая разработка по Scrum плюс Kanban-доска для задач поддержки в той же команде. Это нормально — фреймворки не требуют чистоты реализации, требуется соответствие характеру работы.</p>
+    <p>Большинство реальных команд не следуют ни одной методологии в чистом виде. Распространённая комбинация — Scrumban: спринты из Scrum как организационная единица, WIP-лимиты и метрики потока из Kanban. Scrumban занимает промежуточное положение в таблице выше: тип требований и тип команды как у Scrum, ритм поставки и работа с потоком — как у Kanban. Другой вариант: продуктовая разработка по Scrum плюс Kanban-доска для задач поддержки в той же команде. Это нормально — фреймворки не требуют чистоты реализации, требуется соответствие характеру работы.</p>
   </div>
 
   <p>Аналитику при смене контекста важно сначала понять, как реально устроена работа, а не подстраивать свои практики под название методологии. «Мы работаем по Scrum» и «мы работаем по Kanban» — отправные точки для понимания, а не исчерпывающее описание процесса.</p>
@@ -755,8 +783,8 @@
   <div class="topic-links">
     <span class="topic-links-label">Связи</span>
     <ul>
-      <li><a href="02-sdlc.html#ch02-agile">§ 02-02 · Agile</a> — ценности, которые разделяют и Scrum, и Kanban</li>
-      <li><a href="02-sdlc.html#ch02-scrum">§ 02-03 · Scrum</a> — детальное описание альтернативного фреймворка</li>
+      <li><a href="#ch02-agile">§ 02-02 · Agile</a> — ценности, которые разделяют и Scrum, и Kanban</li>
+      <li><a href="#ch02-scrum">§ 02-03 · Scrum</a> — детальное описание альтернативного фреймворка</li>
       <li><a href="07-decomposition.html">Глава 07 · Декомпозиция, оценка, приоритизация</a> — управление бэклогом и приоритизация задач в разных методологиях</li>
     </ul>
   </div>
@@ -792,15 +820,15 @@
 </main>
 
 <!-- TOC-LOCAL-INCLUDE -->
-<aside class="toc-local" aria-label="В этой главе">
+<aside class="toc-local" role="navigation" aria-label="В этой главе">
   <div class="toc-label">В этой главе</div>
-  <ul>
+  <ol>
     <li><a href="#ch02-sdlc">§ 02-01 · SDLC и классические модели</a></li>
     <li><a href="#ch02-sub-methodologies">Методологии</a></li>
     <li><a href="#ch02-agile">§ 02-02 · Agile</a></li>
     <li><a href="#ch02-scrum">§ 02-03 · Scrum</a></li>
     <li><a href="#ch02-kanban">§ 02-04 · Kanban и выбор</a></li>
-  </ul>
+  </ol>
 </aside>
 <!-- /TOC-LOCAL-INCLUDE -->
 
